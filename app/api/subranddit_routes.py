@@ -1,17 +1,19 @@
 from unicodedata import name
 from flask import Blueprint, jsonify, session, request, redirect
 from app.models import User, db, Post, Subranddit, Comment, subranddit
+from app.models.post import to_dict
 
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_user, logout_user, login_required
 
 from ..forms.subranddits import SubrandditForm
+from ..forms.posts import PostForm
 
 subranddit_blueprint = Blueprint("subranddit_blueprint", __name__)
 
 # see subranddits:
 
-@subranddit_blueprint.route("/subranddits")
+@subranddit_blueprint.route("/")
 def see_subs():
     response = []
     allsubs = Subranddit.query.all()
@@ -21,7 +23,7 @@ def see_subs():
 
 # create a subranddit:
 
-@subranddit_blueprint.route("/subranddits", methods = ["POST"])
+@subranddit_blueprint.route("/", methods = ["POST"])
 @login_required
 def create_sub():
 
@@ -71,3 +73,24 @@ def delete_sub(subrandditId):
         "statusCode": 200,
         "message": "Successfully deleted"
     }
+
+# create a post on a subranddit:
+@subranddit_blueprint.route('/<int:subrandditId>', methods = ["POST"])
+@login_required
+def create_post():
+
+    form = PostForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+
+        new_post = Post(
+            post_title = form.data['post_title'],
+            post_text = form.data['post_text'],
+            image_url = form.data['image_url'],
+            author_id = form.data['author_id'],
+        )
+
+        db.session.add(new_post)
+        db.session.commit()
+        return(new_post(to_dict()))
