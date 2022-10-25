@@ -17,3 +17,17 @@ def see_posts():
     for onepost in allposts:
         response.append(onepost)
     return jsonify(response)
+
+# delete a post:
+@post_blueprint.route("/<int:postId>", methods = ['DELETE'])
+@login_required
+def del_post(postId):
+    posttodel = Post.query.get(postId)
+    if not posttodel:
+        return {"message": "This post does not exists"}, 404
+    db.session.delete(posttodel)
+    db.session.commit()
+    return {
+        "statusCode": 200,
+        "message": "Successfully deleted."
+    }

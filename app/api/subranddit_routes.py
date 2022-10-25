@@ -8,10 +8,11 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 from ..forms.subranddits import SubrandditForm
 from ..forms.posts import PostForm
+import json
 
 subranddit_blueprint = Blueprint("subranddit_blueprint", __name__)
 
-# see subranddits:
+# see all subranddits for now:
 
 @subranddit_blueprint.route("/")
 def see_subs():
@@ -74,10 +75,24 @@ def delete_sub(subrandditId):
         "message": "Successfully deleted"
     }
 
+# see all posts under a subranddit:
+
+@subranddit_blueprint.route('/<int:subrandditId>/posts', methods = ["GET"])
+def see_all_posts():
+    response = []
+    allposts = Post.query.all()
+    for onepost in allposts:
+        response.append(onepost.to_dict())
+    return jsonify(response)
+
 # create a post on a subranddit:
 @subranddit_blueprint.route('/<int:subrandditId>', methods = ["POST"])
 @login_required
-def create_post():
+def create_post(subrandditId):
+
+    subrandy = Subranddit.query.get(subrandditId)
+    if subrandy == None:
+        return {"errors": "Subranddit not found"}, 404
 
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -93,4 +108,29 @@ def create_post():
 
         db.session.add(new_post)
         db.session.commit()
-        return(new_post(to_dict()))
+        return(new_post(to_dict())), 201
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+# edit your post on a subranddit:
+@subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["PUT"])
+@login_required
+def update_post(subrandditId, postId):
+
+    subrandy = Subranddit.query.get(subrandditId)
+    if subrandy == None:
+        return {"errors": "Subranddit not found"}, 404
+
+    whattoedit = Post.query.get(postId)
+    if whattoedit == None:
+        return {"errors": "Post not found"}, 404
+
+    form = PostForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        post_data = json.loads(request.data.decode('utf-8'))
+        for k,v in post_data.items():
+            setattr(whattoedit, k, v)
+        db.session.commit()
+        return whattoedit.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
