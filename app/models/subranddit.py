@@ -1,10 +1,10 @@
-from turtle import back
+# from turtle import back
 from .db import db
 from sqlalchemy.orm import relationship
-from ..models.post import Post
+from .post import Post
 
 class Subranddit(db.Model):
-    __table__name = "subranddits"
+    __tablename__ = "subranddits"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))
@@ -13,8 +13,8 @@ class Subranddit(db.Model):
 
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-    posts = relationship("Post", back_populates="subranddit")
-    user = relationship("User", back_populates="subranddit")
+    posts = relationship("Post", back_populates="subranddit", cascade="all, delete-orphan")
+    user = relationship("User", back_populates="subranddits")
 
     def to_dict(self):
         response = {

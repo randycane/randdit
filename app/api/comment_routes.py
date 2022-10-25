@@ -1,4 +1,4 @@
-from socket import J1939_PGN_REQUEST
+# from socket import J1939_PGN_REQUEST
 from unicodedata import name
 from flask import Blueprint, jsonify, session, request, redirect
 from app.models import User, db, Post, Subranddit, Comment, subranddit
