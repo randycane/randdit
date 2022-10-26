@@ -1,6 +1,6 @@
 from unicodedata import name
 from flask import Blueprint, jsonify, session, request, redirect
-from app.models import User, db, Post, Subranddit, Comment, subranddit
+from app.models import User, db, Post, Subranddit, Comment
 from app.models.post import to_dict
 
 from .auth_routes import validation_errors_to_error_messages

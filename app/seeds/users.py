@@ -24,7 +24,7 @@ def seed_users():
     db.session.add(smiley)
 
     db.session.commit()
-    print("Sucessfully seeded usies")
+    # print("Sucessfully seeded usies")
 
 
 # Uses a raw SQL query to TRUNCATE the users table.

@@ -1,7 +1,7 @@
 # from turtle import back
 from .db import db
 from sqlalchemy.orm import relationship
-from .post import Post
+# from .post import Post
 
 class Subranddit(db.Model):
     __tablename__ = "subranddits"
@@ -10,9 +10,9 @@ class Subranddit(db.Model):
     title = db.Column(db.String(150))
     description = db.Column(db.String)
     image_url = db.Column(db.String)
-
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
+    # relationships:
     posts = relationship("Post", back_populates="subranddit", cascade="all, delete-orphan")
     user = relationship("User", back_populates="subranddits")
 

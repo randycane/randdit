@@ -12,8 +12,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    subranddits = relationship("Subranddit", back_populates="user")
-    posts = relationship("Post", back_populates="user")
+    subranddits = relationship("Subranddit", back_populates="user",  cascade="all, delete-orphan")
+    posts = relationship("Post", back_populates="user",  cascade="all, delete-orphan")
     comments = relationship("Comment", back_populates="user")
 
     @property
