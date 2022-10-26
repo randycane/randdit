@@ -124,6 +124,7 @@ const SubrandditReducer = (state = initialState, action) => {
                 newState[subranddit.id] = subranddit
             })
         }
+            break
         case LOAD_SUB_BY_ID: {
             newState = {};
             newState[action.payload.id] = action.payload
