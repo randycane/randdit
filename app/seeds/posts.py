@@ -1,4 +1,4 @@
-from app.models import subranddit
+from app.models import Subranddit
 from ..models import Post, db
 
 def undo_posts():
@@ -51,3 +51,4 @@ def seed_posts():
         )
         db.session.add(newrandy)
     db.session.commit()
+    print("Sucessfully seeded posts")

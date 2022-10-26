@@ -45,3 +45,4 @@ def seed_comments():
         )
         db.session.add(newrandy)
     db.session.commit()
+    print("Sucessfully seeded comms")

@@ -1,4 +1,5 @@
-from ..models import Subranddit, db
+# from ..models import Subranddit, db
+from app.models import Subranddit, db
 
 def undo_subranddits():
     db.session.execute('TRUNCATE reviews RESTART IDENTITY CASCADE;')
@@ -40,7 +41,8 @@ def seed_subranddits():
             title = subrandy["title"],
             description = subrandy['description'],
             image_url = subrandy['image_url'],
-            authorId= subrandy['author_id'],
+            authorId= subrandy['authorId'],
         )
         db.session.add(newrandy)
     db.session.commit()
+    print("Sucessfully seeded subrand")

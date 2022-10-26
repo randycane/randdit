@@ -24,10 +24,10 @@ class Comment(db.Model):
     def post_to_dict(self):
         return {
             "id": self.post.id,
-            "post_title": self.post_title,
-            "post_text": self.post_text,
-            "image_url": self.image_url,
-            "author_id": self.author_id,
+            "post_title": self.post.post_title,
+            "post_text": self.post.post_text,
+            "image_url": self.post.image_url,
+            "author_id": self.post.author_id,
             # "subranddit_id": self.subranddit.id
         }
     def user_to_dict(self):
