@@ -1,8 +1,9 @@
 // Action type:
 
 const CREATE_SUB = "subranddit/create"
-const LOAD_SUB = "subranddit/load"
+const LOAD_SUBS = "subranddit/load"
 const EDIT_SUB = "subranddit/edit"
+const LOAD_SUB_BY_ID = "subrandditId/load"
 const DEL_SUB = "subranddit/delete"
 
 // Action creators:
@@ -14,9 +15,16 @@ const createNewSubAction = (payload) => {
     }
 }
 
-const loadSubAction = (payload) => {
+const loadSubsAction = (payload) => {
     return {
-        type: LOAD_SUB,
+        type: LOAD_SUBS,
+        payload
+    }
+}
+
+const readOneSubAction = (payload) => {
+    return {
+        type: LOAD_SUB_BY_ID,
         payload
     }
 }
@@ -44,7 +52,7 @@ export const getAllSubrandditsThunk = () => async dispatch => {
     })
     const data = await response.json();
     if (response.ok){
-        dispatch(loadSubAction(data))
+        dispatch(loadSubsAction(data))
     }
 
     return data
@@ -65,6 +73,15 @@ export const createSubrandditThunk = (subranddit) => async dispatch => {
       return newSubr
     }
     return response.json()
+}
+
+export const getSubFromIdThunk = (subrandditId) => async dispatch => {
+    const response = await fetch(`/api/subranddits/${subrandditId}`)
+    if (response.ok) {
+        const thisSub = await response.json();
+        dispatch(readOneSubAction(thisSub));
+    }
+    return response
 }
 
 export const editSubThunk = (payload, subrandditId) => async dispatch => {
@@ -91,3 +108,40 @@ export const deleteSubThink = (subrandditId) => async dispatch => {
 }
 
 //Reducer:
+
+let initialState = {};
+
+const SubrandditReducer = (state = initialState, action) => {
+    let newState = {};
+    switch (action.type) {
+        case CREATE_SUB: {
+            newState = { ...state };
+            newState[action.payload.id] = action.payload;
+            return newState
+        }
+        case LOAD_SUBS: {
+            action.payload.forEach((subranddit) => {
+                newState[subranddit.id] = subranddit
+            })
+        }
+        case LOAD_SUB_BY_ID: {
+            newState = {};
+            newState[action.payload.id] = action.payload
+            return newState;
+        }
+        case EDIT_SUB: {
+            newState = { ...state };
+            newState[action.payload.id] = action.payload;
+            return newState
+        }
+        case DEL_SUB: {
+            newState = { ...state };
+            delete newState[action.subrandditId];
+            return newState
+        }
+        default:
+            return state;
+    }
+}
+
+export default SubrandditReducer;
