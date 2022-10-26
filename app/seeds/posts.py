@@ -1,4 +1,4 @@
-from app.models import Subranddit
+from app.models import Subranddit, db
 from ..models import Post, db
 
 def undo_posts():

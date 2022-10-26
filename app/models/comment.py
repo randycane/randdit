@@ -11,8 +11,8 @@ class Comment(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"))
 
-    post = relationship("Post", back_populates="comments")
-    user = relationship("User", back_populates="comments")
+    post = relationship("Post", back_populates="comment")
+    user = relationship("User", back_populates="comment")
 
     def to_dict(self):
         return {

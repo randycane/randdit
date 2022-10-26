@@ -1,7 +1,7 @@
 # from turtle import back
 from .db import db
 from sqlalchemy.orm import relationship
-# from .post import Post
+from .post import Post
 
 class Subranddit(db.Model):
     __tablename__ = "subranddits"
@@ -13,8 +13,8 @@ class Subranddit(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     # relationships:
-    posts = relationship("Post", back_populates="subranddit", cascade="all, delete-orphan")
-    user = relationship("User", back_populates="subranddits")
+    post = relationship("Post", back_populates="subranddit", cascade="all, delete-orphan")
+    user = relationship("User", back_populates="subranddit")
 
     def to_dict(self):
         response = {
@@ -23,7 +23,7 @@ class Subranddit(db.Model):
             "description": self.description,
             "image_url": self.image_url,
             "author_id": self.author_id,
-            "posts": [ post.to_dict() for post in self.posts],
+            "posts": [ post.to_dict() for post in self.post],
             "user": self.user.to_dict()
         }
 

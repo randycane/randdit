@@ -13,8 +13,8 @@ class Post(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     subranddit_id = db.Column(db.Integer, db.ForeignKey("subranddits.id"))
 
-    comments = relationship("Comment", back_populates="post", cascade="all, delete-orphan")
-    user = relationship("User", back_populates="posts")
+    comment = relationship("Comment", back_populates="post", cascade="all, delete-orphan")
+    user = relationship("User", back_populates="post")
     subranddit = relationship("Subranddit", back_populates="post")
 
 def to_dict(self):
