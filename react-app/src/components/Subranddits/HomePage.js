@@ -24,9 +24,9 @@ function SeeTheSubs() {
     return (
         <>
             <div className="whole-page-container">
-                <div className="create-button" onClick={(CreateSubRandditComponent)}>
+                {/* <div className="create-button" onClick={(CreateSubRandditComponent)}>
                     Create your own community!
-                </div>
+                </div> */}
                 <div className="outer-container">
                     <label className="label-name"> Find the subranddit for you</label>
                     {everysub && (

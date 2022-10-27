@@ -3,6 +3,16 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
     border-radius: 12px;
+    width: 400px;
+}
+
+.sub-logo{
+    height: 55px;
+    width: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+    padding: 10px;
+    background-color:cornsilk;
 }
 
 .create-button{
@@ -28,6 +38,7 @@
     color:black;
     font-weight: 400;
     height: 25px;
-    width: 400px;
+    width: 300px;
     border-radius: 12px;
+    padding-top: 5px;
 }
