@@ -16,9 +16,9 @@ def seed_subranddits():
         "author_id": 2
     },
     {
-        "title": "Rent a Girlfriend",
-        "description": "Welcome to the subranddit for fans of Rent a Girlfriend! No shame here!",
-        "image_url": "https://static.wikia.nocookie.net/p__/images/1/18/Mizuhara.Chizuru.full.3006209.png/revision/latest?cb=20201001131031&path-prefix=protagonist",
+        "title": "Quintessential Quintuplets",
+        "description": "We are all learning here. No shame!",
+        "image_url": "https://otakuusamagazine.com/wp-content/uploads/2022/07/quin01-480x360.jpg",
         "author_id": 2
     },
     {

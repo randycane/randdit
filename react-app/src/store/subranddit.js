@@ -47,19 +47,20 @@ const deleteSubAction = (payload) => {
 //Thunks:
 
 export const getAllSubrandditsThunk = () => async dispatch => {
-    const response = await fetch(`/api/subranddits/`, {
+    const response = await fetch(`/api/subranddits`, {
         method: "GET"
     })
     const data = await response.json();
     if (response.ok){
         dispatch(loadSubsAction(data))
+        return data;
     }
 
-    return data
+    return response;
 }
 
 export const createSubrandditThunk = (subranddit) => async dispatch => {
-    const response = await fetch(`/api/subranddit/`, {
+    const response = await fetch(`/api/subranddits`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -123,8 +124,9 @@ const SubrandditReducer = (state = initialState, action) => {
             action.payload.forEach((subranddit) => {
                 newState[subranddit.id] = subranddit
             })
+            return newState;
         }
-            break
+
         case LOAD_SUB_BY_ID: {
             newState = {};
             newState[action.payload.id] = action.payload
