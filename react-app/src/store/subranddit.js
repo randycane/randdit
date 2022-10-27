@@ -98,7 +98,7 @@ export const editSubThunk = (payload, subrandditId) => async dispatch => {
     return response
 }
 
-export const deleteSubThink = (subrandditId) => async dispatch => {
+export const deleteSubThunk = (subrandditId) => async dispatch => {
     const response = await fetch(`/api/subranddits/${subrandditId}/delete`, {
         method: "DELETE"
     });
