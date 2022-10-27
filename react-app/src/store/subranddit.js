@@ -56,7 +56,7 @@ export const getAllSubrandditsThunk = () => async dispatch => {
         return data;
     }
 
-    return response;
+    // return response;
 }
 
 export const createSubrandditThunk = (subranddit) => async dispatch => {
