@@ -12,6 +12,8 @@ function SeeTheSubs() {
 
     const everysub = useSelector((state) => state.subranddits)
     const normalizedSub = Object.values(everysub);
+    console.log("please show me the subs", everysub)
+    console.log("should be normalized sbs", normalizedSub)
 
     useEffect(() => {
         dispatch(getAllSubrandditsThunk())

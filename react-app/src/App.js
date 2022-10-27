@@ -42,7 +42,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          <SeeTheSubs/>
+          <SeeTheSubs />
         </Route>
       </Switch>
     </BrowserRouter>
