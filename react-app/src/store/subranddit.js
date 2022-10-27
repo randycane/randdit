@@ -47,7 +47,7 @@ const deleteSubAction = (payload) => {
 //Thunks:
 
 export const getAllSubrandditsThunk = () => async dispatch => {
-    const response = await fetch(`/api/subranddits`, {
+    const response = await fetch(`/api/subranddits/`, {
         method: "GET"
     })
     const data = await response.json();
@@ -60,7 +60,7 @@ export const getAllSubrandditsThunk = () => async dispatch => {
 }
 
 export const createSubrandditThunk = (subranddit) => async dispatch => {
-    const response = await fetch(`/api/subranddits`, {
+    const response = await fetch(`/api/subranddits/`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
