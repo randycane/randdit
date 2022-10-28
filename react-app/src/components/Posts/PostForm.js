@@ -29,7 +29,7 @@ function PostFormComponent() {
         setIsSubmitted(true)
         if (errors.length > 0) return;
     }
-    // to do:
+    // to dispatch:
     // dispatch(WriteAPostThunk({
 
     // }))

@@ -39,14 +39,14 @@ function SeeSubrandditDetailsComponent() {
     }, [dispatch, subrandditId]);
 
 
-    //without post interaction
+    //without posts underneath for now:
 
     // useEffect(() => {
     //     dispatch(getSubFromIdThunk(subrandditId))
     //     .then(()=> setIsLoaded(true))
     // },[dispatch, isLoaded])
 
-    // delete a post if you own it
+    // delete a post if you own it:
     const deleteThisSubRn = async (subrandditId) => {
         await dispatch(deleteSubThunk(subrandditId)).then(() => {
             history.push('/');

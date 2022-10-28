@@ -37,9 +37,12 @@ const CreateSubRandditComponent = () => {
             image_url
     }))
         //using history instead of redirect:
-        if (newSub.errors) setErrors([...Object.values(newSub.errors)])
-        else history.push(`/subranddits/${newSub.id}`);
-        dispatch(ReadPostBySubrandditIdThunk(newSub.id))
+
+        // if (newSub.errors) setErrors([...Object.values(newSub.errors)])
+        // else history.push(`/subranddits/${newSub.id}`);
+        // dispatch(ReadPostBySubrandditIdThunk(newSub.id))
+
+        //using redirect:
 
         // return <Redirect to="/"></Redirect>
     };
