@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import {useHistory } from "react-router";
+import {Redirect, useHistory } from "react-router";
+import { ReadPostBySubrandditIdThunk } from "../../store/post";
 
 import { createSubrandditThunk } from "../../store/subranddit";
 import "./Subranddits.css"
@@ -30,13 +31,17 @@ const CreateSubRandditComponent = () => {
         setIsCreated(true);
         if (errors.length > 0) return;
 
-        let newSubranddit = dispatch(createSubrandditThunk({
+    let newSub = dispatch(createSubrandditThunk({
             title,
             description,
             image_url
-        }))
+    }))
+        //using history instead of redirect:
+        if (newSub.errors) setErrors([...Object.values(newSub.errors)])
+        else history.push(`/subranddits/${newSub.id}`);
+        dispatch(ReadPostBySubrandditIdThunk(newSub.id))
 
-        //history.push(`/subranddits/${newSubranddit.id}`)
+        // return <Redirect to="/"></Redirect>
     };
 
     const ErrorMsgs = errors.map(error => (
@@ -48,7 +53,7 @@ const CreateSubRandditComponent = () => {
             <div className="encompass-form">
                 <form
                     className="subr-class" onSubmit={handleSubmit}>
-                    <h1 className="sub-title">Create a community</h1>
+                    <h1 className="sub-title">Create your own community</h1>
                     <div className="errors">
                         {isCreated && ErrorMsgs}
                     </div>
@@ -60,7 +65,7 @@ const CreateSubRandditComponent = () => {
                                 placeholder="title"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
-
+                                required
                             />
                         </label>
 
@@ -71,7 +76,7 @@ const CreateSubRandditComponent = () => {
                                 placeholder="About"
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-
+                                required
                             />
                         </label>
                         <label className="create-image">
@@ -81,13 +86,14 @@ const CreateSubRandditComponent = () => {
                                 placeholder="Image URL"
                                 value={image_url}
                                 onChange={(e) => setImage_url(e.target.value)}
-
+                                required
                             />
                         </label>
                     </div>
                     <div className="to-press">
-                        <button className="submit-button3"
-                            type="submit">
+                        <button className="submit-button"
+                            type="submit" disabled={isCreated && errors.length > 0}
+                            className="submit-button" {...isCreated && errors.length > 0 ? "nur" : "submit-button"}>
                             Create Subranddit
                         </button>
                     </div>
