@@ -24,7 +24,7 @@ class Subranddit(db.Model):
             "image_url": self.image_url,
             "author_id": self.author_id,
             # "posts": [ post.to_dict() for post in self.post],
-            "user": self.user.to_dict()
+            # "user": self.user.to_dict()
         }
 
         return response

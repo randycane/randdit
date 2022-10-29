@@ -46,7 +46,7 @@ function SeeSubrandditDetailsComponent() {
     //     .then(()=> setIsLoaded(true))
     // },[dispatch, isLoaded])
 
-    // delete a post if you own it:
+    // delete post if you own it:
     const deleteThisSubRn = async (subrandditId) => {
         await dispatch(deleteSubThunk(subrandditId)).then(() => {
             history.push('/');
