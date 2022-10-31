@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router";
 import { ReadPostBySubrandditIdThunk } from "../../store/post";
 import { deleteSubThunk, getSubFromIdThunk } from "../../store/subranddit";
+import EditSubRandditComponent from "./EditSub";
 
 function SeeSubrandditDetailsComponent() {
     let { subrandditId } = useParams();
@@ -57,7 +58,7 @@ function SeeSubrandditDetailsComponent() {
   <>
     {/* isLoaded && ( */}
         <div className="subranddit-stuff">
-            {subrandditInfo}
+            <EditSubRandditComponent/>
       </div>
       <div className="undercard">
       <button

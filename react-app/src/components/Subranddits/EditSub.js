@@ -8,7 +8,7 @@ function EditSubRandditComponent({ subrandditId }) {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const subranddit = useSelector(state => state.subranddit)
+    const subranddit = useSelector(state => state.subranddits)
 
     const thisSub = subranddit[subrandditId]
 
@@ -21,76 +21,86 @@ function EditSubRandditComponent({ subrandditId }) {
     const [isEditted, setIsEditted] = useState(false);
 
     useEffect(() => {
-        if (subranddit.name) {
-            setTitle(subranddit.title);
-            setDescription(subranddit.description);
-            setImage_url(subranddit.image_url);
-        }
-    }, [subranddit])
+        let errorArray = []
+        if (!title) errorArray.push("Title is required.")
+        if (!description) errorArray.push("Description is required")
+        if (!image_url) errorArray.push("You need an icon for your subranddit.")
 
+        setErrors(errorArray)
+    }, [title, description, image_url])
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors([]);
-        let newSubData = {
-            id: subrandditId,
-            title: title,
-            description: description,
-            image_url: image_url
-
-        };
-        return dispatch(editSubThunk(payload)).then(
-            async (response) => {
-                if (!response.errors) {
-                    setIsEditted(true);
-                }
-                else setErrors(Object.values(response.errors));
-            }
-        )
+        setIsEditted(true);
+        if (errors.length > 0) return;
     }
 
-    if (isEditted) {
-        return (
-            <div className="editted-container">
-                <div className="under-editted">
-                    <form className="edit-form" onSubmit={handleSubmit}>
-                        <div className="form-title">
-                            <span> Edit your Subranddit: </span>
-                        </div>
-                        <div className="edit-input-container">
-                            <span> Title: </span>
-                            <label>
-                                <textarea
-                                    type="text"
-                                    placeholder="title"
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
-                                />
-                            </label>
-                            <span> Description: </span>
-                            <label>
-                                <textarea
-                                    type="text"
-                                    placeholder="description"
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                />
-                            </label>
-                            <span> Image URL: </span>
-                            <label>
-                                <textarea
-                                    type="text"
-                                    placeholder="image URL"
-                                    value={image_url}
-                                    onChange={(e) => setImage_url(e.target.value)}
-                                />
-                            </label>
-                        </div>
-                    </form>
+
+    let edittedSubData = await dispatch(editSubThunk({
+        title,
+        description,
+        image_url
+    }))
+        // let newSubData = {
+        //     id: subrandditId,
+        //     title: title,
+        //     description: description,
+        //     image_url: image_url
+
+        // };
+    if (edittedSubData.errors) setErrors([...Object.values(edittedSubData.errors)])
+    else await dispatch(getSubFromIdThunk(subrandditId))
+
+    const showErrors = errors.map((error) => (
+        <div className="error-messages" key={error}>
+            {error}
+        </div>
+    ));
+    return (
+                <form className="edit-form" onSubmit={handleSubmit}>
+                <div className="editted-container">
+                    <ul className="messages">{isEditted && showErrors}</ul>
+                    <div className="under-editted">
+                            <div className="form-title">
+                                <span> Edit your Subranddit: </span>
+                    </div>
+                            <div className="edit-input-container">
+                                <span> Title: </span>
+                                <label>
+                                    <textarea
+                                        type="text"
+                                        placeholder="title"
+                                        value={title}
+                                        onChange={(e) => setTitle(e.target.value)}
+                                    />
+                                </label>
+                                <span> Description: </span>
+                                <label>
+                                    <textarea
+                                        type="text"
+                                        placeholder="description"
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)}
+                                    />
+                                </label>
+                                <span> Image URL: </span>
+                                <label>
+                                    <textarea
+                                        type="text"
+                                        placeholder="image URL"
+                                        value={image_url}
+                                        onChange={(e) => setImage_url(e.target.value)}
+                                    />
+                                </label>
+                            </div>
+                    </div>
                 </div>
-            </div>
-        )
-    }
- }
+                </form>
+            )
+}
+
+
+
+
 
 export default EditSubRandditComponent;
