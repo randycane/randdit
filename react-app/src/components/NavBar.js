@@ -35,7 +35,7 @@ const NavBar = () => {
           <div className="create-business-modal">
 
             <div className="logged-in-buttons">
-              {userIsLoggedIn && isSubmitted && (
+              {userIsLoggedIn && (
                 <button className="community-button">
                   <CreateSubRandditComponent/>
                 </button>

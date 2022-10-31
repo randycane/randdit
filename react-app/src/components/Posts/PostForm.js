@@ -30,9 +30,9 @@ function PostFormComponent() {
         if (errors.length > 0) return;
     }
     // to dispatch:
-    // dispatch(WriteAPostThunk({
+    dispatch(WriteAPostThunk({
 
-    // }))
+    }))
 }
 
 
