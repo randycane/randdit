@@ -4,15 +4,17 @@ import { useParams, useHistory } from "react-router-dom";
 import {editSubThunk, getSubFromIdThunk} from "../../store/subranddit"
 
 
-function EditSubRandditComponent({ subrandditId }) {
+function EditSubRandditComponent() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const subranddit = useSelector(state => state.subranddits)
+    let { subrandditId } = useParams();
+
+    const subranddit = useSelector(state => state?.subranddits[subrandditId])
 
     console.log("state rn", subranddit)
 
-    const thisSub = subranddit[subrandditId]
+    // const thisSub = subranddit[subrandditId]
 
     const [title, setTitle] = useState(subranddit.title)
     const [description, setDescription] = useState(subranddit.description)
@@ -35,14 +37,15 @@ function EditSubRandditComponent({ subrandditId }) {
         e.preventDefault();
         setIsEditted(true);
         if (errors.length > 0) return;
+
+        dispatch(editSubThunk({
+            title,
+            description,
+            image_url
+        }))
     }
 
 
-    dispatch(editSubThunk({
-        title,
-        description,
-        image_url
-    }))
         // let newSubData = {
         //     id: subrandditId,
         //     title: title,
