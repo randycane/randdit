@@ -9,10 +9,10 @@ class Post(db.Model):
     post_title = db.Column(db.String(100), nullable=False)
     post_text = db.Column(db.String)
     image_url = db.Column(db.String)
-
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     subranddit_id = db.Column(db.Integer, db.ForeignKey("subranddits.id"))
 
+    #relationships:
     comment = relationship("Comment", back_populates="post", cascade="all, delete-orphan")
     user = relationship("User", back_populates="post")
     subranddit = relationship("Subranddit", back_populates="post")

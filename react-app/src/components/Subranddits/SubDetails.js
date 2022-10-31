@@ -53,11 +53,23 @@ function SeeSubrandditDetailsComponent() {
         })
     }
 
-    return isLoaded && (
+  return (
+  <>
+    {/* isLoaded && ( */}
         <div className="subranddit-stuff">
             {subrandditInfo}
-        </div>
-    )
+      </div>
+      <div className="undercard">
+      <button
+      className="delete-button"
+      onClick={() =>
+        deleteThisSubRn(subranddit.id)
+      }>
+      Delete Subranddit
+    </button>
+    </div>
+    </>
+  )
 }
 
 export default SeeSubrandditDetailsComponent;

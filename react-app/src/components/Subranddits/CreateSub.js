@@ -34,7 +34,8 @@ const CreateSubRandditComponent = () => {
     let newSub = dispatch(createSubrandditThunk({
             title,
             description,
-            image_url
+            image_url,
+            // author_id
     }))
         //using history instead of redirect:
 
@@ -96,7 +97,9 @@ const CreateSubRandditComponent = () => {
                     <div className="to-press">
                         <button className="submit-button"
                             type="submit" disabled={isCreated && errors.length > 0}
-                            className="submit-button" {...isCreated && errors.length > 0 ? "nur" : "submit-button"}>
+                            className="submit-button"
+                            {...isCreated && errors.length > 0 ? "nur" : "submit-button"}
+                            >
                             Create Subranddit
                         </button>
                     </div>

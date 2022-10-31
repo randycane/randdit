@@ -12,7 +12,7 @@ import json
 
 subranddit_blueprint = Blueprint("subranddit_blueprint", __name__)
 
-# see all subranddits for now:
+# see all subranddits on home page for now:
 
 @subranddit_blueprint.route("/")
 def see_subs():
@@ -36,7 +36,8 @@ def create_sub():
         new_sub = Subranddit(
             title = form.data['title'],
             description = form.data['description'],
-            image_url = form.data['image_url']
+            image_url = form.data['image_url'],
+            author_id = current_user.id
         )
 
         db.session.add(new_sub)
