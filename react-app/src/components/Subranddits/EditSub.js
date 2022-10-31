@@ -38,11 +38,14 @@ function EditSubRandditComponent() {
         setIsEditted(true);
         if (errors.length > 0) return;
 
-        dispatch(editSubThunk({
+        let editSub = dispatch(editSubThunk({
             title,
             description,
             image_url
-        }))
+        }, subrandditId))
+        if (editSub) {
+            history.push(`/`)
+        }
     }
 
 
