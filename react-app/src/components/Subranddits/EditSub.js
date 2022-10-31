@@ -38,26 +38,17 @@ function EditSubRandditComponent() {
         setIsEditted(true);
         if (errors.length > 0) return;
 
+        // dispatch needs payload body and the subranddit id:
         let editSub = dispatch(editSubThunk({
             title,
             description,
             image_url
         }, subrandditId))
         if (editSub) {
-            history.push(`/`)
+            history.push(`/subranddits/${subrandditId}`)
         }
     }
 
-
-        // let newSubData = {
-        //     id: subrandditId,
-        //     title: title,
-        //     description: description,
-        //     image_url: image_url
-
-        // };
-    // if (edittedSubData.errors) setErrors([...Object.values(edittedSubData.errors)])
-    // else dispatch(getSubFromIdThunk(subrandditId))
 
     const showErrors = errors.map((error) => (
         <div className="error-messages" key={error}>
