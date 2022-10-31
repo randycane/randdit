@@ -38,7 +38,7 @@ function EditSubRandditComponent({ subrandditId }) {
     }
 
 
-    let edittedSubData = dispatch(editSubThunk({
+    dispatch(editSubThunk({
         title,
         description,
         image_url
@@ -50,8 +50,8 @@ function EditSubRandditComponent({ subrandditId }) {
         //     image_url: image_url
 
         // };
-    if (edittedSubData.errors) setErrors([...Object.values(edittedSubData.errors)])
-    else dispatch(getSubFromIdThunk(subrandditId))
+    // if (edittedSubData.errors) setErrors([...Object.values(edittedSubData.errors)])
+    // else dispatch(getSubFromIdThunk(subrandditId))
 
     const showErrors = errors.map((error) => (
         <div className="error-messages" key={error}>
@@ -96,7 +96,14 @@ function EditSubRandditComponent({ subrandditId }) {
                                 </label>
                             </div>
                 </div>
-                <button className="to-click">Edit subranddit</button>
+                <div className="to-press">
+                        <button onClick={handleSubmit} className="submit-button"
+                            type="submit"
+                            className="submit-button"
+                            >
+                            Edit Subranddit
+                        </button>
+                    </div>
                 </div>
                 </form>
             )

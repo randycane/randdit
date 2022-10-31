@@ -29,15 +29,15 @@ const CreateSubRandditComponent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log("submit triggered")
+        // console.log("submit triggered")
 
         setIsCreated(true);
         if (errors.length > 0) return;
 
 
-        console.log("title", title)
-        console.log("descrip", description)
-        console.log("img", image_url)
+        // console.log("title", title)
+        // console.log("descrip", description)
+        // console.log("img", image_url)
 
     dispatch(createSubrandditThunk({
             title,
@@ -48,15 +48,6 @@ const CreateSubRandditComponent = () => {
 
         dispatch(getAllSubrandditsThunk())
 
-        //using history instead of redirect:
-
-        // if (newSub.errors) setErrors([...Object.values(newSub.errors)])
-        // else history.push(`/subranddits/${newSub.id}`);
-        // dispatch(ReadPostBySubrandditIdThunk(newSub.id))
-
-        //using redirect:
-
-        // return <Redirect to="/"></Redirect>
     };
 
     const ErrorMsgs = errors.map(error => (

@@ -48,7 +48,7 @@ function SeeSubrandditDetailsComponent() {
         .then(()=> setIsLoaded(true))
     },[dispatch, isLoaded])
 
-    // delete post if you own it:
+    // delete post button:
     const deleteThisSubRn = async (subrandditId) => {
         await dispatch(deleteSubThunk(subrandditId)).then(() => {
             history.push('/');
@@ -65,7 +65,7 @@ function SeeSubrandditDetailsComponent() {
       <button
       className="delete-button"
       onClick={() =>
-        deleteThisSubRn(subranddit.id)
+        deleteThisSubRn(subrandditId)
       }>
       Delete Subranddit
     </button>
