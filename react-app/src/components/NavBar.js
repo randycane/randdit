@@ -7,6 +7,7 @@ import LogoutButton from './auth/LogoutButton';
 import CreateSubRandditComponent from './Subranddits/CreateSub';
 import LoginFormModal from './auth/LoginModal';
 import SignupFormModal from './auth/SignUpModal';
+import "./NavBar.css"
 
 const NavBar = () => {
 

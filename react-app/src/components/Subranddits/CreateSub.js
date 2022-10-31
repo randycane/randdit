@@ -57,7 +57,7 @@ const CreateSubRandditComponent = () => {
             <div className="encompass-form">
                 <form
                     className="subr-class" onSubmit={handleSubmit}>
-                    <h1 className="sub-title">Create your own community</h1>
+                    <h1 className="sub-title">Create your own Subranddit!</h1>
                     <div className="errors">
                         {isCreated && ErrorMsgs}
                     </div>
