@@ -8,7 +8,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-import SeeTheSubs from './components/Subranddits/HomePage';
+import SeeTheSubsComponent from './components/Subranddits/HomePage';
+import SeeSubrandditDetailsComponent from './components/Subranddits/SubDetails';
+import SeeThePostsComponent from './components/Posts/PostDetails';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -42,7 +44,11 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          <SeeTheSubs />
+          <SeeTheSubsComponent />
+          {/* <SeeThePostsComponent/> */}
+        </Route>
+        <Route path="/subranddits/:subrandditId" exact={true}>
+            <SeeSubrandditDetailsComponent/>
         </Route>
       </Switch>
     </BrowserRouter>

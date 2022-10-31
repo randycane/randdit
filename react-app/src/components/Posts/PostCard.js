@@ -12,21 +12,21 @@ const PostCardComponent = ({ post }) => {
     const { postId } = useParams();
 
     //need to confirm user to have post editdeletes:
-    const session = useSelector((state) => state.session)
+    const session = useSelector((state) => state.session.user)
     let postWriter = post?.userId === session.user.id
 
-    dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+    // dispatch(ReadPostBySubrandditIdThunk(subrandditId))
 
     const deleteButton = async (e) => {
         e.preventDefault();
         await dispatch(deletePostThunk(postId))
-        await dispatch(getSubFromIdThunk(subrandditId))
-        await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+        // await dispatch(getSubFromIdThunk(subrandditId))
+        // await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
     }
 
-    useEffect(() => {
-        dispatch(getSubFromIdThunk(subrandditId))
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getSubFromIdThunk(subrandditId))
+    // }, [dispatch])
 
     return (
         <div className="post-top">
@@ -34,7 +34,7 @@ const PostCardComponent = ({ post }) => {
                 {post.post_title}
             </div>
             <div className="post-img">
-                <img src={post.image_url} alt="nah"/>
+                <img src={post.image_url} alt="not found"/>
             </div>
             <div className="post-words">
                 {post.post_text}
@@ -54,4 +54,4 @@ const PostCardComponent = ({ post }) => {
     )
 }
 
-export default PostCardComponent;
+export default PostCardComponent

@@ -7,7 +7,7 @@ import CreateSubRandditComponent from "./CreateSub";
 
 import "./Subranddits.css"
 
-function SeeTheSubs() {
+function SeeTheSubsComponent() {
     const dispatch = useDispatch();
 
 
@@ -48,4 +48,4 @@ function SeeTheSubs() {
     )
 }
 
-export default SeeTheSubs;
+export default SeeTheSubsComponent;

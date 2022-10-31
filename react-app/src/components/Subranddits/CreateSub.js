@@ -50,7 +50,7 @@ const CreateSubRandditComponent = () => {
 
         //using redirect:
 
-        // return <Redirect to="/"></Redirect>
+        return <Redirect to="/"></Redirect>
     };
 
     const ErrorMsgs = errors.map(error => (
