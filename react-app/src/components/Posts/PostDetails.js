@@ -6,7 +6,7 @@ import PostCardComponent from "./PostCard";
 
 function SeeThePostsComponent() {
     const dispatch = useDispatch();
-    const allPosts = useSelector((state) => state)
+    // const allPosts = useSelector((state) => state)
 
     useEffect(() => {
         dispatch(ReadPostsThunk())

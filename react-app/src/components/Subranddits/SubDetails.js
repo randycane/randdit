@@ -4,6 +4,7 @@ import { useParams, useHistory } from "react-router";
 import { ReadPostBySubrandditIdThunk } from "../../store/post";
 import { deleteSubThunk, getSubFromIdThunk } from "../../store/subranddit";
 import EditSubRandditComponent from "./EditSub";
+import PostCardComponent from "../Posts/PostCard";
 
 function SeeSubrandditDetailsComponent() {
     let { subrandditId } = useParams();

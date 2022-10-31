@@ -93,7 +93,8 @@ function EditSubRandditComponent({ subrandditId }) {
                                     />
                                 </label>
                             </div>
-                    </div>
+                </div>
+                <button className="to-click">Edit subranddit</button>
                 </div>
                 </form>
             )
