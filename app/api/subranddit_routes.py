@@ -76,7 +76,7 @@ def delete_sub(subrandditId):
         "message": "Successfully deleted"
     }
 
-# see all posts under a subranddit:
+# see all posts under a subranddit by id:
 
 @subranddit_blueprint.route('/<int:subrandditId>/posts', methods = ["GET"])
 def see_all_posts():
