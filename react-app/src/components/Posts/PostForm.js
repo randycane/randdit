@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, Redirect } from "react-router-dom"
+import { useHistory, Redirect, useParams} from "react-router-dom"
 import { WriteAPostThunk } from "../../store/post";
 
 function PostFormComponent() {
