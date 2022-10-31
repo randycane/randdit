@@ -50,13 +50,13 @@ export const getAllSubrandditsThunk = () => async dispatch => {
     const response = await fetch(`/api/subranddits/`, {
         method: "GET"
     })
-    const data = await response.json();
     if (response.ok){
+        const data = await response.json();
         dispatch(loadSubsAction(data))
         return data;
     }
 
-    return response;
+    // return response;
 }
 
 export const createSubrandditThunk = (subranddit) => async dispatch => {
@@ -69,11 +69,12 @@ export const createSubrandditThunk = (subranddit) => async dispatch => {
     })
 
     if (response.ok) {
-      const newSubr = await response.json()
+        const newSubr = await response.json()
+        console.log("a new sub", newSubr)
       dispatch(createNewSubAction(newSubr))
       return newSubr
     }
-    return response.json()
+    // return response.json()
 }
 
 export const getSubFromIdThunk = (subrandditId) => async dispatch => {

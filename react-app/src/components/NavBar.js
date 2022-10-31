@@ -30,7 +30,7 @@ const NavBar = () => {
             Home
           </NavLink>
         </div>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
         <div className="nav-side">
           <div className="create-business-modal">
 
@@ -40,16 +40,16 @@ const NavBar = () => {
                   <CreateSubRandditComponent/>
                 </button>
               )}
+              </div>
+            </div>
+          </div>
+          </form> */}
+
               {userIsLoggedIn && (
                 <button className="out-button">
                   <LogoutButton />
                 </button>
               )}
-              </div>
-            </div>
-          </div>
-          </form>
-
           {!userIsLoggedIn && (
             <div className="register-buttons">
               <div className="nav-item" id="sign-up-button">

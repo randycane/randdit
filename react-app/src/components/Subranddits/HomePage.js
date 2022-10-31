@@ -10,6 +10,8 @@ import "./Subranddits.css"
 function SeeTheSubs() {
     const dispatch = useDispatch();
 
+
+    const sessionUser = useSelector((state => state.session.user));
     const everysub = useSelector((state) => state.subranddits)
     const normalizedSub = Object.values(everysub);
     console.log("please show me the subs", everysub)
@@ -27,9 +29,10 @@ function SeeTheSubs() {
                 {/* <div className="create-button" onClick={(CreateSubRandditComponent)}>
                     Create your own community!
                 </div> */}
+                {sessionUser && <CreateSubRandditComponent/>}
                 <div className="outer-container">
                     <label className="label-name"> Find the subranddit for you</label>
-                    {everysub && (
+                    {normalizedSub.length> 0 && (
                         <div className="single-sub">
                             {normalizedSub.map((subranddit) => (
                                 <div className="each-sub">

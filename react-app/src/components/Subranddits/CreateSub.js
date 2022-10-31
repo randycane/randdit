@@ -28,10 +28,15 @@ const CreateSubRandditComponent = () => {
 
     const handleSubmit = (e) => {
         e.prevent.default();
+        console.log("submit triggered")
         setIsCreated(true);
         if (errors.length > 0) return;
 
-    let newSub = dispatch(createSubrandditThunk({
+        console.log("title", title)
+        console.log("descrip", description)
+        console.log("img", image_url)
+
+    dispatch(createSubrandditThunk({
             title,
             description,
             image_url,
@@ -55,8 +60,8 @@ const CreateSubRandditComponent = () => {
     return (
         <div className="creating-container">
             <div className="encompass-form">
-                <form
-                    className="subr-class" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}
+                    className="subr-class">
                     <h1 className="sub-title">Create your own Subranddit!</h1>
                     <div className="errors">
                         {isCreated && ErrorMsgs}
@@ -95,10 +100,9 @@ const CreateSubRandditComponent = () => {
                         </label>
                     </div>
                     <div className="to-press">
-                        <button className="submit-button"
-                            type="submit" disabled={isCreated && errors.length > 0}
+                        <button onClick={handleSubmit} className="submit-button"
+                            type="submit"
                             className="submit-button"
-                            {...isCreated && errors.length > 0 ? "nur" : "submit-button"}
                             >
                             Create Subranddit
                         </button>

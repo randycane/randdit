@@ -64,7 +64,7 @@ def edit_sub(subrandditId):
         return subrandy_to_edit.to_dict()
 
 # delete a subranddit:
-@subranddit_blueprint.route("/<int:subrandditId>/edit", methods=["DELETE"])
+@subranddit_blueprint.route("/<int:subrandditId>/delete", methods=["DELETE"])
 @login_required
 def delete_sub(subrandditId):
     whichsub = Subranddit.query.get(subrandditId)
