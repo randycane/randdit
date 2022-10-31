@@ -31,8 +31,63 @@ function PostFormComponent() {
     }
     // to dispatch:
     dispatch(WriteAPostThunk({
-
+        post_title,
+        post_text,
+        image_url
     }))
+
+    history.push(`/subranddits/${subrandditId}`)
+
+    const ErrorMsgs = errors.map(error => (
+        <div className="errors" key={error}>{error}</div>
+    ));
+
+    return (
+        <div className="highpostform">
+            <div className="over-form">
+                <form className="highform" onSubmit={handleSubmit}>
+                    <h1 className="high-top"> Write your post</h1>
+                    <div className="messages">
+                        {isSubmitted && ErrorMsgs}
+
+                    </div>
+                        <label className="form">
+                            <span> Post Title: </span>
+                            <input
+                                type="text"
+                                placeholder="Post Title"
+                                value={post_title}
+                                onChange={(e) => setPost_title(e.target.value)}
+                            />
+                    </label>
+                    <label className="form">
+                            <span> Post text: </span>
+                            <input
+                                type="text"
+                                placeholder="Post text"
+                                value={post_text}
+                                onChange={(e) => setPost_text(e.target.value)}
+                            />
+                    </label>
+                    <label className="form">
+                            <span> Post image: </span>
+                            <input
+                                type="text"
+                                placeholder="Post image URL"
+                                value={image_url}
+                                onChange={(e) => setImage_url(e.target.value)}
+                            />
+                    </label>
+                    <div className="end-button">
+                        <button type="submit">
+                            Write your post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
+
 }
 
 

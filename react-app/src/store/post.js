@@ -46,13 +46,13 @@ const deletePostAction = (payload) => {
 
 // Thunks:
 
-export const WriteAPostThunk = (pppost) => async dispatch => {
+export const WriteAPostThunk = (payload) => async dispatch => {
     const response = await fetch('/api/posts/', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(pppost)
+        body: JSON.stringify(payload)
     })
     if (response.ok) {
         const newpost = await response.json()

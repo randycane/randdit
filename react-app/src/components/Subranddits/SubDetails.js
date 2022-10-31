@@ -40,12 +40,12 @@ function SeeSubrandditDetailsComponent() {
     }, [dispatch, subrandditId]);
 
 
-    //without posts underneath for now:
+    // wana see posts underneath:
 
-    // useEffect(() => {
-    //     dispatch(getSubFromIdThunk(subrandditId))
-    //     .then(()=> setIsLoaded(true))
-    // },[dispatch, isLoaded])
+    useEffect(() => {
+        dispatch(getSubFromIdThunk(subrandditId))
+        .then(()=> setIsLoaded(true))
+    },[dispatch, isLoaded])
 
     // delete post if you own it:
     const deleteThisSubRn = async (subrandditId) => {
@@ -55,8 +55,8 @@ function SeeSubrandditDetailsComponent() {
     }
 
   return (
+    isLoaded && (
   <>
-    {/* isLoaded && ( */}
         <div className="subranddit-stuff">
             <EditSubRandditComponent/>
       </div>
@@ -70,6 +70,7 @@ function SeeSubrandditDetailsComponent() {
     </button>
     </div>
     </>
+    )
   )
 }
 

@@ -17,7 +17,7 @@ function SeeThePostsComponent() {
             <h2 id="post-head">Posts</h2>
             <div className="post-outside-container">
                 <div className="post-inner-container">
-                    {/* <PostCardComponent/> */}
+                    <PostCardComponent/>
                 </div>
             </div>
             </>
