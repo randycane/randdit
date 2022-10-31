@@ -10,6 +10,8 @@ function EditSubRandditComponent({ subrandditId }) {
 
     const subranddit = useSelector(state => state.subranddits)
 
+    console.log("state rn", subranddit)
+
     const thisSub = subranddit[subrandditId]
 
     const [title, setTitle] = useState(subranddit.title)

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {Redirect, useHistory } from "react-router";
 import { ReadPostBySubrandditIdThunk } from "../../store/post";
 
-import { createSubrandditThunk } from "../../store/subranddit";
+import { createSubrandditThunk, getAllSubrandditsThunk } from "../../store/subranddit";
 import "./Subranddits.css"
 
 const CreateSubRandditComponent = () => {
@@ -27,10 +27,13 @@ const CreateSubRandditComponent = () => {
     },[title, description, image_url])
 
     const handleSubmit = (e) => {
-        e.prevent.default();
+        e.preventDefault();
+
         console.log("submit triggered")
+
         setIsCreated(true);
         if (errors.length > 0) return;
+
 
         console.log("title", title)
         console.log("descrip", description)
@@ -42,6 +45,9 @@ const CreateSubRandditComponent = () => {
             image_url,
             // author_id
     }))
+
+        dispatch(getAllSubrandditsThunk())
+
         //using history instead of redirect:
 
         // if (newSub.errors) setErrors([...Object.values(newSub.errors)])
@@ -50,7 +56,7 @@ const CreateSubRandditComponent = () => {
 
         //using redirect:
 
-        return <Redirect to="/"></Redirect>
+        // return <Redirect to="/"></Redirect>
     };
 
     const ErrorMsgs = errors.map(error => (
