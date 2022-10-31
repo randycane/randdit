@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import {editSubThunk, getSubFromIdThunk} from "../../store/subranddit"
 
 
@@ -36,7 +36,7 @@ function EditSubRandditComponent({ subrandditId }) {
     }
 
 
-    let edittedSubData = await dispatch(editSubThunk({
+    let edittedSubData = dispatch(editSubThunk({
         title,
         description,
         image_url
@@ -49,7 +49,7 @@ function EditSubRandditComponent({ subrandditId }) {
 
         // };
     if (edittedSubData.errors) setErrors([...Object.values(edittedSubData.errors)])
-    else await dispatch(getSubFromIdThunk(subrandditId))
+    else dispatch(getSubFromIdThunk(subrandditId))
 
     const showErrors = errors.map((error) => (
         <div className="error-messages" key={error}>
