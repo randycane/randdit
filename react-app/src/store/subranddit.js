@@ -50,12 +50,11 @@ export const getAllSubrandditsThunk = () => async dispatch => {
     const response = await fetch(`/api/subranddits/`, {
         method: "GET"
     })
-    if (response.ok){
+    if (response.ok) {
         const data = await response.json();
         dispatch(loadSubsAction(data))
         return data;
     }
-
     // return response;
 }
 
@@ -112,7 +111,7 @@ export const deleteSubThunk = (subrandditId) => async dispatch => {
     }
 }
 
-//Reducer:
+// Subranddit Reducer:
 
 let initialState = {};
 

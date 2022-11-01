@@ -27,7 +27,9 @@ const NavBar = () => {
       <div className="nav-top">
         <div className="home">
           <NavLink to='/' exact={true} activeClassName='active'>
-            Home
+            <div className="home-icon">
+              <img src="https://i.pinimg.com/736x/bb/b2/cf/bbb2cff9da7cf8f0048d1d884b03ad10.jpg" alt="nope"></img>
+            </div>
           </NavLink>
         </div>
         {/* <form onSubmit={handleSubmit}>
