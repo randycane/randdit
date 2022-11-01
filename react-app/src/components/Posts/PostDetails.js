@@ -1,15 +1,29 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { ReadPostsThunk } from "../../store/post";
+import { useParams } from "react-router";
+import { ReadPostsThunk, ReadPostBySubrandditIdThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
+import PostFormComponent from "./PostForm";
+import { getSubFromIdThunk } from "../../store/subranddit";
 
 function SeeThePostsComponent() {
     const dispatch = useDispatch();
-    // const allPosts = useSelector((state) => state)
+    const allPosts = useSelector((state) => state.posts)
+    const normalizedPosts = Object.values(allPosts)
+
+    let { subrandditId } = useParams();
+    subrandditId = Number(subrandditId);
+    console.log("type of", typeof subrandditId)
+
+    console.log("state for post", allPosts)
+
+    console.log("should be normalized", normalizedPosts)
+
 
     useEffect(() => {
-        dispatch(ReadPostsThunk())
+        dispatch(getSubFromIdThunk(subrandditId))
+        dispatch(ReadPostBySubrandditIdThunk(subrandditId))
     }, [dispatch])
 
     return (
@@ -17,7 +31,23 @@ function SeeThePostsComponent() {
             <h2 id="post-head">Posts</h2>
             <div className="post-outside-container">
                 <div className="post-inner-container">
-                    <PostCardComponent/>
+                    <div className="map">
+                        {normalizedPosts.map((post) => {
+                            return (
+                                <div className="details">
+                                    {post.author_id}
+                                    {post.post_title}
+                                    {post.post_description}
+                                    {post.image_url}
+                                </div>
+                            )
+                            // <div className="each-post">
+                            //         <Link to={`/subranddits/${subrandditId}`}>
+                            //             <SubrandditCardComponent subranddit={subranddit} /> </Link>
+                            //     </div>
+                        })}
+                    </div>
+                    {/* <PostCardComponent/> */}
                 </div>
             </div>
             </>

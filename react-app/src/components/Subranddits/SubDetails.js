@@ -5,6 +5,7 @@ import { ReadPostBySubrandditIdThunk } from "../../store/post";
 import { deleteSubThunk, getSubFromIdThunk } from "../../store/subranddit";
 import EditSubRandditComponent from "./EditSub";
 import PostCardComponent from "../Posts/PostCard";
+import SeeThePostsComponent from "../Posts/PostDetails";
 
 function SeeSubrandditDetailsComponent() {
     let { subrandditId } = useParams();
@@ -44,7 +45,10 @@ function SeeSubrandditDetailsComponent() {
 
   return (
     isLoaded && (
-  <>
+      <>
+        <div className="see-posts">
+          <SeeThePostsComponent/>
+        </div>
         <div className="subranddit-stuff">
             <EditSubRandditComponent/>
       </div>

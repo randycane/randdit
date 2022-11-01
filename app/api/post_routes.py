@@ -77,7 +77,7 @@ def update_comment(postId, commentId):
         return whattoedit.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
-# delete a post:
+# delete a post works:
 @post_blueprint.route("/<int:postId>", methods = ['DELETE'])
 @login_required
 def del_post(postId):

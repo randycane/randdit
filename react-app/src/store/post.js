@@ -75,7 +75,8 @@ export const ReadPostsThunk = () => async dispatch => {
 export const ReadPostBySubrandditIdThunk = (subrandditId) => async dispatch => {
     const response = await fetch(`/api/subranddits/${subrandditId}/posts`)
     if (response.ok) {
-        const allposts = response.json();
+        const allposts = await response.json();
+        console.log("check reducer", allposts)
         dispatch(loadPostsBySubIdAction(allposts))
         return allposts;
     }

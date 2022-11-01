@@ -10,12 +10,14 @@ const PostCardComponent = ({ post }) => {
     const history = useHistory();
 
     const { postId } = useParams();
+    const { subrandditId } = useParams();
+    console.log("type of", typeof subrandditId)
 
     //need to confirm user to have post editdeletes:
     const session = useSelector((state) => state.session.user)
-    let postWriter = post?.userId === session.user.id
+    // let postWriter = post?.userId === session.user.id
 
-    // dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+
 
     const deleteButton = async (e) => {
         e.preventDefault();
@@ -24,9 +26,9 @@ const PostCardComponent = ({ post }) => {
         // await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
     }
 
-    // useEffect(() => {
-    //     dispatch(getSubFromIdThunk(subrandditId))
-    // }, [dispatch])
+    useEffect(() => {
+        dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+    }, [dispatch])
 
     return (
         <div className="post-top">
@@ -40,13 +42,13 @@ const PostCardComponent = ({ post }) => {
                 {post.post_text}
             </div>
             <div className="logic">
-                {postWriter && (
+
                     <>
                         <button className="click" onClick={(e) => deleteButton(e)}>
 
                         </button>
                         </>
-                )}
+
             </div>
         </div>
 

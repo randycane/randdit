@@ -113,7 +113,7 @@ def create_post(subrandditId):
         return(new_post.to_dict()), 201
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
-# edit your post on a subranddit:
+# edit your post on a subranddit works:
 @subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["PUT"])
 @login_required
 def update_post(subrandditId, postId):
