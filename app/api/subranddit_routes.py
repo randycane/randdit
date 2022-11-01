@@ -1,7 +1,7 @@
-from unicodedata import name
+# from unicodedata import name
 from flask import Blueprint, jsonify, session, request, redirect
 from app.models import User, db, Post, Subranddit, Comment
-from app.models.post import to_dict
+# from app.models.post import to_dict
 
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_user, logout_user, login_required
@@ -76,12 +76,12 @@ def delete_sub(subrandditId):
         "message": "Successfully deleted"
     }
 
-# see all posts under a subranddit by subranddit id:
+# see all posts under a subranddit by subranddit id working:
 
 @subranddit_blueprint.route('/<int:subrandditId>/posts', methods = ["GET"])
-def see_all_posts():
+def see_all_posts(subrandditId):
     response = []
-    allposts = Post.query.all()
+    allposts = Post.query.filter(Post.subranddit_id==subrandditId)
     for onepost in allposts:
         response.append(onepost.to_dict())
     return jsonify(response)
@@ -109,7 +109,7 @@ def create_post(subrandditId):
 
         db.session.add(new_post)
         db.session.commit()
-        return(new_post(to_dict())), 201
+        return(new_post.to_dict()), 201
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 # edit your post on a subranddit:

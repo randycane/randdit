@@ -17,14 +17,14 @@ class Post(db.Model):
     user = relationship("User", back_populates="post")
     subranddit = relationship("Subranddit", back_populates="post")
 
-def to_dict(self):
-    response = {
+    def to_dict(self):
+        response = {
         "id": self.id,
         "post_title": self.post_title,
         "post_text": self.post_text,
         "image_url": self.image_url,
         "author_id": self.author_id,
         "subranddit_id": self.subranddit_id
-    }
+        }
 
-    return response
+        return response
