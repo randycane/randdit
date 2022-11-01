@@ -24,19 +24,21 @@ function PostFormComponent() {
         setErrors(errorsArray)
     }, [post_title, post_text, image_url])
 
-    let handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitted(true)
         if (errors.length > 0) return;
-    }
-    // to dispatch:
-    dispatch(WriteAPostThunk({
-        post_title,
-        post_text,
-        image_url
-    }))
+        const payload = {post_title: post_title, post_text: post_text, image_url: image_url}
+        // to dispatch:
+        // await dispatch(WriteAPostThunk(payload))
 
-    history.push(`/subranddits/${subrandditId}`)
+        let apost = await dispatch(WriteAPostThunk(payload))
+        if (apost) {
+            history.push(`/subranddits/${subrandditId}`)
+
+        }
+    }
+
 
     const ErrorMsgs = errors.map(error => (
         <div className="errors" key={error}>{error}</div>
@@ -79,7 +81,7 @@ function PostFormComponent() {
                             />
                     </label>
                     <div className="end-button">
-                        <button type="submit">
+                        <button type="submit" onSubmit={handleSubmit}>
                             Write your post
                         </button>
                     </div>

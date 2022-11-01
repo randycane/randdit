@@ -86,7 +86,7 @@ def see_all_posts(subrandditId):
         response.append(onepost.to_dict())
     return jsonify(response)
 
-# create a post on a subranddit works:
+# create a post on a subranddit:
 @subranddit_blueprint.route('/<int:subrandditId>', methods = ["POST"])
 @login_required
 def create_post(subrandditId):

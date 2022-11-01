@@ -8,10 +8,10 @@ const DEL_POST = "post/delete"
 
 // Action creators:
 
-const writePostAction = (payload) => {
+const writePostAction = (subrandditId) => {
     return {
         type: CREATE_POST,
-        payload
+        subrandditId
     }
 }
 
@@ -46,14 +46,16 @@ const deletePostAction = (payload) => {
 
 // Thunks:
 
-export const WriteAPostThunk = (payload) => async dispatch => {
-    const response = await fetch('/api/posts/', {
+export const WriteAPostThunk = (subrandditId) => async dispatch => {
+
+    const response = await fetch(`/api/subranddits/${subrandditId}`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(subrandditId)
     })
+    console.log("reply", response)
     if (response.ok) {
         const newpost = await response.json()
         dispatch(writePostAction(newpost))
@@ -76,7 +78,7 @@ export const ReadPostBySubrandditIdThunk = (subrandditId) => async dispatch => {
     const response = await fetch(`/api/subranddits/${subrandditId}/posts`)
     if (response.ok) {
         const allposts = await response.json();
-        console.log("check reducer", allposts)
+        //console.log("check reducer", allposts)
         dispatch(loadPostsBySubIdAction(allposts))
         return allposts;
     }
@@ -118,7 +120,7 @@ const postReducer = (state = initialState, action) => {
     switch (action.type) {
         case CREATE_POST: {
             newState = { ...state };
-            newState[action.payload.id] = action.payload;
+            newState[action.subrandditId.id] = action.subrandditId
             return newState
         }
         case LOAD_POSTS: {

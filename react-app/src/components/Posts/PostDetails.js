@@ -6,7 +6,7 @@ import { ReadPostsThunk, ReadPostBySubrandditIdThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
 import { getSubFromIdThunk } from "../../store/subranddit";
-
+import "./Posts.css"
 function SeeThePostsComponent() {
     const dispatch = useDispatch();
     const allPosts = useSelector((state) => state.posts)
@@ -14,11 +14,11 @@ function SeeThePostsComponent() {
 
     let { subrandditId } = useParams();
     subrandditId = Number(subrandditId);
-    console.log("type of", typeof subrandditId)
+    // console.log("type of", typeof subrandditId)
 
-    console.log("state for post", allPosts)
+    // console.log("state for post", allPosts)
 
-    console.log("should be normalized", normalizedPosts)
+    // console.log("should be normalized", normalizedPosts)
 
 
     useEffect(() => {
@@ -31,16 +31,22 @@ function SeeThePostsComponent() {
             <h2 id="post-head">Posts</h2>
             <div className="post-outside-container">
                 <div className="post-inner-container">
+
+                    <div className="hi-man">
+                    <PostFormComponent />
+                    </div>
+
                     <div className="map">
                         {normalizedPosts.map((post) => {
                             return (
                                 <div className="details">
-                                    {post.author_id}
-                                    {post.post_title}
-                                    {post.post_description}
-                                    {post.image_url}
+                                    <div className="in-detail"> Author ID: {post.author_id}</div>
+                                    <div className="in-detail"> Title: {post.post_title}</div>
+                                    <div className="in-detail"> Text: {post.post_text}</div>
+                                    <img src={post.image_url} alt="no" className="img" ></img>
                                 </div>
                             )
+
                             // <div className="each-post">
                             //         <Link to={`/subranddits/${subrandditId}`}>
                             //             <SubrandditCardComponent subranddit={subranddit} /> </Link>

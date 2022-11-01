@@ -16,9 +16,9 @@ function EditSubRandditComponent() {
 
     // const thisSub = subranddit[subrandditId]
 
-    const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
-    const [image_url, setImage_url] = useState("")
+    const [title, setTitle] = useState(subranddit?.title)
+    const [description, setDescription] = useState(subranddit?.description)
+    const [image_url, setImage_url] = useState(subranddit?.image_url)
 
     const [errors, setErrors] = useState([])
 

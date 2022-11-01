@@ -11,7 +11,7 @@ const PostCardComponent = ({ post }) => {
 
     const { postId } = useParams();
     const { subrandditId } = useParams();
-    console.log("type of", typeof subrandditId)
+    // console.log("type of", typeof subrandditId)
 
     //need to confirm user to have post editdeletes:
     const session = useSelector((state) => state.session.user)

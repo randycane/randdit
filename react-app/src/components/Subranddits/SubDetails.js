@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router";
 import { ReadPostBySubrandditIdThunk } from "../../store/post";
-import { deleteSubThunk, getSubFromIdThunk } from "../../store/subranddit";
+import { deleteSubThunk, getAllSubrandditsThunk, getSubFromIdThunk } from "../../store/subranddit";
 import EditSubRandditComponent from "./EditSub";
 import PostCardComponent from "../Posts/PostCard";
 import SeeThePostsComponent from "../Posts/PostDetails";
+import SubrandditCardComponent from "./SubCard";
 
 function SeeSubrandditDetailsComponent() {
     let { subrandditId } = useParams();
@@ -17,7 +18,9 @@ function SeeSubrandditDetailsComponent() {
     const [isLoaded, setIsLoaded] = useState(false)
     const [isPosty, setIsPosty]= useState(false)
 
-    const subranddit = useSelector((state) => Object.values(state.subranddits))
+  // key into my obj state
+  const subranddit = useSelector((state) => (state.subranddits[subrandditId]))
+  //console.log("obj state", subranddit)
 
     const subrandditInfo = useSelector((state) => {
         let posts = Object.values(state.posts)
@@ -28,13 +31,11 @@ function SeeSubrandditDetailsComponent() {
     const sessionUser = useSelector((state)=> state.session.user)
 
 
-
-    // wana see posts underneath:
-
     useEffect(() => {
-        dispatch(getSubFromIdThunk(subrandditId))
+      dispatch(getSubFromIdThunk(subrandditId))
+      dispatch(getAllSubrandditsThunk())
         .then(()=> setIsLoaded(true))
-    },[dispatch, isLoaded])
+    },[dispatch])
 
     // delete post button:
     const deleteThisSubRn = async (subrandditId) => {
@@ -46,6 +47,10 @@ function SeeSubrandditDetailsComponent() {
   return (
     isLoaded && (
       <>
+        <div className="describe">
+        <img src={subranddit.image_url} alt="nah" className="sub-logo"></img>
+                <div className="sub-title">Title: {subranddit.title}</div>
+        </div>
         <div className="see-posts">
           <SeeThePostsComponent/>
         </div>
