@@ -42,12 +42,16 @@ function SeeThePostsComponent() {
                     <div className="map">
                         {normalizedPosts.map((post) => {
                             return (
+                                <div className="out">
+                                    <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}>
                                 <div key={post.id} className="details">
                                     <div className="in-detail"> Author ID: {post.author_id}</div>
                                     <div className="in-detail"> Title: {post.post_title}</div>
                                     <div className="in-detail"> Text: {post.post_text}</div>
                                     <img src={post.image_url} alt="no" className="img" ></img>
-                                </div>
+                                    </div>
+                                    </Link>
+                                    </div>
                             )
                         })}
                     </div>

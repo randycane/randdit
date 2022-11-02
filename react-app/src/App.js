@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import SeeTheSubsComponent from './components/Subranddits/HomePage';
 import SeeSubrandditDetailsComponent from './components/Subranddits/SubDetails';
 import SeeThePostsComponent from './components/Posts/PostDetails';
+import PostCardComponent from './components/Posts/PostCard';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route path="/subranddits/:subrandditId" exact={true}>
             <SeeSubrandditDetailsComponent/>
+        </Route>
+        <Route path="/subranddits/:subrandditId/posts/:postId" exact={true}>
+            <PostCardComponent/>
         </Route>
       </Switch>
     </BrowserRouter>

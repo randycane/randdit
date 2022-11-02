@@ -17,19 +17,27 @@ function PostFormComponent() {
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [errors, setErrors] = useState([]);
 
-    useEffect(() => {
-        let errorsArray = []
-        //if (!image_url) errorsArray.push("Please provide valid image.")
-        if (!post_title) errorsArray.push("Please provide a valid Title.")
-        if (!post_text) errorsArray.push("Please provide a valid post text body.")
+    // useEffect(() => {
+    //     let errorsArray = []
+    //     if (!image_url) errorsArray.push("Please provide valid image.")
+    //     if (!post_title) errorsArray.push("Please provide a valid Title.")
+    //     if (!post_text) errorsArray.push("Please provide a valid post text body.")
 
-        setErrors(errorsArray)
-    }, [post_title, post_text, image_url])
+    //     setErrors(errorsArray)
+    // }, [post_title, post_text, image_url])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!post_title) {
+            setErrors(["Please provide a valid Title."])
+            return;
+        }
+        if (!post_text) {
+            setErrors(["Please provide a valid post text body."])
+            return;
+        }
         setIsSubmitted(true)
-        if (errors.length > 0) return;
+        // if (errors.length > 0) return;
         const payload = {post_title: post_title, post_text: post_text, image_url: image_url, subrandditId: subrandditId}
         // to dispatch:
         // await dispatch(WriteAPostThunk(payload))
@@ -39,6 +47,10 @@ function PostFormComponent() {
             history.push(`/subranddits/${subrandditId}`)
 
         }
+        setPost_title("");
+        setPost_text("")
+        setImage_url("");
+        setErrors([]);
     }
 
 
@@ -52,6 +64,7 @@ function PostFormComponent() {
                 <form className="highform" onSubmit={handleSubmit}>
                     <h1 className="high-top"> Write your post</h1>
                     <div className="messages">
+
                         {isSubmitted && ErrorMsgs}
 
                     </div>

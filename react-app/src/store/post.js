@@ -4,6 +4,7 @@ const CREATE_POST = "post/create"
 const LOAD_POSTS = "post/load"
 const EDIT_POST= "post/edit"
 const LOAD_POST_BY_SUB = "subranddit/load_by_sub"
+const LOAD_POST_BY_POST = "post/read"
 const DEL_POST = "post/delete"
 
 // Action creators:
@@ -18,6 +19,13 @@ const writePostAction = (subrandditId) => {
 const loadPostsAction = (payload) => {
     return {
         type: LOAD_POSTS,
+        payload
+    }
+}
+
+const readPostByPostAction = (payload) => {
+    return {
+        type: LOAD_POST_BY_POST,
         payload
     }
 }
@@ -101,6 +109,15 @@ export const ReadPostBySubrandditIdThunk = (subrandditId) => async dispatch => {
     }
 }
 
+export const SeePostByItsPostIdThunk = (subrandditId, postId) => async dispatch => {
+    const response = await fetch(`/api/subranddits/${subrandditId}/posts/${postId}`)
+    if (response.ok) {
+        const postpage = await response.json()
+        dispatch(readPostByPostAction(postpage))
+        return postpage;
+    }
+}
+
 // Edit your post:
 export const EditPostThunk = (payload, postId) => async dispatch => {
     const response = await fetch(`/api/posts/${postId}/edit`, {
@@ -147,6 +164,12 @@ const postReducer = (state = initialState, action) => {
             return { ...newState };
         }
         case LOAD_POST_BY_SUB: {
+            action.payload.forEach((post) => {
+                newState[post.id] = post
+            })
+            return { ...newState };
+        }
+        case LOAD_POST_BY_POST: {
             action.payload.forEach((post) => {
                 newState[post.id] = post
             })

@@ -86,6 +86,14 @@ def see_all_posts(subrandditId):
         response.append(onepost.to_dict())
     return jsonify(response)
 
+# see postcard by the post id:
+@subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["GET"])
+def read_one(postId):
+    subpost = Post.query.get(postId)
+    if subpost== None:
+        return {"errors": "Subranddit not found"}, 404
+    return jsonify(subpost)
+
 #create a post:
 @subranddit_blueprint.route('/<int:subrandditId>', methods = ["POST"])
 @login_required
