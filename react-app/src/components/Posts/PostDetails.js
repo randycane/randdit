@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { ReadPostsThunk, ReadPostBySubrandditIdThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
+import UpdatePostComponent from "./EditPost";
 import { getSubFromIdThunk } from "../../store/subranddit";
 
 import "./Posts.css"
@@ -37,6 +38,9 @@ function SeeThePostsComponent() {
                     <div className="hi-man">
                     <PostFormComponent />
                     </div>
+                    {/* <div className="hey-man">
+                    <UpdatePostComponent />
+                    </div> */}
 
                     <div className="map">
                         {normalizedPosts.map((post) => {
