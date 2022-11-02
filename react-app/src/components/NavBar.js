@@ -25,12 +25,14 @@ const NavBar = () => {
   return (
     <nav className="top">
       <div className="nav-top">
+        <div className="nav-left">
         <div className="home">
           <NavLink to='/' exact={true} activeClassName='active'>
             <div className="home-icon">
               <img src="https://i.pinimg.com/736x/bb/b2/cf/bbb2cff9da7cf8f0048d1d884b03ad10.jpg" alt="nope"></img>
             </div>
           </NavLink>
+        </div>
         </div>
         {/* <form onSubmit={handleSubmit}>
         <div className="nav-side">
@@ -46,7 +48,7 @@ const NavBar = () => {
             </div>
           </div>
           </form> */}
-
+          <div className="nav-right">
               {userIsLoggedIn && (
                 <button className="out-button">
                   <LogoutButton />
@@ -62,6 +64,7 @@ const NavBar = () => {
               </div>
             </div>
           )}
+        </div>
         </div>
     </nav>
   );
