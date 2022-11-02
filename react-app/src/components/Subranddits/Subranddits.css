@@ -20,6 +20,10 @@
     font-weight: 600;
 }
 
+.sub-stuff{
+    font-weight: 400;
+}
+
 .high-form{
     display: flex;
     flex-direction: column;

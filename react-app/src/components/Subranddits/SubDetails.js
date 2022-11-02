@@ -18,7 +18,7 @@ function SeeSubrandditDetailsComponent() {
     const history = useHistory();
 
     const [isLoaded, setIsLoaded] = useState(false)
-    const [isPosty, setIsPosty]= useState(false)
+    // const [isPosty, setIsPosty]= useState(false)
 
   // key into my obj state
   const subranddit = useSelector((state) => (state.subranddits[subrandditId]))

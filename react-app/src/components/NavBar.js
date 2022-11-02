@@ -50,9 +50,10 @@ const NavBar = () => {
           </form> */}
           <div className="nav-right">
               {userIsLoggedIn && (
-                <button className="out-button">
+                <div className="out-button"><button>
                   <LogoutButton />
                 </button>
+                </div>
               )}
           {!userIsLoggedIn && (
             <div className="register-buttons">

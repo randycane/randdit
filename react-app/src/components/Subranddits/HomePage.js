@@ -35,7 +35,7 @@ function SeeTheSubsComponent() {
                     {normalizedSub.length> 0 && (
                         <div className="single-sub">
                             {normalizedSub.map((subranddit) => (
-                                <div className="each-sub">
+                                <div key={subranddit.id} className="each-sub">
                                     <Link to={`/subranddits/${subranddit.id}`}>
                                         <SubrandditCardComponent subranddit={subranddit} /> </Link>
                                 </div>

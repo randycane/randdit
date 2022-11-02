@@ -86,14 +86,14 @@ def see_all_posts(subrandditId):
         response.append(onepost.to_dict())
     return jsonify(response)
 
-# create a post on a subranddit:
+#create a post:
 @subranddit_blueprint.route('/<int:subrandditId>', methods = ["POST"])
 @login_required
 def create_post(subrandditId):
 
-    subrandy = Subranddit.query.get(subrandditId)
-    if subrandy == None:
-        return {"errors": "Subranddit not found"}, 404
+    # subrandy = Subranddit.query.get(subrandditId)
+    # if subrandy == None:
+    #     return {"errors": "Subranddit not found"}, 404
 
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -112,6 +112,8 @@ def create_post(subrandditId):
         db.session.commit()
         return(new_post.to_dict()), 201
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+
 
 # edit your post on a subranddit works:
 @subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["PUT"])

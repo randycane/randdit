@@ -27,7 +27,7 @@ function SeeThePostsComponent() {
     useEffect(() => {
         dispatch(getSubFromIdThunk(subrandditId))
         dispatch(ReadPostBySubrandditIdThunk(subrandditId))
-    }, [dispatch])
+    }, [dispatch, subrandditId])
 
     return (
         <>
@@ -38,14 +38,11 @@ function SeeThePostsComponent() {
                     <div className="hi-man">
                     <PostFormComponent />
                     </div>
-                    {/* <div className="hey-man">
-                    <UpdatePostComponent />
-                    </div> */}
 
                     <div className="map">
                         {normalizedPosts.map((post) => {
                             return (
-                                <div className="details">
+                                <div key={post.id} className="details">
                                     <div className="in-detail"> Author ID: {post.author_id}</div>
                                     <div className="in-detail"> Title: {post.post_title}</div>
                                     <div className="in-detail"> Text: {post.post_text}</div>

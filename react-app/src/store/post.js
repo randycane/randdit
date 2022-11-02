@@ -46,21 +46,38 @@ const deletePostAction = (payload) => {
 
 // Thunks:
 
-export const WriteAPostThunk = (subrandditId) => async dispatch => {
+// export const WriteAPostThunk = (subrandditId) => async dispatch => {
 
-    const response = await fetch(`/api/subranddits/${subrandditId}`, {
+//     const response = await fetch(`/api/subranddits/${subrandditId}`, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(subrandditId)
+//     })
+//     console.log("reply", response)
+//     if (response.ok) {
+//         const newpost = await response.json()
+//         dispatch(writePostAction(newpost))
+//         return newpost;
+//     }
+// }
+
+export const WriteAPostThunk = (data) => async dispatch => {
+    const { post_title, post_text, image_url, subrandditId} = data
+    const formData = new FormData()
+    formData.append('post_title', post_title)
+    formData.append('post_text', post_text)
+    formData.append('image_url', image_url)
+    formData.append('subrandditId', subrandditId)
+
+    const response = await fetch(`/api/subranddits/${data.subrandditId}`, {
         method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(subrandditId)
+        body: formData,
     })
-    console.log("reply", response)
-    if (response.ok) {
-        const newpost = await response.json()
-        dispatch(writePostAction(newpost))
-        return newpost;
-    }
+    const newPost = await response.json();
+    dispatch(writePostAction(newPost))
+    return newPost;
 }
 
 // Read all posts:

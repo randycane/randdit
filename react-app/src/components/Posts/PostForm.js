@@ -19,7 +19,7 @@ function PostFormComponent() {
 
     useEffect(() => {
         let errorsArray = []
-        if (!image_url) errorsArray.push("Please provide valid image.")
+        //if (!image_url) errorsArray.push("Please provide valid image.")
         if (!post_title) errorsArray.push("Please provide a valid Title.")
         if (!post_text) errorsArray.push("Please provide a valid post text body.")
 
@@ -30,7 +30,7 @@ function PostFormComponent() {
         e.preventDefault();
         setIsSubmitted(true)
         if (errors.length > 0) return;
-        const payload = {post_title: post_title, post_text: post_text, image_url: image_url}
+        const payload = {post_title: post_title, post_text: post_text, image_url: image_url, subrandditId: subrandditId}
         // to dispatch:
         // await dispatch(WriteAPostThunk(payload))
 
@@ -74,10 +74,10 @@ function PostFormComponent() {
                             />
                     </label>
                     <label className="form">
-                            <span> Post image: </span>
+                            <span> Post image (optional): </span>
                             <input
                                 type="text"
-                                placeholder="Post image URL"
+                                placeholder="Image URL"
                                 value={image_url}
                                 onChange={(e) => setImage_url(e.target.value)}
                             />
