@@ -51,8 +51,10 @@ function SeeSubrandditDetailsComponent() {
       <>
         <div className="describe">
         <img src={subranddit.image_url} alt="nah" className="sub-logo"></img>
-                <div className="sub-title">Community Title: {subranddit.title}</div>
+          <div className="sub-title">Community Title: {subranddit.title}</div>
+          <div className="sub-stuff">About: {subranddit.description}</div>
         </div>
+
         <div className="see-posts">
           <SeeThePostsComponent/>
         </div>

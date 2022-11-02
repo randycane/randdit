@@ -48,14 +48,8 @@ function SeeThePostsComponent() {
                                     <img src={post.image_url} alt="no" className="img" ></img>
                                 </div>
                             )
-
-                            // <div className="each-post">
-                            //         <Link to={`/subranddits/${subrandditId}`}>
-                            //             <SubrandditCardComponent subranddit={subranddit} /> </Link>
-                            //     </div>
                         })}
                     </div>
-                    {/* <PostCardComponent/> */}
                 </div>
             </div>
             </>
