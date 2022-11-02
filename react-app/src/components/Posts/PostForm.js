@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Redirect, useParams} from "react-router-dom"
 import { WriteAPostThunk } from "../../store/post";
 
+import "./Posts.css"
+
 function PostFormComponent() {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -81,7 +83,7 @@ function PostFormComponent() {
                             />
                     </label>
                     <div className="end-button">
-                        <button type="submit" onSubmit={handleSubmit}>
+                        <button className="submit-now" type="submit" onSubmit={handleSubmit}>
                             Write your post
                         </button>
                     </div>

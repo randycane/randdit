@@ -6,7 +6,9 @@ import { ReadPostsThunk, ReadPostBySubrandditIdThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
 import { getSubFromIdThunk } from "../../store/subranddit";
+
 import "./Posts.css"
+
 function SeeThePostsComponent() {
     const dispatch = useDispatch();
     const allPosts = useSelector((state) => state.posts)

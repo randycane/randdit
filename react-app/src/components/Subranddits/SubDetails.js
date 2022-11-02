@@ -8,6 +8,8 @@ import PostCardComponent from "../Posts/PostCard";
 import SeeThePostsComponent from "../Posts/PostDetails";
 import SubrandditCardComponent from "./SubCard";
 
+import "./Subranddits.css"
+
 function SeeSubrandditDetailsComponent() {
     let { subrandditId } = useParams();
     subrandditId = Number(subrandditId);
@@ -28,7 +30,7 @@ function SeeSubrandditDetailsComponent() {
     })
 
     //logic to see if you are logged in to perform actions
-    const sessionUser = useSelector((state)=> state.session.user)
+  const sessionUser = useSelector((state) => state.session.user)
 
 
     useEffect(() => {
@@ -49,14 +51,15 @@ function SeeSubrandditDetailsComponent() {
       <>
         <div className="describe">
         <img src={subranddit.image_url} alt="nah" className="sub-logo"></img>
-                <div className="sub-title">Title: {subranddit.title}</div>
+                <div className="sub-title">Community Title: {subranddit.title}</div>
         </div>
         <div className="see-posts">
           <SeeThePostsComponent/>
         </div>
         <div className="subranddit-stuff">
             <EditSubRandditComponent/>
-      </div>
+        </div>
+
       <div className="undercard">
       <button
       className="delete-button"

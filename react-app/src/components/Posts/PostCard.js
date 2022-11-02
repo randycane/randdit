@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router";
 import { deletePostThunk, ReadPostBySubrandditIdThunk } from "../../store/post";
 import { getSubFromIdThunk } from "../../store/subranddit";
+import UpdatePostComponent from "./EditPost";
 
 
 const PostCardComponent = ({ post }) => {
@@ -15,7 +16,7 @@ const PostCardComponent = ({ post }) => {
 
     //need to confirm user to have post editdeletes:
     const session = useSelector((state) => state.session.user)
-    // let postWriter = post?.userId === session.user.id
+    let postWriter = post?.userId === session.user.id
 
 
 
@@ -41,18 +42,18 @@ const PostCardComponent = ({ post }) => {
             <div className="post-words">
                 {post.post_text}
             </div>
-            <div className="logic">
-
-                    <>
-                        <button className="click" onClick={(e) => deleteButton(e)}>
-
-                        </button>
+            <>
+                {postWriter && (
+                    <div className="logic">
+                        <>
+                            <UpdatePostComponent/>
+                            <button className="click" onClick={(e) => deleteButton(e)}>
+                            </button>
                         </>
-
-            </div>
+                    </div>
+                )}
+                </>
         </div>
-
-
     )
 }
 

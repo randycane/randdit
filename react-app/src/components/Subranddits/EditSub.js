@@ -12,7 +12,7 @@ function EditSubRandditComponent() {
 
     const subranddit = useSelector(state => state?.subranddits[subrandditId])
 
-    console.log("state rn", subranddit)
+    //console.log("state rn", subranddit)
 
     // const thisSub = subranddit[subrandditId]
 
