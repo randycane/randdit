@@ -101,13 +101,13 @@ export const editSubThunk = (payload, subrandditId) => async dispatch => {
     return response
 }
 
-export const deleteSubThunk = (subrandditId) => async dispatch => {
-    const response = await fetch(`/api/subranddits/${subrandditId}/delete`, {
+export const deleteSubThunk = (id) => async dispatch => {
+    const response = await fetch(`/api/subranddits/${id}/delete`, {
         method: "DELETE"
     });
 
     if (response.ok) {
-        dispatch(deleteSubAction(subrandditId))
+        dispatch(deleteSubAction(id))
     }
 }
 
@@ -142,7 +142,7 @@ const SubrandditReducer = (state = initialState, action) => {
         }
         case DEL_SUB: {
             newState = { ...state };
-            delete newState[action.subrandditId];
+            delete newState[action.payload];
             return newState
         }
         default:

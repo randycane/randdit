@@ -86,13 +86,19 @@ def see_all_posts(subrandditId):
         response.append(onepost.to_dict())
     return jsonify(response)
 
-# see postcard by the post id:
-@subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["GET"])
-def read_one(postId):
-    subpost = Post.query.get(postId)
-    if subpost== None:
-        return {"errors": "Subranddit not found"}, 404
-    return jsonify(subpost)
+# see one post by the post id:
+# extra layer to see the post by the post card id, comments bonus after:
+
+# @subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["GET"])
+# def read_one(subrandditId, postId):
+#     subrandy = Subranddit.query.get(subrandditId)
+#     if subrandy == None:
+#         return {"errors": "Subranddit not found"}, 404
+
+#     whattoread = Post.query.get(postId)
+#     if whattoread == None:
+#         return {"errors": "Post not found"}, 404
+#     return whattoread.to_dict()
 
 #create a post:
 @subranddit_blueprint.route('/<int:subrandditId>', methods = ["POST"])

@@ -9,6 +9,8 @@ import SeeThePostsComponent from "../Posts/PostDetails";
 import SubrandditCardComponent from "./SubCard";
 import CreateSubRandditComponent from "./CreateSub";
 
+import DeletingModal from "./DeleteSubModal";
+
 import "./Subranddits.css"
 
 function SeeSubrandditDetailsComponent() {
@@ -41,11 +43,11 @@ function SeeSubrandditDetailsComponent() {
     },[dispatch])
 
     // delete sub button:
-    const deleteThisSubRn = async (subrandditId) => {
-        await dispatch(deleteSubThunk(subrandditId)).then(() => {
-            history.push('/');
-        })
-    }
+    // const deleteThisSubRn = async (subrandditId) => {
+    //     await dispatch(deleteSubThunk(subrandditId)).then(() => {
+    //         history.push('/');
+    //     })
+    // }
 
   return (
     isLoaded && (
@@ -63,7 +65,11 @@ function SeeSubrandditDetailsComponent() {
             <EditSubRandditComponent/>
         </div>
 
-      <div className="undercard">
+        <div className="undercard">
+          <DeletingModal subranddit={subranddit}/>
+        </div>
+
+      {/* <div className="undercard">
       <button
       className="delete-button"
       onClick={() =>
@@ -71,7 +77,7 @@ function SeeSubrandditDetailsComponent() {
       }>
       Delete Subranddit
     </button>
-    </div>
+    </div> */}
     </>
     )
   )

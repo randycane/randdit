@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import CreateSubRandditComponent from "./CreateSub";
 import { useHistory } from "react-router";
 
+import DeletingModal from "./DeleteSubModal";
+
 import "./Subranddits.css"
 
 function SeeTheSubsComponent() {
@@ -51,7 +53,8 @@ function SeeTheSubsComponent() {
                             {normalizedSub.map((subranddit) => (
                                 <div key={subranddit.id} className="each-sub">
                                     <Link to={`/subranddits/${subranddit.id}`}>
-                                        <SubrandditCardComponent subranddit={subranddit} /> </Link>
+                                        <SubrandditCardComponent subranddit={subranddit} />
+                                    </Link>
                                 </div>
                             ))}
                         </div>
