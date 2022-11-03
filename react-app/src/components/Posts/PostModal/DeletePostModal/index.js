@@ -1,10 +1,12 @@
 import React, { useState } from "react"
-import { Modal } from "../../Modals/modal"
-
-import DeleteSubComp from "./DelSub"
 
 
-function DeletingModal({ subranddit }) {
+import {Modal } from "../../../Modals/modal"
+
+import DeletePostComp from "./DeletePost"
+
+
+function DeletingPostModal({ post}) {
     const [showModal, setShowModal] = useState(false)
 
     return (
@@ -14,11 +16,11 @@ function DeletingModal({ subranddit }) {
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <DeleteSubComp subranddit={subranddit} onClick={()=> setShowModal(false)}/>
+                    <DeletePostComp post={post} onClick={()=> setShowModal(false)}/>
                 </Modal>
             )}
         </div>
     )
 }
 
-export default DeletingModal;
+export default DeletingPostModal;

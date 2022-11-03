@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router";
 import { deletePostThunk, ReadPostBySubrandditIdThunk, SeePostByItsPostIdThunk } from "../../store/post";
 import { getSubFromIdThunk } from "../../store/subranddit";
 import UpdatePostComponent from "./EditPost";
-
+import DeletingPostModal from "./PostModal/DeletePostModal/DeletePost";
 
 const PostCardComponent = () => {
     const dispatch = useDispatch();
@@ -49,8 +49,11 @@ const PostCardComponent = () => {
             <div className="post-words">
                 {post?.post_text}
             </div>
+            {/* <div className="undercard">
+          <DeletingPostModal post={post}/>
+            </div> */}
             <>
-                {postWriter && (
+                {/* {postWriter && (
                     <div className="logic">
                         <>
                             <UpdatePostComponent/>
@@ -58,7 +61,7 @@ const PostCardComponent = () => {
                             </button>
                         </>
                     </div>
-                )}
+                )} */}
                 </>
         </div>
     )

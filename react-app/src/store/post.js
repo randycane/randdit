@@ -120,7 +120,7 @@ export const SeePostByItsPostIdThunk = (subrandditId, postId) => async dispatch 
 
 // Edit your post:
 export const EditPostThunk = (payload, postId) => async dispatch => {
-    const response = await fetch(`/api/posts/${postId}/edit`, {
+    const response = await fetch(`/api/posts/${postId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -136,7 +136,7 @@ export const EditPostThunk = (payload, postId) => async dispatch => {
 //Delete post:
 
 export const deletePostThunk = (postId) => async dispatch => {
-    const response = await fetch(`/api/posts/${postId}/delete`, {
+    const response = await fetch(`/api/posts/${postId}`, {
         method: "DELETE"
     });
 

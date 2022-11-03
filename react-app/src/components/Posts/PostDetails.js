@@ -7,6 +7,7 @@ import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
 import UpdatePostComponent from "./EditPost";
 import { getSubFromIdThunk } from "../../store/subranddit";
+import DeletingPostModal from "./PostModal/DeletePostModal";
 
 import "./Posts.css"
 
@@ -35,7 +36,7 @@ function SeeThePostsComponent({post}) {
         await dispatch(deletePostThunk(post.id))
 
 
-        history.push(`/subranddits/${subrandditId}`)
+        // history.push(`/subranddits/${subrandditId}`)
     }
 
     // delete post button:
@@ -67,9 +68,12 @@ function SeeThePostsComponent({post}) {
                                     <img src={post.image_url} alt="no" className="img" ></img>
                                     </div>
                                     <div className="button">
-                                    <button>Delete your post{(e) => deleteButton(e)}</button>
+                                    {/* <button>Delete your post{(e) => deleteButton(e)}</button> */}
                                     </div>
                                     </Link>
+                                    <div className="undercard">
+                                        <DeletingPostModal post={post}/>
+                                        </div>
                                     {/* <div className="undercard">
                                         <button
                                             className="delete-button"
