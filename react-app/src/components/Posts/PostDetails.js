@@ -67,7 +67,7 @@ function SeeThePostsComponent({post}) {
                                     <img src={post.image_url} alt="no" className="img" ></img>
                                     </div>
                                     <div className="button">
-                                    <button>Delete your post{() => deleteButton()}</button>
+                                    <button>Delete your post{(e) => deleteButton(e)}</button>
                                     </div>
                                     </Link>
                                     {/* <div className="undercard">
