@@ -40,7 +40,7 @@ function SeeSubrandditDetailsComponent() {
         .then(()=> setIsLoaded(true))
     },[dispatch])
 
-    // delete post button:
+    // delete sub button:
     const deleteThisSubRn = async (subrandditId) => {
         await dispatch(deleteSubThunk(subrandditId)).then(() => {
             history.push('/');

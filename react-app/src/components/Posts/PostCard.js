@@ -30,6 +30,7 @@ const PostCardComponent = () => {
         await dispatch(deletePostThunk(postId))
         // await dispatch(getSubFromIdThunk(subrandditId))
         // await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+        history.push(`/subranddits/${subrandditId}`)
     }
 
     useEffect(() => {

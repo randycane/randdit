@@ -35,10 +35,15 @@ function SeeThePostsComponent({post}) {
         await dispatch(deletePostThunk(post.id))
 
 
-        history.push(`/`)
-        // await dispatch(getSubFromIdThunk(subrandditId))
-        // await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+        history.push(`/subranddits/${subrandditId}`)
     }
+
+    // delete post button:
+    // const deleteThisPostRn = async (postId) => {
+    //     await dispatch(deletePostThunk(postId)).then(() => {
+    //         history.push('/');
+    //     })
+    // }
 
     return (
         <>
@@ -65,6 +70,15 @@ function SeeThePostsComponent({post}) {
                                     <button>Delete your post{() => deleteButton()}</button>
                                     </div>
                                     </Link>
+                                    {/* <div className="undercard">
+                                        <button
+                                            className="delete-button"
+                                                onClick={() =>
+                                            deleteThisPostRn(post.id)
+                                             }>
+                                                Delete Post
+                                        </button>
+                                        </div> */}
                                     </div>
                             )
                         })}

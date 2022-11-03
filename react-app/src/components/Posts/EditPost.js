@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Redirect, useParams} from "react-router-dom"
-import { EditPostThunk } from "../../store/post";
+import { deletePostThunk, EditPostThunk } from "../../store/post";
 
 import "./Posts.css"
 
@@ -17,8 +17,8 @@ function UpdatePostComponent() {
 
     const selectedPost = useSelector(state => state?.posts[postId])
 
-    //hits:
-    console.log("this post print", selectedPost)
+
+    // console.log("this post print", selectedPost)
 
     const [post_title, setPost_title] = useState(selectedPost?.post_title)
     const [post_text, setPost_text] = useState(selectedPost?.post_text)
@@ -50,6 +50,13 @@ function UpdatePostComponent() {
         if (editPost) {
             history.push(`/subranddits/${subrandditId}`)
         }
+    }
+
+    // delete post button:
+    const deleteThisPostRn = async (postId) => {
+        await dispatch(deletePostThunk(postId)).then(() => {
+            history.push('/');
+        })
     }
 
     const showErrors = errors.map((error) => (
@@ -103,6 +110,16 @@ function UpdatePostComponent() {
                     >
                     Edit your Post
                 </button>
+                </div>
+                {/* delete nested in editing */}
+                <div className="undercard">
+            <button
+            className="delete-button"
+            onClick={() =>
+                deleteThisPostRn(postId)
+                }>
+                Delete Post
+            </button>
             </div>
         </div>
         </form>
