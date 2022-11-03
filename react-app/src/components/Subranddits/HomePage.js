@@ -29,8 +29,13 @@ function SeeTheSubsComponent() {
                 {/* <div className="create-button" onClick={(CreateSubRandditComponent)}>
                     Create your own community!
                 </div> */}
-                {sessionUser && <CreateSubRandditComponent/>}
+                {sessionUser && (
                 <div className="outer-container">
+                    <div className="right-under">
+                        <CreateSubRandditComponent/>
+                    </div>
+                </div>
+                )}
                     <label className="label-name"> Find the subranddit for you</label>
                     {normalizedSub.length> 0 && (
                         <div className="single-sub">
@@ -43,7 +48,7 @@ function SeeTheSubsComponent() {
                         </div>
                     )}
                 </div>
-            </div>
+
             </>
     )
 }

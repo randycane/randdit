@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { useParams } from "react-router";
-import { ReadPostsThunk, ReadPostBySubrandditIdThunk } from "../../store/post";
+import { useHistory, useParams } from "react-router";
+import { ReadPostsThunk, ReadPostBySubrandditIdThunk, deletePostThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
 import UpdatePostComponent from "./EditPost";
@@ -10,8 +10,9 @@ import { getSubFromIdThunk } from "../../store/subranddit";
 
 import "./Posts.css"
 
-function SeeThePostsComponent() {
+function SeeThePostsComponent({post}) {
     const dispatch = useDispatch();
+    const history = useHistory();
     const allPosts = useSelector((state) => state.posts)
     const normalizedPosts = Object.values(allPosts)
 
@@ -28,6 +29,16 @@ function SeeThePostsComponent() {
         dispatch(getSubFromIdThunk(subrandditId))
         dispatch(ReadPostBySubrandditIdThunk(subrandditId))
     }, [dispatch, subrandditId])
+
+    let deleteButton = async (e) => {
+        e.preventDefault();
+        await dispatch(deletePostThunk(post.id))
+
+
+        history.push(`/`)
+        // await dispatch(getSubFromIdThunk(subrandditId))
+        // await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+    }
 
     return (
         <>
@@ -49,6 +60,9 @@ function SeeThePostsComponent() {
                                     <div className="in-detail"> Title: {post.post_title}</div>
                                     <div className="in-detail"> Text: {post.post_text}</div>
                                     <img src={post.image_url} alt="no" className="img" ></img>
+                                    </div>
+                                    <div className="button">
+                                    <button>Delete your post{() => deleteButton()}</button>
                                     </div>
                                     </Link>
                                     </div>
