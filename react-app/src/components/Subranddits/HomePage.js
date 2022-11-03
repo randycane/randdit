@@ -4,12 +4,14 @@ import { getAllSubrandditsThunk } from "../../store/subranddit";
 import SubrandditCardComponent from "./SubCard";
 import { Link } from "react-router-dom";
 import CreateSubRandditComponent from "./CreateSub";
+import { useHistory } from "react-router";
 
 import "./Subranddits.css"
 
 function SeeTheSubsComponent() {
     const dispatch = useDispatch();
 
+    const history = useHistory();
 
     const sessionUser = useSelector((state => state.session.user));
     const everysub = useSelector((state) => state.subranddits)
@@ -21,18 +23,25 @@ function SeeTheSubsComponent() {
         dispatch(getAllSubrandditsThunk())
     }, [dispatch])
 
+    const makeButton = (e) => {
+        e.preventDefault();
 
+        history.push(`/`)
+    }
 
     return (
         <>
             <div className="whole-page-container">
-                {/* <div className="create-button" onClick={(CreateSubRandditComponent)}>
-                    Create your own community!
-                </div> */}
+            <div className="toman">
+                    Welcome to Randdit, a forum for reading.
+                </div>
                 {sessionUser && (
                 <div className="outer-container">
                     <div className="right-under">
-                        <CreateSubRandditComponent/>
+                            <button onClick={makeButton} className="style-button" type="submit">
+
+                                <CreateSubRandditComponent/>
+                            </button>
                     </div>
                 </div>
                 )}

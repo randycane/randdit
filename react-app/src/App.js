@@ -12,6 +12,7 @@ import SeeTheSubsComponent from './components/Subranddits/HomePage';
 import SeeSubrandditDetailsComponent from './components/Subranddits/SubDetails';
 import SeeThePostsComponent from './components/Posts/PostDetails';
 import PostCardComponent from './components/Posts/PostCard';
+import CreateSubRandditComponent from './components/Subranddits/CreateSub';
 
 function App() {
   const [loaded, setLoaded] = useState(false);

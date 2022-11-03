@@ -7,6 +7,7 @@ import EditSubRandditComponent from "./EditSub";
 import PostCardComponent from "../Posts/PostCard";
 import SeeThePostsComponent from "../Posts/PostDetails";
 import SubrandditCardComponent from "./SubCard";
+import CreateSubRandditComponent from "./CreateSub";
 
 import "./Subranddits.css"
 
@@ -50,7 +51,7 @@ function SeeSubrandditDetailsComponent() {
     isLoaded && (
       <>
         <div className="describe">
-        <img src={subranddit.image_url} alt="nah" className="sub-logo"></img>
+        <img src={subranddit.image_url} alt="n/a" className="sub-logo"></img>
           <div className="sub-title">Community Title: {subranddit.title}</div>
           <div className="sub-stuff">About: {subranddit.description}</div>
         </div>

@@ -70,6 +70,9 @@ const CreateSubRandditComponent = () => {
     return (
         <div className="creating-container">
             <div className="encompass-form">
+                <div className="menu">
+
+                </div>
                 <form onSubmit={handleSubmit}
                     className="subr-class">
                     <h1 className="sub-title">Create your own Subranddit</h1>
@@ -110,11 +113,15 @@ const CreateSubRandditComponent = () => {
                         </label>
                     </div>
                     <div className="to-press">
-                        <button onClick={handleSubmit} className="submit-button"
+                        <button onClick={handleSubmit} className="sub-button"
                             type="submit"
-                            className="submit-button"
+                            disabled={isCreated && errors.length > 0}
+                            // className="submit-button"
+                            className={
+                                isCreated && errors.length > 0 ? "dog" : "submit-button"
+                            }
                             >
-                            Create Subranddit
+                            Submit Subranddit
                         </button>
                     </div>
                 </form>
