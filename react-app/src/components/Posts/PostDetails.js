@@ -8,6 +8,8 @@ import PostFormComponent from "./PostForm";
 import UpdatePostComponent from "./EditPost";
 import { getSubFromIdThunk } from "../../store/subranddit";
 import DeletingPostModal from "./PostModal/DeletePostModal";
+import UpdatingPostComp from "./PostModal/UpdateModal/UpdatePost";
+import UpdatingPostModal from "./PostModal/UpdateModal";
 
 import "./Posts.css"
 
@@ -71,6 +73,9 @@ function SeeThePostsComponent({post}) {
                                     {/* <button>Delete your post{(e) => deleteButton(e)}</button> */}
                                     </div>
                                     </Link>
+                                    <div className="middlecard">
+                                        <UpdatingPostModal post={post}/>
+                                        </div>
                                     <div className="undercard">
                                         <DeletingPostModal post={post}/>
                                         </div>
