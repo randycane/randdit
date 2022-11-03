@@ -129,26 +129,26 @@ def create_post(subrandditId):
 
 
 
-# edit your post on a subranddit works:
-@subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["PUT"])
-@login_required
-def update_post(subrandditId, postId):
+# edit your post on a subranddit (unused):
+# @subranddit_blueprint.route('/<int:subrandditId>/posts/<int:postId>', methods = ["PUT"])
+# @login_required
+# def update_post(subrandditId, postId):
 
-    subrandy = Subranddit.query.get(subrandditId)
-    if subrandy == None:
-        return {"errors": "Subranddit not found"}, 404
+#     subrandy = Subranddit.query.get(subrandditId)
+#     if subrandy == None:
+#         return {"errors": "Subranddit not found"}, 404
 
-    whattoedit = Post.query.get(postId)
-    if whattoedit == None:
-        return {"errors": "Post not found"}, 404
+#     whattoedit = Post.query.get(postId)
+#     if whattoedit == None:
+#         return {"errors": "Post not found"}, 404
 
-    form = PostForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
+#     form = PostForm()
+#     form['csrf_token'].data = request.cookies['csrf_token']
 
-    if form.validate_on_submit():
-        post_data = json.loads(request.data.decode('utf-8'))
-        for k,v in post_data.items():
-            setattr(whattoedit, k, v)
-        db.session.commit()
-        return whattoedit.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+#     if form.validate_on_submit():
+#         post_data = json.loads(request.data.decode('utf-8'))
+#         for k,v in post_data.items():
+#             setattr(whattoedit, k, v)
+#         db.session.commit()
+#         return whattoedit.to_dict()
+#     return {'errors': validation_errors_to_error_messages(form.errors)}, 400

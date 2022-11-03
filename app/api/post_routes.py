@@ -21,6 +21,23 @@ def see_posts():
         response.append(onepost)
     return jsonify(response)
 
+# edit your post on a subranddit (used):
+@post_blueprint.route('/<int:postId>', methods = ["PUT"])
+@login_required
+def update_post(postId):
+    form = PostForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    what = Post.query.get(postId)
+    update = request.json
+
+    if "post_title" in update.keys():
+        what.post_title = update["post_title"]
+        what.post_text = update["post_text"]
+        what.image_url = update["image_url"]
+        db.session.commit()
+    return what.to_dict()
+
 # see all comments under a post:
 @post_blueprint.route("/<int:postId>", methods = ['GET'])
 def read_comments():

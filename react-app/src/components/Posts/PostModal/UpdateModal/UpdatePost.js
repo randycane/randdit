@@ -17,8 +17,14 @@ function UpdatingPostComp({ post, onClick }) {
     let { postId } = useParams();
     postId = Number(postId)
 
+    const selectedSubranddit = useSelector((state) => state?.subranddits)
+    console.log("what is this sub on rn", selectedSubranddit)
+
     const selectedPost = useSelector(state => state?.posts[post.id])
     console.log("show me the state", selectedPost)
+
+    const selectedAuthor = useSelector((state) => state?.session.user)
+    console.log("jkrowling", selectedAuthor)
 
 
     // const onEdd = () => {
@@ -43,22 +49,35 @@ function UpdatingPostComp({ post, onClick }) {
         setErrors(errorArray)
     }, [post_title], [post_text], [image_url])
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsUpdated(true);
         if (errors.length > 0) return;
 
-        let editPost = dispatch(EditPostThunk({
-            post_title,
-            post_text,
-            image_url
-        }, postId))
-
-        console.log("what is my word", post_text)
-
-        if (editPost) {
-            history.push(`/`)
+        let payload = {
+            id: post?.id,
+            post_title: post_title,
+            post_text: post_text,
+            image_url: image_url,
+            subranddit_id: selectedSubranddit.id,
+            author_id: selectedAuthor.id
         }
+
+        dispatch(EditPostThunk(payload))
+        onClick()
+
+        // let editPost = dispatch(EditPostThunk({
+        //     post_title,
+        //     post_text,
+        //     image_url
+        // }, postId))
+
+        // console.log("what is my word", post_text)
+
+        // if (editPost) {
+        //     history.push(`/`)
+        // }
     }
 
 
