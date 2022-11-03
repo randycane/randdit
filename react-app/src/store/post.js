@@ -118,7 +118,7 @@ export const SeePostByItsPostIdThunk = (subrandditId, postId) => async dispatch 
     }
 }
 
-// Edit your post hitting undefined:
+// Edit your post hitting:
 export const EditPostThunk = (payloadData) => async dispatch => {
     const { id, post_title, post_text, image_url, author_id, subranddit_id} = payloadData
     const response = await fetch(`/api/posts/${id}`, {

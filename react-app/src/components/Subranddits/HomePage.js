@@ -5,7 +5,6 @@ import SubrandditCardComponent from "./SubCard";
 import { Link } from "react-router-dom";
 import CreateSubRandditComponent from "./CreateSub";
 import { useHistory } from "react-router";
-
 import DeletingModal from "./DeleteSubModal";
 
 import "./Subranddits.css"

@@ -18,13 +18,13 @@ function UpdatingPostComp({ post, onClick }) {
     postId = Number(postId)
 
     const selectedSubranddit = useSelector((state) => state?.subranddits)
-    console.log("what is this sub on rn", selectedSubranddit)
+    //console.log("what is this sub on rn", selectedSubranddit)
 
     const selectedPost = useSelector(state => state?.posts[post.id])
-    console.log("show me the state", selectedPost)
+    //console.log("show me the state", selectedPost)
 
     const selectedAuthor = useSelector((state) => state?.session.user)
-    console.log("jkrowling", selectedAuthor)
+    //console.log("jkrowling", selectedAuthor)
 
 
     // const onEdd = () => {
