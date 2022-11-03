@@ -28,16 +28,8 @@ const CreateSubRandditComponent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // console.log("submit triggered")
-
         setIsCreated(true);
         if (errors.length > 0) return;
-
-
-        // console.log("title", title)
-        // console.log("descrip", description)
-        // console.log("img", image_url)
 
     dispatch(createSubrandditThunk({
             title,
@@ -54,12 +46,33 @@ const CreateSubRandditComponent = () => {
         <div className="errors" key={error}>{error}</div>
     ));
 
+    // synonymous handle submit function
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     setErrors([]);
+    //     let newSubData = {
+    //       title: title,
+    //       description: description,
+    //       image_url: image_url,
+    //     //   author_id: author_id
+    //     };
+    //     return dispatch(createSubrandditThunk(newSubData)).then(async (res) => {
+    //       if (!errors) {
+    //         setIsCreated(true);
+    //       } else {
+    //         setErrors(Object.values(errors));
+    //       }
+    //     });
+    // };
+
+
     return (
         <div className="creating-container">
             <div className="encompass-form">
                 <form onSubmit={handleSubmit}
                     className="subr-class">
-                    <h1 className="sub-title">Create your own Subranddit!</h1>
+                    <h1 className="sub-title">Create your own Subranddit</h1>
                     <div className="errors">
                         {isCreated && ErrorMsgs}
                     </div>
