@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import CreateSubRandditComponent from "./CreateSub";
 import { useHistory } from "react-router";
 import DeletingModal from "./DeleteSubModal";
+import CreatingSubRandditComponent from "./CreateSubModal/Create";
+import CreationModal from "./CreateSubModal";
 
 import "./Subranddits.css"
 
@@ -37,7 +39,10 @@ function SeeTheSubsComponent() {
                     Welcome to Randdit, a forum for reading.
                 </div>
                 {sessionUser && (
-                <div className="outer-container">
+                    <div className="outer-container">
+                        {/* <div className="topcard">
+                 <CreationModal subranddit={subranddit}/>
+                        </div> */}
                     <div className="right-under">
                             <button onClick={makeButton} className="style-button" type="submit">
 

@@ -28,7 +28,7 @@ function DeletePostComp({ post, onClick }) {
                 <h1>
                     Delete Post
                 </h1>
-                <div>
+                <div className="sure">
                     Are you sure you want to delete?
                 </div>
                 <button>

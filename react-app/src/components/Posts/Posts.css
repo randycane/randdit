@@ -8,3 +8,12 @@
     border: 1px solid black;
     width: 500px;
 }
+
+.sure{
+    color: forestgreen;
+    font-weight: 600;
+}
+
+.cancel{
+    background-color: pink;
+}

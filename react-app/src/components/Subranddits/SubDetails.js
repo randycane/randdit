@@ -69,15 +69,6 @@ function SeeSubrandditDetailsComponent() {
           <DeletingModal subranddit={subranddit}/>
         </div>
 
-      {/* <div className="undercard">
-      <button
-      className="delete-button"
-      onClick={() =>
-        deleteThisSubRn(subrandditId)
-      }>
-      Delete Subranddit
-    </button>
-    </div> */}
     </>
     )
   )

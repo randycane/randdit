@@ -143,7 +143,7 @@ function UpdatingPostComp({ post, onClick }) {
 
              </div>
             </form>
-                <div className="confirm">
+                <div className="sure">
                     Are you sure you want to edit?
                 </div>
                 <button>
