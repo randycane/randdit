@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import { Modal } from "../../../Modals/modal"
-
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router"
 
 import { deletePostThunk } from "../../../../store/post"
+
+import "./Del.css"
 
 function DeletePostComp({ post, onClick }) {
 

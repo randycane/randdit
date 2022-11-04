@@ -6,6 +6,7 @@ import { useHistory, useParams } from "react-router"
 
 import { EditPostThunk } from "../../../../store/post"
 
+
 function UpdatingPostComp({ post, onClick }) {
 
     const dispatch = useDispatch()
