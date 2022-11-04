@@ -9,3 +9,7 @@
     height: 22px;
     margin-top: 5px;
 }
+
+.deletion:hover{
+    cursor: pointer;
+}
