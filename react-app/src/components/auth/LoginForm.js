@@ -87,8 +87,10 @@ const LoginForm = () => {
                 <button className={
                             isSubmitted && errors.length > 0 ? "noob2" : "submit-button-login"
                         } type='submit'>Login</button>
-                <div></div>
+        <div></div>
+            <div className="demi">
                 <button className='demo-button' onClick={demoLogin}>Demo User</button>
+                </div>
             </div>
     </form>
   );

@@ -33,3 +33,22 @@
 .sub:hover{
     cursor: pointer;
 }
+
+.demi{
+    border: none;
+}
+
+.demo-button{
+    background-color: orange;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding: 4px;
+
+}
+
+.demo-button:hover{
+    cursor: pointer;
+
+}
