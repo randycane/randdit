@@ -58,11 +58,11 @@ const LoginForm = () => {
           ))}
         </div>
       )}
-      <div>
+      {/* <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
-      </div>
+      </div> */}
       <div className='email-div'>
                 <label className='email-label' htmlFor='email'>Email</label>
                 <input

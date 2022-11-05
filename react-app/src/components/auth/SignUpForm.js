@@ -44,13 +44,14 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={onSignUp}>
+      <h2> Register an Account </h2>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
       <div>
-        <label>User Name</label>
+        <label>Username</label>
         <input
           type='text'
           name='username'
@@ -77,7 +78,7 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div>
-        <label>Repeat Password</label>
+        <label>Confirm Password</label>
         <input
           type='password'
           name='repeat_password'

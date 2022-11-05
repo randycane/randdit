@@ -10,6 +10,7 @@ import SubrandditCardComponent from "./SubCard";
 import CreateSubRandditComponent from "./CreateSub";
 
 import DeletingModal from "./DeleteSubModal";
+import UpdatingModal from "./UpdateSubModal";
 
 import "./Subranddits.css"
 
@@ -34,6 +35,9 @@ function SeeSubrandditDetailsComponent() {
 
     //logic to see if you are logged in to perform actions
   const sessionUser = useSelector((state) => state.session.user)
+  console.log("i am:", sessionUser)
+
+
 
 
     useEffect(() => {
@@ -64,6 +68,9 @@ function SeeSubrandditDetailsComponent() {
         <div className="subranddit-stuff">
             <EditSubRandditComponent/>
         </div>
+        {/* <div className="subranddit-stuff">
+            <UpdatingModal/>
+        </div> */}
 
         <div className="undercard">
           <DeletingModal subranddit={subranddit}/>
