@@ -33,20 +33,8 @@ function SeeThePostsComponent({post}) {
         dispatch(ReadPostBySubrandditIdThunk(subrandditId))
     }, [dispatch, subrandditId])
 
-    let deleteButton = async (e) => {
-        e.preventDefault();
-        await dispatch(deletePostThunk(post.id))
 
 
-        // history.push(`/subranddits/${subrandditId}`)
-    }
-
-    // delete post button:
-    // const deleteThisPostRn = async (postId) => {
-    //     await dispatch(deletePostThunk(postId)).then(() => {
-    //         history.push('/');
-    //     })
-    // }
 
     return (
         <>

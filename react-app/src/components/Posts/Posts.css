@@ -5,8 +5,10 @@
 }
 
 .details{
-    border: 1px solid black;
-    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    width: 400px;
 }
 
 .sure{
@@ -26,6 +28,25 @@
 .out{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px;
+}
+
+.map{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.in-detail{
+    display: flex;
+    flex-direction: column;
+    color: navy;
+    font-weight: 600;
+    margin-top: 3px;
+    margin-bottom: 6px;
 }
