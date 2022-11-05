@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
+import "./auth.css"
+
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
@@ -19,6 +21,8 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+    } else {
+      setErrors(["Passwords are not matching"])
     }
   };
 
@@ -43,9 +47,11 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <h2> Register an Account </h2>
-      <div>
+    <div className="outer-banks">
+        <h2> Register an Account </h2>
+        <div className="inner-banks">
+    <form onSubmit={onSignUp} className="reggie">
+      <div className="erroring">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
@@ -89,6 +95,8 @@ const SignUpForm = () => {
       </div>
       <button type='submit'>Sign Up</button>
     </form>
+    </div>
+    </div>
   );
 };
 
