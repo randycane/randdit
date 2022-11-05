@@ -14,20 +14,28 @@
     margin-bottom: 5px;
 }
 
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
 .come-in:hover{
     cursor: pointer
 }
 
 .sub{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid black;
     border-radius: 7px;
     width: 50px;
     height: 50px;
-    display: flex;
     align-items: center;
-    padding-left: 5px;
-    margin-bottom: 10px;
-    background-color: coral;
+    background-color: gold;
+    font-weight: 600;
 }
 
 .sub:hover{
@@ -55,4 +63,11 @@
 
 .erroring{
     color: red;
+}
+
+.out-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

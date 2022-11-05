@@ -50,7 +50,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={onLogin} className="login">
-      <h2 className="get-in"> Log In</h2>
+      <h2> Log In</h2>
       {isSubmitted && (
         <div className="errors-top">
           {errors.map((error, index) => (
@@ -58,11 +58,7 @@ const LoginForm = () => {
           ))}
         </div>
       )}
-      {/* <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div> */}
+
       <div className='email-div'>
                 <label className='email-label' htmlFor='email'>Email</label>
                 <input
