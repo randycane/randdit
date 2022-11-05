@@ -74,7 +74,8 @@ function PostFormComponent() {
                                 type="text"
                                 placeholder="Post Title"
                                 value={post_title}
-                                onChange={(e) => setPost_title(e.target.value)}
+                            onChange={(e) => setPost_title(e.target.value)}
+                            required
                             />
                     </label>
                     <label className="form">
@@ -83,7 +84,8 @@ function PostFormComponent() {
                                 type="text"
                                 placeholder="Post text"
                                 value={post_text}
-                                onChange={(e) => setPost_text(e.target.value)}
+                            onChange={(e) => setPost_text(e.target.value)}
+                            required
                             />
                     </label>
                     <label className="form">

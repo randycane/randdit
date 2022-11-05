@@ -81,7 +81,7 @@ const CreateSubRandditComponent = () => {
                     </div>
                     <div className="submit-div">
                         <label className="create-sub">
-                            <span> Subranddit Name: </span>
+                            <span> Subranddit Title: </span>
                             <input
                                 type="text"
                                 placeholder="title"
@@ -116,7 +116,7 @@ const CreateSubRandditComponent = () => {
                         <button onClick={handleSubmit} className="sub-button"
                             type="submit"
                             disabled={isCreated && errors.length > 0}
-                            // className="submit-button"
+
                             className={
                                 isCreated && errors.length > 0 ? "dog" : "submit-button"
                             }
