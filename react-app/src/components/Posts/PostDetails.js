@@ -63,7 +63,7 @@ function SeeThePostsComponent({post}) {
                         {normalizedPosts.map((post) => {
                             return (
                                 <div className="out">
-                                    <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}>
+                                    {/* <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}> */}
                                 <div key={post.id} className="details">
                                     <div className="in-detail"> Author: {post.author_id}</div>
                                     <div className="in-detail"> Title: {post.post_title}</div>
@@ -75,7 +75,7 @@ function SeeThePostsComponent({post}) {
                                     <div className="button">
 
                                     </div>
-                                    </Link>
+                                    {/* </Link> */}
                                     <div className="middlecard">
                                         <UpdatingPostModal post={post}/>
                                         </div>

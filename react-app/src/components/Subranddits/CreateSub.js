@@ -19,7 +19,7 @@ const CreateSubRandditComponent = () => {
 
     useEffect(() => {
         let errorsArray = []
-        if (!title) errorsArray.push("A title is required.");
+        if (!title || title?.length>25) errorsArray.push("Please provide title between 1 and 25 characters.");
         if (!description) errorsArray.push("Description is required.");
         if (!image_url) errorsArray.push("Please provide an icon.");
 
