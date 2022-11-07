@@ -67,7 +67,7 @@ function PostFormComponent() {
                     {errors && (
               <ul className="create-sub-form-errors">
                 {errors.map((error) => {
-                  return <div key={error.id}>{`${error}`}</div>;
+                  return <div key={error}>{`${error}`}</div>;
                 })}
               </ul>
             )}

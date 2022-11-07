@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router";
-import { ReadPostsThunk, ReadPostBySubrandditIdThunk, deletePostThunk } from "../../store/post";
+import { ReadPostsThunk, ReadPostBySubrandditIdThunk, deletePostThunk, GetUserThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
 import UpdatePostComponent from "./EditPost";
@@ -17,6 +17,7 @@ function SeeThePostsComponent({post}) {
     const dispatch = useDispatch();
     const history = useHistory();
     const allPosts = useSelector((state) => state.posts)
+
     const normalizedPosts = Object.values(allPosts)
 
     let { subrandditId } = useParams();
@@ -28,12 +29,25 @@ function SeeThePostsComponent({post}) {
     // console.log("should be normalized", normalizedPosts)
 
 
+
+    const users = useSelector((state) => state)
+    console.log("show me the writer hitt", users)
+
     useEffect(() => {
         dispatch(getSubFromIdThunk(subrandditId))
         dispatch(ReadPostBySubrandditIdThunk(subrandditId))
+        dispatch(GetUserThunk())
     }, [dispatch, subrandditId])
 
-
+    const fetchNameById = (userId) => {
+        // if (!users[userId]) {
+        //     return "";
+        // }
+        // else {
+            // const writer = users[userId].username
+            // return writer;
+        // }
+    }
 
 
     return (
@@ -49,11 +63,12 @@ function SeeThePostsComponent({post}) {
                     </div>
                     <div className="map">
                         {normalizedPosts.map((post) => {
+                            console.log("write me ", post)
                             return (
                                 <div className="out">
                                     {/* <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}> */}
-                                <div key={post.id} className="details">
-                                    <div className="in-detail"> Author: {post.author_id}</div>
+                                <div key={post} className="details">
+                                    <div className="in-detail"> Author: {fetchNameById(post.author_id)}</div>
                                     <div className="in-detail"> Title: {post.post_title}</div>
                                     <div className="in-detail"> Discussion: {post.post_text}</div>
                                     {post.image_url && (

@@ -6,8 +6,16 @@ const EDIT_POST= "post/edit"
 const LOAD_POST_BY_SUB = "subranddit/load_by_sub"
 const LOAD_POST_BY_POST = "post/read"
 const DEL_POST = "post/delete"
+const GET_USER= "post/writer"
 
 // Action creators:
+
+const GetUserAction = (payload) => {
+    return {
+        type: GET_USER,
+        payload
+    }
+}
 
 const writePostAction = (subrandditId) => {
     return {
@@ -98,6 +106,15 @@ export const ReadPostsThunk = () => async dispatch => {
     }
 }
 
+//Get user
+export const GetUserThunk = () => async dispatch => {
+    const response = await fetch(`/api/users`)
+    if (response.ok) {
+        const thisWriter = await response.json()
+        dispatch(GetUserAction(thisWriter))
+        return thisWriter;
+    }
+}
 // Get all posts by its subranddit id:
 export const ReadPostBySubrandditIdThunk = (subrandditId) => async dispatch => {
     const response = await fetch(`/api/subranddits/${subrandditId}/posts`)
@@ -177,6 +194,12 @@ const postReducer = (state = initialState, action) => {
             })
             return { ...newState };
         }
+        case GET_USER: {
+            action.payload.forEach((user) => {
+                newState[user.id] = user
+            })
+            return {...newState}
+            }
         case LOAD_POST_BY_POST: {
             action.payload.forEach((post) => {
                 newState[post.id] = post
