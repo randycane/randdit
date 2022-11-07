@@ -46,7 +46,7 @@ function SeeTheSubsComponent() {
                     <div className="right-under">
                             {/* <button onClick={makeButton} className="style-button" type="submit"> */}
 
-                                <CreateSubRandditComponent/>
+                                <CreationModal/>
                             {/* </button> */}
                     </div>
                 </div>
