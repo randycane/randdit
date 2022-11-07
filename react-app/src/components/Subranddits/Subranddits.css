@@ -70,6 +70,31 @@
     padding-left: 4px;
 }
 
+.right-under{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: cornsilk;
+    padding: 2px;
+}
+
+.errors{
+    color: red;
+}
+
+.submit-button{
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: aqua;
+    font-weight: 600;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+}
 .create-button{
     display: flex;
     flex-direction: column;

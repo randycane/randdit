@@ -45,9 +45,6 @@ const CreateSubRandditComponent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if (!title || title?.length>25) setErrors(["Please provide title between 1 and 25 characters."]);
-        // if (!description) setErrors(["Description is required."]);
-        // if (!image_url) setErrors(["Please provide an icon."]);
         setIsCreated(true);
 
         // if (errors.length > 0) return;
@@ -83,13 +80,6 @@ const CreateSubRandditComponent = () => {
                     <h1 className="sub-title">Create your own Subranddit</h1>
                     <div className="errors">
                         {isCreated && ErrorMsgs}
-                        {/* {isCreated && errors && (
-              <ul className="create-post-form-errors">
-                {errors.map((error) => {
-                  return <div>{`${error}`}</div>;
-                })}
-              </ul>
-            )} */}
                     </div>
                     <div className="submit-div">
                         <label className="create-sub">
