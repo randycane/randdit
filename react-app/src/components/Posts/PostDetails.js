@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router";
-import { ReadPostsThunk, ReadPostBySubrandditIdThunk, deletePostThunk, GetUserThunk } from "../../store/post";
+import { ReadPostsThunk, ReadPostBySubrandditIdThunk, deletePostThunk } from "../../store/post";
 import PostCardComponent from "./PostCard";
 import PostFormComponent from "./PostForm";
 import UpdatePostComponent from "./EditPost";
@@ -36,7 +36,7 @@ function SeeThePostsComponent({post}) {
     useEffect(() => {
         dispatch(getSubFromIdThunk(subrandditId))
         dispatch(ReadPostBySubrandditIdThunk(subrandditId))
-        dispatch(GetUserThunk())
+        // dispatch(GetUserThunk())
     }, [dispatch, subrandditId])
 
     const fetchNameById = (userId) => {

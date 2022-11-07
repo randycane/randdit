@@ -45,7 +45,7 @@ function SeeSubrandditDetailsComponent() {
       dispatch(getSubFromIdThunk(subrandditId))
       dispatch(getAllSubrandditsThunk())
         .then(()=> setIsLoaded(true))
-    },[dispatch])
+    },[dispatch, subrandditId])
 
     // delete sub button:
     // const deleteThisSubRn = async (subrandditId) => {

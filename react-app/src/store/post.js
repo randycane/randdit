@@ -107,14 +107,14 @@ export const ReadPostsThunk = () => async dispatch => {
 }
 
 //Get user
-export const GetUserThunk = () => async dispatch => {
-    const response = await fetch(`/api/users`)
-    if (response.ok) {
-        const thisWriter = await response.json()
-        dispatch(GetUserAction(thisWriter))
-        return thisWriter;
-    }
-}
+// export const GetUserThunk = () => async dispatch => {
+//     const response = await fetch(`/api/users`)
+//     if (response.ok) {
+//         const thisWriter = await response.json()
+//         dispatch(GetUserAction(thisWriter))
+//         return thisWriter;
+//     }
+// }
 // Get all posts by its subranddit id:
 export const ReadPostBySubrandditIdThunk = (subrandditId) => async dispatch => {
     const response = await fetch(`/api/subranddits/${subrandditId}/posts`)

@@ -6,6 +6,7 @@ import { useHistory, useParams } from "react-router"
 import { deletePostThunk } from "../../../../store/post"
 
 import "./Del.css"
+import { getAllSubrandditsThunk, getSubFromIdThunk } from "../../../../store/subranddit"
 
 function DeletePostComp({ post, onClick }) {
 
@@ -26,8 +27,11 @@ function DeletePostComp({ post, onClick }) {
 
     const onDel = () => {
         dispatch(deletePostThunk(post.id))
+        dispatch(getSubFromIdThunk(subrandditId))
+        // dispatch(getAllSubrandditsThunk())
+        onClick()
 
-        history.push(`/`)
+        // history.push(`/subranddits/${subrandditId}`)
     }
 
     return (
