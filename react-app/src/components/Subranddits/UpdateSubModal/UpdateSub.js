@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 // import {editSubThunk, getSubFromIdThunk} from "../../store/subranddit"
 
-import {editSubThunk, getSubFromIdThunk} from "../../../store/subranddit"
+import { editSubThunk, getSubFromIdThunk } from "../../../store/subranddit"
+
+import "./UpdateSub.css"
 
 function UpdatingSubComp({onClick}) {
     const dispatch = useDispatch();

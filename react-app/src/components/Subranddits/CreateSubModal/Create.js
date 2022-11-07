@@ -5,6 +5,7 @@ import { ReadPostBySubrandditIdThunk } from "../../../store/post";
 
 import { createSubrandditThunk, getAllSubrandditsThunk } from "../../../store/subranddit";
 import ".././Subranddits.css"
+import "./Create.css"
 
 const CreateSubRandditRanked = () => {
     const dispatch = useDispatch();

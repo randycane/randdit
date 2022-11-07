@@ -70,7 +70,7 @@
     padding-left: 4px;
 }
 
-.right-under{
+/* .right-under{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +79,7 @@
     border-radius: 10px;
     background-color: cornsilk;
     padding: 2px;
-}
+} */
 
 .errors{
     color: red;
@@ -133,12 +133,12 @@
     margin-top: 5px;
 }
 
-.outer-container{
+/* .outer-container{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding-right: 12px;
-}
+} */
 
 .whole-page-container{
     display: flex;

@@ -29,14 +29,17 @@ function SeeSubrandditDetailsComponent() {
   const subranddit = useSelector((state) => (state.subranddits[subrandditId]))
   //console.log("obj state", subranddit)
 
-    const subrandditInfo = useSelector((state) => {
-        let posts = Object.values(state.posts)
-        return posts;
-    })
+  const subrandditposter = useSelector((state) => state.posts)
+  console.log("who rote this", subrandditposter)
+
+  const normalizedPoster = Object.values(subrandditposter)
+  console.log("this is normal", normalizedPoster)
+
+
 
     //logic to see if you are logged in to perform actions
   const sessionUser = useSelector((state) => state.session.user)
-  console.log("i am:", sessionUser)
+  // console.log("i am:", sessionUser)
 
 
 
@@ -47,12 +50,7 @@ function SeeSubrandditDetailsComponent() {
         .then(()=> setIsLoaded(true))
     },[dispatch, subrandditId])
 
-    // delete sub button:
-    // const deleteThisSubRn = async (subrandditId) => {
-    //     await dispatch(deleteSubThunk(subrandditId)).then(() => {
-    //         history.push('/');
-    //     })
-    // }
+
 
   return (
     isLoaded && (
@@ -70,17 +68,17 @@ function SeeSubrandditDetailsComponent() {
         <div className="see-posts">
           <SeeThePostsComponent/>
         </div>
-        <div className="subranddit-stuff">
+        {/* {sessionUser && sessionUser.id === normalizedPoster.map((poster)=> poster.id) && ( */}
+        <div className="manjiro">
+        <div className="update-stuff">
           <UpdatingModal subranddit={subranddit}/>
         </div>
-        {/* <div className="subranddit-stuff">
-            <UpdatingModal/>
-        </div> */}
 
         <div className="undercard">
           <DeletingModal subranddit={subranddit}/>
         </div>
-
+        </div>
+         {/* )} */}
     </>
     )
   )
