@@ -24,13 +24,13 @@ function SeeTheSubsComponent() {
 
     useEffect(() => {
         dispatch(getAllSubrandditsThunk())
-    }, [dispatch])
+    }, [dispatch, JSON.stringify(everysub)])
 
-    const makeButton = (e) => {
-        e.preventDefault();
+    // const makeButton = (e) => {
+    //     e.preventDefault();
 
-        history.push(`/`)
-    }
+    //     history.push(`/`)
+    // }
 
     return (
         <>
@@ -44,10 +44,10 @@ function SeeTheSubsComponent() {
                  <CreationModal subranddit={subranddit}/>
                         </div> */}
                     <div className="right-under">
-                            <button onClick={makeButton} className="style-button" type="submit">
+                            {/* <button onClick={makeButton} className="style-button" type="submit"> */}
 
                                 <CreateSubRandditComponent/>
-                            </button>
+                            {/* </button> */}
                     </div>
                 </div>
                 )}

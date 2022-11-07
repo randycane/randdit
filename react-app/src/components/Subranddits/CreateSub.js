@@ -24,12 +24,33 @@ const CreateSubRandditComponent = () => {
         if (!image_url) errorsArray.push("Please provide an icon.");
 
         setErrors(errorsArray)
-    },[title, description, image_url])
+    }, [title, description, image_url])
+
+    useEffect(() => {
+        const errors = [];
+        const imgRegex = new RegExp(
+          /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/
+        );
+        if (image_url && !imgRegex.test(image_url)) {
+          errors.push(
+            "Invalid Image Url! URL must start with https:// and contain a .png, .jpg, .jpeg, .gif, .png or .svg!",
+          );
+        }
+        setErrors(errors);
+    }, [image_url]);
+
+    useEffect(() => {
+        dispatch(getAllSubrandditsThunk())
+    },[dispatch])
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // if (!title || title?.length>25) setErrors(["Please provide title between 1 and 25 characters."]);
+        // if (!description) setErrors(["Description is required."]);
+        // if (!image_url) setErrors(["Please provide an icon."]);
         setIsCreated(true);
-        if (errors.length > 0) return;
+
+        // if (errors.length > 0) return;
 
     dispatch(createSubrandditThunk({
             title,
@@ -37,6 +58,10 @@ const CreateSubRandditComponent = () => {
             image_url,
             // author_id
     }))
+        setTitle("")
+        setDescription("")
+        setImage_url("")
+        setErrors([])
 
         dispatch(getAllSubrandditsThunk())
 
@@ -45,26 +70,6 @@ const CreateSubRandditComponent = () => {
     const ErrorMsgs = errors.map(error => (
         <div className="errors" key={error}>{error}</div>
     ));
-
-    // synonymous handle submit function
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setErrors([]);
-    //     let newSubData = {
-    //       title: title,
-    //       description: description,
-    //       image_url: image_url,
-    //     //   author_id: author_id
-    //     };
-    //     return dispatch(createSubrandditThunk(newSubData)).then(async (res) => {
-    //       if (!errors) {
-    //         setIsCreated(true);
-    //       } else {
-    //         setErrors(Object.values(errors));
-    //       }
-    //     });
-    // };
 
 
     return (
@@ -78,6 +83,13 @@ const CreateSubRandditComponent = () => {
                     <h1 className="sub-title">Create your own Subranddit</h1>
                     <div className="errors">
                         {isCreated && ErrorMsgs}
+                        {/* {isCreated && errors && (
+              <ul className="create-post-form-errors">
+                {errors.map((error) => {
+                  return <div>{`${error}`}</div>;
+                })}
+              </ul>
+            )} */}
                     </div>
                     <div className="submit-div">
                         <label className="create-sub">

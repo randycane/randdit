@@ -32,14 +32,12 @@ def create_sub():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-
         new_sub = Subranddit(
             title = form.data['title'],
             description = form.data['description'],
             image_url = form.data['image_url'],
             author_id = current_user.id
         )
-
         db.session.add(new_sub)
         db.session.commit()
         return new_sub.to_dict()
