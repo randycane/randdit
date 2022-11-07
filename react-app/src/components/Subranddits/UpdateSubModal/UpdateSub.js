@@ -5,7 +5,7 @@ import { useParams, useHistory } from "react-router-dom";
 
 import {editSubThunk, getSubFromIdThunk} from "../../../store/subranddit"
 
-function UpdatingSubComp() {
+function UpdatingSubComp({onClick}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -47,7 +47,9 @@ function UpdatingSubComp() {
         }, subrandditId))
         if (editSub) {
             history.push(`/subranddits/${subrandditId}`)
+
         }
+        onClick()
     }
 
 
