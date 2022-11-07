@@ -54,7 +54,7 @@ const LoginForm = () => {
       {isSubmitted && (
         <div className="errors-top">
           {errors.map((error, index) => (
-            <div className="error-text" key={index}>{error}</div>
+            <div className="error-text" key={index}>{error.split(":")[1]}</div>
           ))}
         </div>
       )}
