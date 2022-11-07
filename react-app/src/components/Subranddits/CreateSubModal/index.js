@@ -8,8 +8,8 @@
 
 //     return (
 //         <div>
-//             <div className="deletion" onClick={()=> setShowModal(true)}>
-//                 Delete!
+//             <div className="create" onClick={()=> setShowModal(true)}>
+//                 Create!
 //             </div>
 //             {showModal && (
 //                 <Modal onClose={() => setShowModal(false)}>

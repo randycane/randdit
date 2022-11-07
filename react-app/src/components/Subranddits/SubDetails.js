@@ -11,6 +11,7 @@ import CreateSubRandditComponent from "./CreateSub";
 
 import DeletingModal from "./DeleteSubModal";
 import UpdatingModal from "./UpdateSubModal";
+import UpdatingSubComp from "./UpdateSubModal/UpdateSub";
 
 import "./Subranddits.css"
 
@@ -70,7 +71,7 @@ function SeeSubrandditDetailsComponent() {
           <SeeThePostsComponent/>
         </div>
         <div className="subranddit-stuff">
-            <EditSubRandditComponent/>
+          <UpdatingSubComp subranddit={subranddit}/>
         </div>
         {/* <div className="subranddit-stuff">
             <UpdatingModal/>
