@@ -63,7 +63,7 @@ function PostFormComponent() {
             <div className="over-form">
                 <form className="highform" onSubmit={handleSubmit}>
                     <h1 className="high-top"> Write your post</h1>
-                    <div className="messages">
+                    <div className="errors">
 
                         {isSubmitted && ErrorMsgs}
 
@@ -75,7 +75,7 @@ function PostFormComponent() {
                                 placeholder="Post Title"
                                 value={post_title}
                             onChange={(e) => setPost_title(e.target.value)}
-                            required
+                            // required
                             />
                     </label>
                     <label className="form">
@@ -85,7 +85,7 @@ function PostFormComponent() {
                                 placeholder="Post text"
                                 value={post_text}
                             onChange={(e) => setPost_text(e.target.value)}
-                            required
+                            // required
                             />
                     </label>
                     <label className="form">
