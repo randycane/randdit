@@ -14,7 +14,7 @@ function PostFormComponent() {
     const [post_title, setPost_title] = useState("")
     const [post_text, setPost_text] = useState("")
     const [image_url, setImage_url] = useState("")
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    // const [isSubmitted, setIsSubmitted] = useState(false)
     const [errors, setErrors] = useState([]);
 
     // useEffect(() => {
@@ -36,7 +36,7 @@ function PostFormComponent() {
             setErrors(["Please provide a valid post text body."])
             return;
         }
-        setIsSubmitted(true)
+        // setIsSubmitted(true)
         // if (errors.length > 0) return;
         const payload = {post_title: post_title, post_text: post_text, image_url: image_url, subrandditId: subrandditId}
         // to dispatch:
@@ -64,9 +64,13 @@ function PostFormComponent() {
                 <form className="highform" onSubmit={handleSubmit}>
                     <h1 className="high-top"> Write your post</h1>
                     <div className="errors">
-
-                        {isSubmitted && ErrorMsgs}
-
+                    {errors && (
+              <ul className="create-sub-form-errors">
+                {errors.map((error) => {
+                  return <div key={error.id}>{`${error}`}</div>;
+                })}
+              </ul>
+            )}
                     </div>
                         <label className="form">
                             <span> Post Title: </span>
