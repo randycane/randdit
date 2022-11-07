@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { useHistory, useParams } from "react-router"
 import { deleteSubThunk } from "../../../store/subranddit"
 
+import "./DelSub.css"
+
 function DeleteSubComp({ subranddit, onClick }) {
 
     const dispatch = useDispatch()
@@ -30,8 +32,8 @@ function DeleteSubComp({ subranddit, onClick }) {
                 <div>
                     Are you sure you want to delete?
                 </div>
-                <button>
-                    <div className="deletion" onClick={onDel}> Confirm Deletion</div>
+                <button className="conference">
+                    <div className="conf" onClick={onDel}> Confirm Deletion</div>
                 </button>
                 <button>
                     <div className="cancel" onClick={onClick}>Cancel</div>

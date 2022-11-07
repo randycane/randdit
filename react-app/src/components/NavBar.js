@@ -37,9 +37,9 @@ const NavBar = () => {
             </div>
           </NavLink>
             </div>
-            <form onSubmit={handleSubmit}>
-              {/* <ProfileButtonComponent/> */}
-            </form>
+            {/* <form onSubmit={handleSubmit}>
+
+            </form> */}
 
         </div>
           <div className="nav-right">
