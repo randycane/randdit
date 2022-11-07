@@ -22,11 +22,7 @@ function SeeThePostsComponent({post}) {
 
     let { subrandditId } = useParams();
     subrandditId = Number(subrandditId);
-    // console.log("type of", typeof subrandditId)
 
-    // console.log("state for post", allPosts)
-
-    // console.log("should be normalized", normalizedPosts)
 
 
 
