@@ -7,6 +7,9 @@ import LogoutButton from './auth/LogoutButton';
 import CreateSubRandditComponent from './Subranddits/CreateSub';
 import LoginFormModal from './auth/LoginModal';
 import SignupFormModal from './auth/SignUpModal';
+
+import ProfileButtonComponent from './ProfileButton';
+
 import "./NavBar.css"
 
 const NavBar = () => {
@@ -33,7 +36,11 @@ const NavBar = () => {
               <img src="https://i.pinimg.com/736x/bb/b2/cf/bbb2cff9da7cf8f0048d1d884b03ad10.jpg" alt="nope"></img>
             </div>
           </NavLink>
-        </div>
+            </div>
+            <form onSubmit={handleSubmit}>
+              {/* <ProfileButtonComponent/> */}
+            </form>
+
         </div>
           <div className="nav-right">
               {userIsLoggedIn && (

@@ -68,7 +68,7 @@ function SeeThePostsComponent({post}) {
                                 <div className="out">
                                     {/* <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}> */}
                                 <div key={post} className="details">
-                                    <div className="in-detail"> Author: {fetchNameById(post.author_id)}</div>
+                                    {/* <div className="in-detail"> Author: {fetchNameById(post.author_id)}</div> */}
                                     <div className="in-detail"> Title: {post.post_title}</div>
                                     <div className="in-detail"> Discussion: {post.post_text}</div>
                                     {post.image_url && (

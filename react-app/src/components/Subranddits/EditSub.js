@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import {editSubThunk, getSubFromIdThunk} from "../../store/subranddit"
 
+import "./Subranddits.css"
 
 function EditSubRandditComponent() {
     const dispatch = useDispatch();
@@ -94,9 +95,9 @@ function EditSubRandditComponent() {
                             </div>
                 </div>
                 <div className="to-press">
-                        <button onClick={handleSubmit} className="submit-button"
+                        <button onClick={handleSubmit} className="submit-now"
                             type="submit"
-                            className="submit-button"
+                            className="submit-now"
                             >
                             Edit Subranddit
                         </button>

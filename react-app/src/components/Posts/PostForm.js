@@ -62,7 +62,7 @@ function PostFormComponent() {
         <div className="highpostform">
             <div className="over-form">
                 <form className="highform" onSubmit={handleSubmit}>
-                    <h1 className="high-top"> Write your post</h1>
+                    <h1 className="high-top"> Write a post</h1>
                     <div className="errors">
                     {errors && (
               <ul className="create-sub-form-errors">
@@ -101,9 +101,9 @@ function PostFormComponent() {
                                 onChange={(e) => setImage_url(e.target.value)}
                             />
                     </label>
-                    <div className="end-button">
-                        <button className="submit-now" type="submit" onSubmit={handleSubmit}>
-                            Write your post
+                    <div className="bottom-end">
+                        <button onClick={handleSubmit} type="submit" className="submit-now">
+                            Submit your post
                         </button>
                     </div>
                 </form>
