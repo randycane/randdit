@@ -25,6 +25,7 @@ const NavBar = () => {
   return (
     <nav className="top">
       <div className="nav-top">
+        <div className="over-nav">
         <div className="nav-left">
         <div className="home">
           <NavLink to='/' exact={true} activeClassName='active'>
@@ -34,20 +35,6 @@ const NavBar = () => {
           </NavLink>
         </div>
         </div>
-        {/* <form onSubmit={handleSubmit}>
-        <div className="nav-side">
-          <div className="create-business-modal">
-
-            <div className="logged-in-buttons">
-              {userIsLoggedIn && (
-                <button className="community-button">
-                  <CreateSubRandditComponent/>
-                </button>
-              )}
-              </div>
-            </div>
-          </div>
-          </form> */}
           <div className="nav-right">
               {userIsLoggedIn && (
                 <div className="out-button"><button>
@@ -65,6 +52,7 @@ const NavBar = () => {
               </div>
             </div>
           )}
+        </div>
         </div>
         </div>
     </nav>
