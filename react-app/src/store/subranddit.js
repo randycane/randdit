@@ -87,8 +87,6 @@ export const getSubFromIdThunk = (subrandditId) => async dispatch => {
 
 
 export const editSubThunk = (payload, subrandditId) => async dispatch => {
-    // console.log("this is payload", payload)
-    // console.log("this is the id", subrandditId)
     const response = await fetch(`/api/subranddits/${subrandditId}/edit`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

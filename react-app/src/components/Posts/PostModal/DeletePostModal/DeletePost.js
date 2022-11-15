@@ -15,7 +15,6 @@ function DeletePostComp({ post, onClick }) {
 
     const thispost = useSelector((state) => Object.values(state?.posts))
 
-    //console.log("written", thispost)
 
     let { postId } = useParams();
     postId = Number(postId)
@@ -23,7 +22,7 @@ function DeletePostComp({ post, onClick }) {
     let { subrandditId } = useParams();
     subrandditId = Number(subrandditId)
 
-    //console.log("show me the num", subrandditId)
+
 
     const onDel = () => {
         dispatch(deletePostThunk(post.id))
