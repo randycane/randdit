@@ -12,6 +12,7 @@ import UpdatingPostComp from "./PostModal/UpdateModal/UpdatePost";
 import UpdatingPostModal from "./PostModal/UpdateModal";
 
 import "./Posts.css"
+import WritingPostModal from "./PostModal/WritingModal";
 
 function SeeThePostsComponent({post}) {
     const dispatch = useDispatch();
@@ -52,7 +53,7 @@ function SeeThePostsComponent({post}) {
                 <div className="post-inner-container">
 
                     <div className="hi-man">
-                    <PostFormComponent />
+                    <WritingPostModal />
                     </div>
                     <div className="head">
                         View these posts!
