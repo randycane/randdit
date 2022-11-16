@@ -36,6 +36,7 @@
     align-items: center;
     background-color: gold;
     font-weight: 600;
+    padding: 2px;
 }
 
 .sub:hover{
@@ -65,9 +66,9 @@
     color: red;
 }
 
-.out-button{
+/* .out-button{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+} */

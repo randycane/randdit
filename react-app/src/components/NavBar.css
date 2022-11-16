@@ -24,6 +24,17 @@
     padding-left: 2px;
 }
 
+.page-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 15px;
+    color: darkblue
+}
+
 .top{
     display: flex;
     flex-direction: row;
