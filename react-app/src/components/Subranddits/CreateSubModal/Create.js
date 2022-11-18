@@ -30,9 +30,6 @@ const CreateSubRandditRanked = () => {
               "Invalid Image Url! URL must start with https:// and contain a .png, .jpg, .jpeg, .gif, .png or .svg!",
             );
           }
-        // if (!title || title?.length>25) errorsArray.push("Please provide title between 1 and 25 characters.");
-        // if (!description) errorsArray.push("Description is required.");
-        // if (!image_url) errorsArray.push("Please provide an icon.");
 
         setErrors(errorsArray)
     }, [title, description, image_url])
@@ -63,7 +60,6 @@ const CreateSubRandditRanked = () => {
             return;
         }
 
-        // if (errors.length > 0) return;
 
     let created = await dispatch(createSubrandditThunk({
             title,
@@ -84,9 +80,6 @@ const CreateSubRandditRanked = () => {
 
     };
 
-    // const ErrorMsgs = errors.map(error => (
-    //     <div className="errors" key={error}>{error}</div>
-    // ));
 
 
     return (

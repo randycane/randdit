@@ -30,8 +30,6 @@ function UpdatePostComponent() {
         let errorArray = []
         if (!post_title) errorArray.push("Title is required.")
         if (!post_text) errorArray.push("Your post needs words.")
-        //optional:
-        // if (!image_url) errorArray.push("You should add an image for your post.")
 
         setErrors(errorArray)
     }, [post_title], [post_text], [image_url])
