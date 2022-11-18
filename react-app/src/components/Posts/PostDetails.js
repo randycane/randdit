@@ -25,10 +25,8 @@ function SeeThePostsComponent({post}) {
     subrandditId = Number(subrandditId);
 
 
-
-
     const users = useSelector((state) => state)
-    console.log("show me the writer hitt", users)
+    // console.log("show me the writer hitt", users)
 
     useEffect(() => {
         dispatch(getSubFromIdThunk(subrandditId))
@@ -60,7 +58,7 @@ function SeeThePostsComponent({post}) {
                     </div>
                     <div className="map">
                         {normalizedPosts.map((post) => {
-                            console.log("write me ", post)
+                            // console.log("write me ", post)
                             return (
                                 <div className="out">
                                     {/* <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}> */}

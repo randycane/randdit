@@ -14,17 +14,9 @@ function WritingPostFormComponent() {
     const [post_title, setPost_title] = useState("")
     const [post_text, setPost_text] = useState("")
     const [image_url, setImage_url] = useState("")
-    // const [isSubmitted, setIsSubmitted] = useState(false)
+
     const [errors, setErrors] = useState([]);
 
-    // useEffect(() => {
-    //     let errorsArray = []
-    //     if (!image_url) errorsArray.push("Please provide valid image.")
-    //     if (!post_title) errorsArray.push("Please provide a valid Title.")
-    //     if (!post_text) errorsArray.push("Please provide a valid post text body.")
-
-    //     setErrors(errorsArray)
-    // }, [post_title, post_text, image_url])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,11 +28,9 @@ function WritingPostFormComponent() {
             setErrors(["Please provide a valid post text body."])
             return;
         }
-        // setIsSubmitted(true)
-        // if (errors.length > 0) return;
+
         const payload = {post_title: post_title, post_text: post_text, image_url: image_url, subrandditId: subrandditId}
-        // to dispatch:
-        // await dispatch(WriteAPostThunk(payload))
+
 
         let apost = await dispatch(WriteAPostThunk(payload))
         if (apost) {
@@ -79,7 +69,7 @@ function WritingPostFormComponent() {
                                 placeholder="Post Title"
                                 value={post_title}
                             onChange={(e) => setPost_title(e.target.value)}
-                            // required
+
                             />
                     </label>
                     <label className="form">
@@ -89,7 +79,7 @@ function WritingPostFormComponent() {
                                 placeholder="Post text"
                                 value={post_text}
                             onChange={(e) => setPost_text(e.target.value)}
-                            // required
+
                             />
                     </label>
                     <label className="form">
@@ -102,8 +92,8 @@ function WritingPostFormComponent() {
                             />
                     </label>
                     <div className="bottom-end">
-                        <button onClick={handleSubmit} type="submit" className="submit-now">
-                            Submit your post
+                        <button onClick={onClick} type="submit" className="submit-now">
+                            Submit your post!
                         </button>
                     </div>
                 </form>

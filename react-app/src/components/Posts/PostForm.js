@@ -17,14 +17,6 @@ function PostFormComponent() {
     // const [isSubmitted, setIsSubmitted] = useState(false)
     const [errors, setErrors] = useState([]);
 
-    // useEffect(() => {
-    //     let errorsArray = []
-    //     if (!image_url) errorsArray.push("Please provide valid image.")
-    //     if (!post_title) errorsArray.push("Please provide a valid Title.")
-    //     if (!post_text) errorsArray.push("Please provide a valid post text body.")
-
-    //     setErrors(errorsArray)
-    // }, [post_title, post_text, image_url])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
