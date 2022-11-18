@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import * as sessionActions from '../../store/session';
 
+import "./auth.css"
+
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -79,11 +81,11 @@ const LoginForm = () => {
                     value={password}
                     onChange={updatePassword}
                 />
-                <div></div><div></div><div></div>
+                <div></div>
                 <button className={
-                            isSubmitted && errors.length > 0 ? "noob2" : "submit-button-login"
+                            isSubmitted && errors.length > 0 ? "negative" : "submit-button-login"
                         } type='submit'>Login</button>
-        <div></div>
+                <div></div>
             <div className="demi">
                 <button className='demo-button' onClick={demoLogin}>Demo User</button>
                 </div>

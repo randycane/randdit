@@ -143,11 +143,6 @@ const CreateSubRandditRanked = () => {
                     <div className="to-press">
                         <button onClick={handleSubmit} className="submit-button"
                             type="submit"
-                            // disabled={isCreated && errors.length > 0}
-
-                            // className={
-                            //     isCreated && errors.length > 0 ? "dog" : "submit-button"
-                            // }
                             >
                             Submit Subranddit
                         </button>

@@ -48,22 +48,35 @@
 }
 
 .demo-button{
-    background-color: orange;
+    background-color: palevioletred;
     border: 1px solid white;
     border-radius: 5px;
     margin-top: 4px;
     margin-bottom: 2px;
     padding: 4px;
-
+    font-weight: 600;
 }
 
 .demo-button:hover{
     cursor: pointer;
-
 }
 
 .erroring{
     color: red;
+}
+
+.submit-button-login{
+    background-color: palevioletred;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 4px;
+    font-weight: 600;
+}
+
+.submit-button-login:hover{
+    cursor: pointer;
 }
 
 /* .out-button{
