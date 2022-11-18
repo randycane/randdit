@@ -17,7 +17,6 @@ function UpdatingSubComp({onClick}) {
 
     //console.log("state rn", subranddit)
 
-    // const thisSub = subranddit[subrandditId]
 
     const [title, setTitle] = useState(subranddit?.title)
     const [description, setDescription] = useState(subranddit?.description)

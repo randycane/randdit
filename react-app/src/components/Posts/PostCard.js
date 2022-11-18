@@ -11,7 +11,6 @@ const PostCardComponent = () => {
     const history = useHistory();
 
     const { postId } = useParams();
-    //console.log("my posy", postId)
     const { subrandditId } = useParams();
     // console.log("type of", typeof subrandditId)
     // const params = useParams();

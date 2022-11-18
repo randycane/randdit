@@ -63,7 +63,6 @@ function UpdatePostComponent() {
         </div>
     ));
 
-    // form need to change on submit
     return (
         <form className="edit-form" onSubmit={handleSubmit}>
         <div className="editted-container">
