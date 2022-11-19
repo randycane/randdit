@@ -40,7 +40,6 @@ function UpdatingSubComp({onClick}) {
         setIsEditted(true);
         if (errors.length > 0) return;
 
-        // dispatch needs payload body and the subranddit id:
         let editSub = dispatch(editSubThunk({
             title,
             description,

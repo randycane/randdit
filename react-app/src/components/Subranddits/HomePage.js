@@ -19,18 +19,11 @@ function SeeTheSubsComponent() {
     const sessionUser = useSelector((state => state.session.user));
     const everysub = useSelector((state) => state.subranddits)
     const normalizedSub = Object.values(everysub);
-    // console.log("please show me the subs", everysub)
-    // console.log("should be normalized sbs", normalizedSub)
 
     useEffect(() => {
         dispatch(getAllSubrandditsThunk())
     }, [dispatch, JSON.stringify(everysub)])
 
-    // const makeButton = (e) => {
-    //     e.preventDefault();
-
-    //     history.push(`/`)
-    // }
 
     return (
         <>
@@ -44,10 +37,8 @@ function SeeTheSubsComponent() {
                  <CreationModal subranddit={subranddit}/>
                         </div> */}
                     <div className="right-under">
-                            {/* <button onClick={makeButton} className="style-button" type="submit"> */}
-
                                 <CreationModal/>
-                            {/* </button> */}
+
                     </div>
                 </div>
                 )}

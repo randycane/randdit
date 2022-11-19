@@ -18,8 +18,6 @@ function UpdatePostComponent() {
     const selectedPost = useSelector(state => state?.posts[postId])
 
 
-    // console.log("this post print", selectedPost)
-
     const [post_title, setPost_title] = useState(selectedPost?.post_title)
     const [post_text, setPost_text] = useState(selectedPost?.post_text)
     const [image_url, setImage_url] = useState(selectedPost?.image_url)
