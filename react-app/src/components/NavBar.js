@@ -27,8 +27,6 @@ const NavBar = () => {
   }
   return (
     <nav className="top">
-      {/* <div className="nav-top">
-        <div className="over-nav"> */}
         <div className="home">
           <NavLink to='/' exact={true} activeClassName='active'>
             <div className="home-icon">
@@ -56,8 +54,6 @@ const NavBar = () => {
               </div>
             </div>
           )}
-        {/* </div>
-        </div> */}
         </div>
     </nav>
   );
