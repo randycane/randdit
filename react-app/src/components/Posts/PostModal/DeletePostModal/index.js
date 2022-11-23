@@ -6,7 +6,7 @@ import {Modal } from "../../../Modals/modal"
 import DeletePostComp from "./DeletePost"
 
 
-function DeletingPostModal({ post}) {
+function DeletingPostModal({post}) {
     const [showModal, setShowModal] = useState(false)
 
     return (

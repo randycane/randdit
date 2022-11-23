@@ -18,7 +18,7 @@ const PostCardComponent = () => {
 
     const post = useSelector((state)=> state.posts)
 
-    //need to confirm user to have post editdeletes:
+    //need to confirm author to have post edit or delete:
     const session = useSelector((state) => state.session.user)
     let postWriter = post?.userId === session?.user?.id
 
@@ -50,9 +50,9 @@ const PostCardComponent = () => {
             <div className="post-words">
                 {post?.post_text}
             </div>
-            {/* <div className="undercard">
+            <div className="undercard">
           <DeletingPostModal post={post}/>
-            </div> */}
+            </div>
             <>
                 {/* {postWriter && (
                     <div className="logic">
