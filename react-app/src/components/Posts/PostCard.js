@@ -68,4 +68,4 @@ const PostCardComponent = () => {
     )
 }
 
-export default PostCardComponent
+export default PostCardComponent;

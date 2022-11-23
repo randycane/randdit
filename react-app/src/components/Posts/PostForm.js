@@ -29,7 +29,6 @@ function PostFormComponent() {
             return;
         }
         // setIsSubmitted(true)
-        // if (errors.length > 0) return;
         const payload = {post_title: post_title, post_text: post_text, image_url: image_url, subrandditId: subrandditId}
         // to dispatch:
         // await dispatch(WriteAPostThunk(payload))
@@ -46,9 +45,9 @@ function PostFormComponent() {
     }
 
 
-    const ErrorMsgs = errors.map(error => (
-        <div className="errors" key={error}>{error}</div>
-    ));
+    // const ErrorMsgs = errors.map(error => (
+    //     <div className="errors" key={error}>{error}</div>
+    // ));
 
     return (
         <div className="highpostform">
