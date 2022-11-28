@@ -5,7 +5,7 @@ import { WriteAPostThunk } from "../../../store/post";
 
 import "./Posts.css"
 
-function WritingPostFormComponent() {
+function WritingPostFormComponent({ onClick }) {
     const dispatch = useDispatch()
     const history = useHistory()
     let { subrandditId } = useParams();
@@ -41,6 +41,8 @@ function WritingPostFormComponent() {
         setPost_text("")
         setImage_url("");
         setErrors([]);
+
+        onClick();
     }
 
 

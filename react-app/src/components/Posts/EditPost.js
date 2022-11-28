@@ -107,7 +107,6 @@ function UpdatePostComponent() {
                     Edit your Post
                 </button>
                 </div>
-                {/* delete nested in editing */}
                 <div className="undercard">
             <button
             className="delete-button"
