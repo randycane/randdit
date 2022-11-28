@@ -131,12 +131,6 @@ function UpdatingPostComp({ post, onClick }) {
                     </div>
                  </div>
                 <div className="to-press">
-                {/* <button onClick={handleSubmit} className="submit-button"
-                    type="submit"
-                    className="submit-button"
-                    >
-                    Edit your Post
-                </button> */}
                 </div>
 
              </div>
@@ -145,7 +139,7 @@ function UpdatingPostComp({ post, onClick }) {
                     Are you sure you want to edit?
                 </div>
                 <button>
-                    <div className="edit" onClick={handleSubmit}> Confirm Changes</div>
+                    <div className="edit" onClick={handleSubmit}>Confirm Changes</div>
                 </button>
                 <button>
                     <div className="cancel" onClick={onClick}>Cancel</div>

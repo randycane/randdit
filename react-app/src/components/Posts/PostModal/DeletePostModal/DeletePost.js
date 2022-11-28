@@ -24,13 +24,13 @@ function DeletePostComp({ post, onClick }) {
 
 
 
-    const onDel = () => {
+    const onDel = (e) => {
+        e.preventDefault();
         dispatch(deletePostThunk(post.id))
         dispatch(getSubFromIdThunk(subrandditId))
         // dispatch(getAllSubrandditsThunk())
         onClick()
 
-        // history.push(`/subranddits/${subrandditId}`)
     }
 
     return (
@@ -43,7 +43,7 @@ function DeletePostComp({ post, onClick }) {
                     Are you sure you want to delete?
                 </div>
                 <button>
-                    <div className="deletion" onClick={onDel}> Confirm Deletion</div>
+                    <div className="deletion" onClick={onDel}>Confirm Deletion</div>
                 </button>
                 <button>
                     <div className="cancel" onClick={onClick}>Cancel</div>
