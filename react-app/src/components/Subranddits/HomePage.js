@@ -20,6 +20,8 @@ function SeeTheSubsComponent() {
     const everysub = useSelector((state) => state.subranddits)
     const normalizedSub = Object.values(everysub);
 
+    const reversedSub = normalizedSub.sort().reverse()
+
     useEffect(() => {
         dispatch(getAllSubrandditsThunk())
     }, [dispatch, JSON.stringify(everysub)])
@@ -43,9 +45,9 @@ function SeeTheSubsComponent() {
                 </div>
                 )}
                     <label className="label-name"> Find the subranddit for you</label>
-                    {normalizedSub.length> 0 && (
+                    {reversedSub.length> 0 && (
                         <div className="single-sub">
-                            {normalizedSub.map((subranddit) => (
+                            {reversedSub.map((subranddit) => (
                                 <div key={subranddit.id} className="each-sub">
                                     <Link to={`/subranddits/${subranddit.id}`}>
                                         <SubrandditCardComponent subranddit={subranddit} />

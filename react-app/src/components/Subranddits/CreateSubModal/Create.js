@@ -7,7 +7,7 @@ import { createSubrandditThunk, getAllSubrandditsThunk } from "../../../store/su
 import ".././Subranddits.css"
 import "./Create.css"
 
-const CreateSubRandditRanked = (onClick) => {
+const CreateSubRandditRanked = ({ onClick }) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -60,7 +60,7 @@ const CreateSubRandditRanked = (onClick) => {
             return;
         }
 
-        // onClick();
+        onClick();
 
 
     let created = await dispatch(createSubrandditThunk({
