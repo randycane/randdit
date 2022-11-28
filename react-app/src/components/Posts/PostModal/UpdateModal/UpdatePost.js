@@ -28,12 +28,6 @@ function UpdatingPostComp({ post, onClick }) {
     //console.log("jkrowling", selectedAuthor)
 
 
-    // const onEdd = () => {
-    //     dispatch(EditPostThunk(post.id))
-
-    //     history.push("/")
-    // }
-
     const [post_title, setPost_title] = useState(selectedPost?.post_title)
     const [post_text, setPost_text] = useState(selectedPost?.post_text)
     const [image_url, setImage_url] = useState(selectedPost?.image_url)
@@ -64,19 +58,9 @@ function UpdatingPostComp({ post, onClick }) {
         }
 
         dispatch(EditPostThunk(payload))
-        onClick()
+        onClick();
 
-        // let editPost = dispatch(EditPostThunk({
-        //     post_title,
-        //     post_text,
-        //     image_url
-        // }, postId))
 
-        // console.log("what is my word", post_text)
-
-        // if (editPost) {
-        //     history.push(`/`)
-        // }
     }
 
 
