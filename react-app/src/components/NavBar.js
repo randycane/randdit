@@ -38,13 +38,22 @@ const NavBar = () => {
                 Randdit, a Home for all Weebs to unite.
               </div>
 
-          <div className="nav-right">
-              {userIsLoggedIn && (
-                <div>
-                  <LogoutButton />
-                </div>
-              )}
-          {!userIsLoggedIn && (
+      {/* <div className="nav-right">
+
+        {userIsLoggedIn && (
+          <>
+          {/* <div className="profile-infor">
+
+            </div> */}
+
+
+                  {/* <LogoutButton />
+            </div>
+
+              )} */}
+
+
+          {/* {!userIsLoggedIn && (
             <div className="register-buttons">
               <div className="nav-item" id="sign-up-button">
                 <LoginFormModal />
@@ -54,7 +63,7 @@ const NavBar = () => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
     </nav>
   );
 }
