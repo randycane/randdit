@@ -81,10 +81,8 @@ function SeeThePostsComponent({post}) {
                                     ></img>
                                     </div>
                                     )}
-
                                     </div>
                                     <div className="button">
-
                                     </div>
                                     {/* </Link> */}
                                     <div className="middlecard">
@@ -93,7 +91,6 @@ function SeeThePostsComponent({post}) {
                                     <div className="undercard">
                                         <DeletingPostModal post={post}/>
                                         </div>
-
                                     </div>
                             )
                         })}
