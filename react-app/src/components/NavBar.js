@@ -44,10 +44,10 @@ const NavBar = () => {
 
           //show me who i am here:
 
-          <div className="right-circle">
-            <div className="user-prof">
+          <div className="profile-dropdown">
+            <div className="top-prof">
             <i className="fas fa-bars"/> <i className="fas fa-user-circle"/>
-                  {userIsLoggedIn.username}
+                  Welcome {userIsLoggedIn.username} !
                   </div>
                   <LogoutButton />
             </div>
