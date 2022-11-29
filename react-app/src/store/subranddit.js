@@ -77,6 +77,7 @@ export const createSubrandditThunk = (subranddit) => async dispatch => {
 }
 
 export const getSubFromIdThunk = (subrandditId) => async dispatch => {
+    console.log("these should be loaded", subrandditId)
     const response = await fetch(`/api/subranddits/${subrandditId}`)
     if (response.ok) {
         const thisSub = await response.json();

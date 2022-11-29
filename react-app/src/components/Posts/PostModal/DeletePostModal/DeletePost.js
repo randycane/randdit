@@ -24,11 +24,12 @@ function DeletePostComp({ post, onClick }) {
 
 
 
-    const onDel = (e) => {
+    const onDel = async (e) => {
         e.preventDefault();
-        dispatch(deletePostThunk(post.id))
-        dispatch(getSubFromIdThunk(subrandditId))
-        // dispatch(getAllSubrandditsThunk())
+        dispatch(deletePostThunk(post.id)).then(() => {
+
+            dispatch(getSubFromIdThunk(subrandditId))
+        })
         onClick()
 
     }

@@ -5,7 +5,7 @@ import { WriteAPostThunk } from "../../store/post";
 
 import "./Posts.css"
 
-function PostFormComponent() {
+function PostFormComponent({setShowModal}) {
     const dispatch = useDispatch()
     const history = useHistory()
     let { subrandditId } = useParams();
@@ -35,6 +35,7 @@ function PostFormComponent() {
 
         let apost = await dispatch(WriteAPostThunk(payload))
         if (apost) {
+            setShowModal(false)
             history.push(`/subranddits/${subrandditId}`)
 
         }

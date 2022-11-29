@@ -12,12 +12,13 @@ function WritingPostModal() {
 
     return (
         <div>
-            <div className="deletion" onClick={(onClick)=> setShowModal(true)}>
+            <div className="deletion" onClick={()=> setShowModal(true)}>
                 Create your Post!
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <PostFormComponent onClick={(onClick)=> setShowModal(false)}/>
+                    {/* <PostFormComponent onClick={(onClick)=> setShowModal(false)}/> */}
+                    <PostFormComponent setShowModal={setShowModal}/>
                 </Modal>
             )}
         </div>
