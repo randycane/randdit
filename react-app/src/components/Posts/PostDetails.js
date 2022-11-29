@@ -60,7 +60,6 @@ function SeeThePostsComponent({post}) {
                     </div>
                     <div className="map">
                         {reversedPosts.map((post) => {
-                            // console.log("write me ", post)
                             return (
                                 <div className="out">
                                     {/* <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}> */}

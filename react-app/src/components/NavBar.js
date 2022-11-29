@@ -41,9 +41,6 @@ const NavBar = () => {
       <div className="nav-right">
 
         {userIsLoggedIn && (
-
-          //show me who i am here:
-
           <div className="profile-dropdown">
             <div className="top-prof">
             <i className="fas fa-bars"/> <i className="fas fa-user-circle"/>
