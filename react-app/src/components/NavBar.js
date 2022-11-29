@@ -12,11 +12,6 @@ import "./NavBar.css"
 
 function NavBar() {
 
-  const dispatch = useDispatch()
-  const history = useHistory()
-
-  const [showMenu, setShowMenu] = useState(false)
-
   const userIsLoggedIn = useSelector((state) => state.session.user)
 
 

@@ -6,9 +6,6 @@ import LogoutButton from "./auth/LogoutButton";
 
 function ProfileButtonComponent({user}) {
 
-    const history = useHistory()
-    const dispatch = useDispatch()
-
     const [showMenu, setShowMenu] = useState(false)
 
     const userIsLoggedIn = useSelector((state) => state.session.user)
