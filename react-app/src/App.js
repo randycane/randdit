@@ -30,6 +30,7 @@ function App() {
   }
 
   return (
+    <div className="global">
     <BrowserRouter>
       <NavBar />
       <Switch>
@@ -56,7 +57,8 @@ function App() {
             <PostCardComponent/>
         </Route>
       </Switch>
-    </BrowserRouter>
+      </BrowserRouter>
+      </div>
   );
 }
 

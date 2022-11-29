@@ -31,20 +31,15 @@ function SeeTheSubsComponent() {
         <>
             <div className="whole-page-container">
             <div className="toman">
-                    Welcome to Randdit, a forum for reading.
                 </div>
                 {sessionUser && (
                     <div className="outer-container">
-                        {/* <div className="topcard">
-                 <CreationModal subranddit={subranddit}/>
-                        </div> */}
                     <div className="right-under">
                                 <CreationModal/>
-
                     </div>
                 </div>
                 )}
-                    <label className="label-name"> Find the subranddit for you</label>
+                    <label className="label-name">Check out some communities below!</label>
                     {reversedSub.length> 0 && (
                         <div className="single-sub">
                             {reversedSub.map((subranddit) => (

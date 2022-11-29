@@ -3,8 +3,7 @@ import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import LogoutButton from './auth/LogoutButton';
-import CreateSubRandditComponent from './Subranddits/CreateSub';
+
 import LoginFormModal from './auth/LoginModal';
 import SignupFormModal from './auth/SignUpModal';
 
@@ -15,8 +14,6 @@ function NavBar() {
 
   const dispatch = useDispatch()
   const history = useHistory()
-
-  const [isSubmitted, setIsSubmitted] = useState("");
 
   const [showMenu, setShowMenu] = useState(false)
 
