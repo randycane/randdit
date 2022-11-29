@@ -9,7 +9,7 @@ import LoginFormModal from './auth/LoginModal';
 import SignupFormModal from './auth/SignUpModal';
 
 import ProfileButtonComponent from './ProfileButton';
-
+import * as sessionActions from "../store/session";
 import "./NavBar.css"
 
 const NavBar = () => {

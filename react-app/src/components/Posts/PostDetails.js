@@ -21,6 +21,8 @@ function SeeThePostsComponent({post}) {
 
     const normalizedPosts = Object.values(allPosts)
 
+    const reversedPosts = normalizedPosts.sort().reverse()
+
     let { subrandditId } = useParams();
     subrandditId = Number(subrandditId);
 
@@ -57,7 +59,7 @@ function SeeThePostsComponent({post}) {
                         View these posts!
                     </div>
                     <div className="map">
-                        {normalizedPosts.map((post) => {
+                        {reversedPosts.map((post) => {
                             // console.log("write me ", post)
                             return (
                                 <div className="out">
