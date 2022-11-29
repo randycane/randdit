@@ -9,21 +9,33 @@ import LoginFormModal from './auth/LoginModal';
 import SignupFormModal from './auth/SignUpModal';
 
 import ProfileButtonComponent from './ProfileButton';
-import * as sessionActions from "../store/session";
 import "./NavBar.css"
 
-const NavBar = () => {
+function NavBar() {
 
   const dispatch = useDispatch()
   const history = useHistory()
 
   const [isSubmitted, setIsSubmitted] = useState("");
 
+  const [showMenu, setShowMenu] = useState(false)
+
   const userIsLoggedIn = useSelector((state) => state.session.user)
 
-  let handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitted(true)
+
+  let sessionLinks;
+
+  if (userIsLoggedIn) {
+    sessionLinks = (
+      <ProfileButtonComponent user={userIsLoggedIn}/>
+    )
+  } else {
+    sessionLinks = (
+      <>
+        <LoginFormModal />
+        <SignupFormModal />
+        </>
+    )
   }
   return (
     <nav className="top">
@@ -35,37 +47,16 @@ const NavBar = () => {
               Home
               </div>
             </div>
-          </NavLink>
+        </NavLink>
             </div>
             <div className="page-title">
-                Randdit, a Home for all Weebs to unite.
-              </div>
+                Welcome to the forum where all weebs can live in harmony.
+      </div>
 
-      <div className="nav-right">
-
-        {userIsLoggedIn && (
-          <div className="profile-dropdown">
-            <div className="top-prof">
-            <i className="fas fa-bars"/> <i className="fas fa-user-circle"/>
-                  Welcome {userIsLoggedIn.username} !
-                  </div>
-                  <LogoutButton />
-            </div>
-
-              )}
-
-
-          {!userIsLoggedIn && (
-            <div className="register-buttons">
-              <div className="nav-item" id="sign-up-button">
-                <LoginFormModal />
-              </div>
-              <div className="nav-item" id="sign-up-button">
-                <SignupFormModal />
-              </div>
-            </div>
-          )}
+      <div className="get-on-sib">
+        {sessionLinks}
         </div>
+
     </nav>
   );
 }
