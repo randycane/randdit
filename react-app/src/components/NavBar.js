@@ -34,7 +34,7 @@ function NavBar() {
         <div className="home">
           <NavLink to='/' exact={true} activeClassName='active'>
             <div className="home-icon">
-            <img src="https://i.pinimg.com/736x/bb/b2/cf/bbb2cff9da7cf8f0048d1d884b03ad10.jpg" alt="nope"></img>
+            <img src="https://res.cloudinary.com/teepublic/image/private/s--rdSMZL_M--/c_fit,g_north_west,h_711,w_840/co_484849,e_outline:40/co_484849,e_outline:inner_fill:1/co_ffffff,e_outline:40/co_ffffff,e_outline:inner_fill:1/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1592405498/production/designs/11418386_0.jpg" alt="nope"></img>
             <div className="home-text">
               Home
               </div>
@@ -42,7 +42,7 @@ function NavBar() {
         </NavLink>
             </div>
             <div className="page-title">
-                Welcome to the forum where all weebs can live in harmony.
+                Where all weebs can live in harmony.
       </div>
 
       <div className="get-on-sib">
