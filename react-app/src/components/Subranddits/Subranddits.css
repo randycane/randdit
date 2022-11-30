@@ -132,13 +132,6 @@
     margin-top: 5px;
 }
 
-/* .outer-container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 12px;
-} */
-
 .whole-page-container{
     display: flex;
     flex-direction: column;

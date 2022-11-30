@@ -28,13 +28,11 @@ function SeeSubrandditDetailsComponent() {
   //console.log("obj state", subranddit)
   const sub  = useSelector((state)=>state.subranddits)
   const subrandditposter = useSelector((state) => state.posts)
-  //console.log("who wrote this", subrandditposter)
 
   const normalizedPoster = Object.values(subrandditposter)
 
   //logic to see if you are logged in to perform actions
   const sessionUser = useSelector((state) => state.session.user)
-  // console.log("i am:", sessionUser)
 
 
     useEffect(() => {
