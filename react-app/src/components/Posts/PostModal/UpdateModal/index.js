@@ -12,7 +12,7 @@ function UpdatingPostModal({ post}) {
     return (
         <div>
             <div className="deletion" onClick={()=> setShowModal(true)}>
-                Edit Post!
+                Edit your Post!
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

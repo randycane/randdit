@@ -12,7 +12,7 @@ function UpdatingModal({ subranddit }) {
     return (
         <div>
             <div className="updating" onClick={()=> setShowModal(true)}>
-                Update Sub!
+                Update your Sub!
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

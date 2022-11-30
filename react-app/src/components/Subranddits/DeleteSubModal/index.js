@@ -10,7 +10,7 @@ function DeletingModal({ subranddit }) {
     return (
         <div>
             <div className="deletion" onClick={()=> setShowModal(true)}>
-                Delete Sub!
+                Delete your Sub!
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
