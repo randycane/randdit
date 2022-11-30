@@ -24,31 +24,24 @@ function SeeSubrandditDetailsComponent() {
 
     const [isLoaded, setIsLoaded] = useState(false)
 
-
-  // key into my obj state
   const subranddit = useSelector((state) => (state.subranddits[subrandditId]))
   //console.log("obj state", subranddit)
-
+  const sub  = useSelector((state)=>state.subranddits)
   const subrandditposter = useSelector((state) => state.posts)
   //console.log("who wrote this", subrandditposter)
 
   const normalizedPoster = Object.values(subrandditposter)
-  //console.log("this is normal", normalizedPoster)
-
-
 
   //logic to see if you are logged in to perform actions
   const sessionUser = useSelector((state) => state.session.user)
   // console.log("i am:", sessionUser)
 
 
-
-
     useEffect(() => {
       dispatch(getSubFromIdThunk(subrandditId))
       dispatch(getAllSubrandditsThunk())
         .then(() => setIsLoaded(true))
-      if (isLoaded && subrandditId && subranddit === undefined) {
+      if (isLoaded && sub && sub[subrandditId] === undefined) {
         history.push("/")
       }
 

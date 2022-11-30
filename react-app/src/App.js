@@ -34,25 +34,25 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
+        <Route exact path='/login'>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact={true}>
+        <Route exact path='/sign-up' >
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
+        <ProtectedRoute exact path='/users' >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <Route path='/' exact={true} >
+        <Route exact path='/' >
           <SeeTheSubsComponent />
         </Route>
-        <Route path="/subranddits/:subrandditId" exact={true}>
+        <Route exact path="/subranddits/:subrandditId" >
             <SeeSubrandditDetailsComponent/>
         </Route>
-        <Route path="/subranddits/:subrandditId/posts/:postId" exact={true}>
+        <Route exact path="/subranddits/:subrandditId/posts/:postId">
             <PostCardComponent/>
           </Route>
           <Route path="*">

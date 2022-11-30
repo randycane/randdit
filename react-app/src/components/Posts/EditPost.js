@@ -73,6 +73,7 @@ function UpdatePostComponent() {
                         <span> Title: </span>
                         <label>
                             <textarea
+                                style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                 type="text"
                                 placeholder="title"
                                 value={post_title}
@@ -82,6 +83,7 @@ function UpdatePostComponent() {
                         <span> Text: </span>
                         <label>
                             <textarea
+                                style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                 type="text"
                                 placeholder="description"
                                 value={post_text}
@@ -91,6 +93,7 @@ function UpdatePostComponent() {
                         <span> Image URL: </span>
                         <label>
                             <textarea
+                                style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                 type="text"
                                 placeholder="image URL"
                                 value={image_url}

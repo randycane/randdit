@@ -69,7 +69,8 @@ function UpdatingSubComp({onClick}) {
                             <div className="edit-input-container">
                                 <span> Title: </span>
                                 <label>
-                                    <textarea
+                            <textarea
+                                style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                         type="text"
                                         placeholder="title"
                                         value={title}
@@ -78,7 +79,8 @@ function UpdatingSubComp({onClick}) {
                                 </label>
                                 <span> Description: </span>
                                 <label>
-                                    <textarea
+                            <textarea
+                                style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                         type="text"
                                         placeholder="description"
                                         value={description}
@@ -87,7 +89,8 @@ function UpdatingSubComp({onClick}) {
                                 </label>
                                 <span> Image URL: </span>
                                 <label>
-                                    <textarea
+                            <textarea
+                                style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                         type="text"
                                         placeholder="image URL"
                                         value={image_url}
