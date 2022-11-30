@@ -19,23 +19,27 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: whitesmoke;
+    background-color: antiquewhite;
     height: 44px;
-    width: 66px;
+    width: 55px;
     border-radius: 35px;
     border: 0.5px solid #e0e0e0;
     cursor: pointer;
 }
 
 .profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
-    right: 1px;
+    right: 6px;
     top: 75px;
-    background-color: whitesmoke;
+    background-color: antiquewhite;
     border-radius: 5px;
     align-items: center;
     height: 150px;
-    width: 300px;
+    width: 200px;
+    padding: 3px;
 }
 
 .home-text{
@@ -88,7 +92,15 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    border-bottom: 2px solid black;
+    border-bottom: 1.5px solid black;
+    padding-bottom: 5px;
+}
+
+.comm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
     padding-bottom: 5px;
 }
 
@@ -103,8 +115,8 @@ a {
 .nav-bar-right{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 
 

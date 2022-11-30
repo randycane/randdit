@@ -11,7 +11,7 @@ function CreationModal({ subranddit }) {
     return (
         <div className="make-top">
             <div className="create" onClick={()=> setShowModal(true)}>
-                Create a new Subranddit!
+                Create your own Subranddit!
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

@@ -38,8 +38,8 @@ function ProfileButtonComponent({user}) {
 
           {showMenu && (
             <div className="profile-dropdown">
-              <div className="top">Welcome, {user.username}!</div>
-                    <div className="top">Profile: {user.email}</div>
+              <div className="comm">Welcome, {user.username}!</div>
+                    <div className="comm">Profile: {user.email}</div>
                     {userIsLoggedIn && (
                         <div className="get-out" >
                             <LogoutButton />
