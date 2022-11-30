@@ -95,12 +95,12 @@ def update_comment(postId, commentId):
     return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 # delete a post:
-@post_blueprint.route("/<int:postId>", methods = ['DELETE'])
+@post_blueprint.route("/<int:post_id>", methods = ['DELETE'])
 @login_required
-def del_post(postId):
-    posttodel = Post.query.get(postId)
+def del_post(post_id):
+    posttodel = Post.query.get(post_id)
     if not posttodel:
-        return {"message": "This post does not exists"}, 404
+        return {"message": "This post does not exist"}, 404
     db.session.delete(posttodel)
     db.session.commit()
     return {

@@ -14,6 +14,29 @@ a {
     background-color:whitesmoke;
 }
 
+.DropDownMenuIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 44px;
+    width: 82px;
+    border-radius: 35px;
+    border: 0.5px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.profile-dropdown{
+    position: absolute;
+    right: 1px;
+    top: 75px;
+    background-color: whitesmoke;
+    border-radius: 7px;
+    align-items: center;
+    height: 150px;
+    width: 300px;
+}
+
 .home-text{
     display: flex;
     flex-direction: column;

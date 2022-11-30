@@ -30,7 +30,7 @@ function NavBar() {
     )
   }
   return (
-    <nav className="top">
+    <div className="top">
         <div className="home">
           <NavLink to='/' exact={true} activeClassName='active'>
             <div className="home-icon">
@@ -49,7 +49,7 @@ function NavBar() {
         {sessionLinks}
         </div>
 
-    </nav>
+    </div>
   );
 }
 
