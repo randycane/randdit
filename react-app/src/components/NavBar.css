@@ -16,11 +16,12 @@ a {
 
 .DropDownMenuIcon {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: whitesmoke;
     height: 44px;
-    width: 82px;
+    width: 66px;
     border-radius: 35px;
     border: 0.5px solid #e0e0e0;
     cursor: pointer;
@@ -31,7 +32,7 @@ a {
     right: 1px;
     top: 75px;
     background-color: whitesmoke;
-    border-radius: 7px;
+    border-radius: 5px;
     align-items: center;
     height: 150px;
     width: 300px;
@@ -99,11 +100,19 @@ a {
     width: 100%;
 }
 
+.nav-bar-right{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
 
 .nav-right{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: space-around;
 }
 
 .register-buttons{

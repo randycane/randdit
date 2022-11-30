@@ -4,6 +4,8 @@ import { NavLink, useHistory } from "react-router-dom";
 // import * as sessionActions from '../../store/session';
 import LogoutButton from "./auth/LogoutButton";
 
+import "./NavBar.css"
+
 function ProfileButtonComponent({user}) {
 
     const [showMenu, setShowMenu] = useState(false)
@@ -27,7 +29,7 @@ function ProfileButtonComponent({user}) {
     }, [showMenu])
 
     return (
-        <div className="NavBarRight">
+        <div className="nav-bar-right">
             {userIsLoggedIn && (
                 <button className="DropDownMenuIcon" onClick={openMenu}>
                     <i className="fas fa-bars" /> <i className="fas fa-user-circle" />
