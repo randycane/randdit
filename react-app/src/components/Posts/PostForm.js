@@ -45,11 +45,6 @@ function PostFormComponent({setShowModal}) {
         setErrors([]);
     }
 
-
-    // const ErrorMsgs = errors.map(error => (
-    //     <div className="errors" key={error}>{error}</div>
-    // ));
-
     return (
         <div className="highpostform">
             <div className="over-form">
