@@ -85,9 +85,9 @@ const LoginForm = () => {
                 <button className={
                             isSubmitted && errors.length > 0 ? "negative" : "submit-button-login"
                         } type='submit'>Login Now</button>
-                <div></div>
+                <div className="choice"> or you can: </div>
             <div className="demi">
-                <button className='demo-button' onClick={demoLogin}>Login as Demo User</button>
+                <button className='demo-button' onClick={demoLogin}>Login as Demo</button>
                 </div>
             </div>
     </form>
