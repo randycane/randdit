@@ -21,14 +21,16 @@ function SeeThePostsComponent({post}) {
 
     const normalizedPosts = Object.values(allPosts)
 
+    console.log("show me all posts rn",allPosts)
+
     const reversedPosts = normalizedPosts.sort().reverse()
 
     let { subrandditId } = useParams();
     subrandditId = Number(subrandditId);
 
 
-    const users = useSelector((state) => state)
-    // console.log("show me the writer hitt", users)
+    const author = useSelector((state) => state.session.user)
+
 
     useEffect(() => {
         dispatch(getSubFromIdThunk(subrandditId))
@@ -36,25 +38,17 @@ function SeeThePostsComponent({post}) {
         // dispatch(GetUserThunk())
     }, [dispatch, subrandditId])
 
-    const fetchNameById = (userId) => {
-        // if (!users[userId]) {
-        //     return "";
-        // }
-        // else {
-            // const writer = users[userId].username
-            // return writer;
-        // }
-    }
 
 
     return (
         <>
             <div className="post-outside-container">
                 <div className="post-inner-container">
-
+                    {author && (
                     <div className="hi-man">
                     <WritingPostModal />
                     </div>
+                    )}
                     <div className="head">
                         View these posts!
                     </div>
@@ -62,9 +56,9 @@ function SeeThePostsComponent({post}) {
                         {reversedPosts.map((post) => {
                             return (
                                 <div className="out">
-                                    {/* <Link to={`/subranddits/${subrandditId}/posts/${post.id}`}> */}
+
                                 <div key={post} className="details">
-                                    {/* <div className="in-detail"> Author: {fetchNameById(post.author_id)}</div> */}
+
                                     <div className="in-detail"> Title: {post.post_title}</div>
                                     <div className="in-detail"> Discussion: {post.post_text}</div>
                                     {post.image_url && (
@@ -84,13 +78,16 @@ function SeeThePostsComponent({post}) {
                                     </div>
                                     <div className="button">
                                     </div>
-                                    {/* </Link> */}
+                                    {author && author.id === post.author_id && (
+                                        <div className="mikey">
                                     <div className="middlecard">
                                         <UpdatingPostModal post={post}/>
                                         </div>
                                     <div className="undercard">
                                         <DeletingPostModal post={post}/>
-                                        </div>
+                                            </div>
+                                            </div>
+                                    )}
                                     </div>
                             )
                         })}

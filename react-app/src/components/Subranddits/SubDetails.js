@@ -30,7 +30,7 @@ function SeeSubrandditDetailsComponent() {
   //console.log("obj state", subranddit)
 
   const subrandditposter = useSelector((state) => state.posts)
-  //console.log("who rote this", subrandditposter)
+  //console.log("who wrote this", subrandditposter)
 
   const normalizedPoster = Object.values(subrandditposter)
   //console.log("this is normal", normalizedPoster)
