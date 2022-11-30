@@ -30,14 +30,14 @@ function SeeSubrandditDetailsComponent() {
   //console.log("obj state", subranddit)
 
   const subrandditposter = useSelector((state) => state.posts)
-  console.log("who rote this", subrandditposter)
+  //console.log("who rote this", subrandditposter)
 
   const normalizedPoster = Object.values(subrandditposter)
-  console.log("this is normal", normalizedPoster)
+  //console.log("this is normal", normalizedPoster)
 
 
 
-    //logic to see if you are logged in to perform actions
+  //logic to see if you are logged in to perform actions
   const sessionUser = useSelector((state) => state.session.user)
   // console.log("i am:", sessionUser)
 
@@ -68,7 +68,7 @@ function SeeSubrandditDetailsComponent() {
         <div className="see-posts">
           <SeeThePostsComponent/>
         </div>
-        {/* {sessionUser && sessionUser.id === normalizedPoster.map((poster)=> poster.id) && ( */}
+        {sessionUser && sessionUser.id === subranddit.author_id && (
         <div className="manjiro">
         <div className="update-stuff">
           <UpdatingModal subranddit={subranddit}/>
@@ -78,7 +78,7 @@ function SeeSubrandditDetailsComponent() {
           <DeletingModal subranddit={subranddit}/>
         </div>
         </div>
-         {/* )} */}
+        )}
     </>
     )
   )
