@@ -14,6 +14,8 @@ import SeeThePostsComponent from './components/Posts/PostDetails';
 import PostCardComponent from './components/Posts/PostCard';
 import CreateSubRandditComponent from './components/Subranddits/CreateSub';
 
+import FooterComponent from './components/Footer';
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -60,7 +62,8 @@ function App() {
               This material does not exist.
             </div>
         </Route>
-      </Switch>
+        </Switch>
+        <FooterComponent />
       </BrowserRouter>
       </div>
   );
