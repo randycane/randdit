@@ -68,7 +68,7 @@ function WritingPostFormComponent({ onClick }) {
                             <span> Post Title: </span>
                             <input
                                 type="text"
-                                placeholder="Post Title"
+                                // placeholder="Post Title"
                                 value={post_title}
                             onChange={(e) => setPost_title(e.target.value)}
 
@@ -78,7 +78,7 @@ function WritingPostFormComponent({ onClick }) {
                             <span> Post text: </span>
                             <input
                                 type="text"
-                                placeholder="Post text"
+                                // placeholder="Post text"
                                 value={post_text}
                             onChange={(e) => setPost_text(e.target.value)}
 
@@ -88,7 +88,7 @@ function WritingPostFormComponent({ onClick }) {
                             <span> Post image (optional): </span>
                             <input
                                 type="text"
-                                placeholder="Image URL"
+                                // placeholder="Image URL"
                                 value={image_url}
                                 onChange={(e) => setImage_url(e.target.value)}
                             />

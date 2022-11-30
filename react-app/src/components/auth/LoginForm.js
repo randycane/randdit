@@ -62,7 +62,7 @@ const LoginForm = () => {
       )}
 
       <div className='email-div'>
-                <label className='email-label' htmlFor='email'>Email</label>
+                <label className='email-label' htmlFor='email'>Email: </label>
                 <input
                     className='email-input'
                     name='email'
@@ -73,7 +73,7 @@ const LoginForm = () => {
                 />
             </div>
             <div className='password-div'>
-                <label htmlFor='password'>Password</label>
+                <label htmlFor='password'>Password: </label>
                 <input
                     name='password'
                     type='password'
