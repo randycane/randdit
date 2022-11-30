@@ -1,0 +1,45 @@
+.form-edit{
+    font-size: 19px;
+    font-weight: 600;
+    padding-left: 3px;
+    margin-bottom: 5px;
+}
+
+.each-editted{
+    padding-left: 3px;
+}
+
+.confirmation{
+    background-color: palegreen;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding: 5px;
+    font-weight: 600;
+}
+
+.confirmation:hover{
+    cursor: pointer;
+}
+
+.cancellation{
+    background-color: palevioletred;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding: 5px;
+    font-weight: 600;
+}
+
+.cancellation:hover{
+    cursor: pointer;
+}
+
+.edit-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+}

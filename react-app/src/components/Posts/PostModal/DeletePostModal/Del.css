@@ -13,3 +13,11 @@
 .deletion:hover{
     cursor: pointer;
 }
+
+.biggie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+}

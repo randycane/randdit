@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-
-
 import {Modal } from "../../../Modals/modal"
 
 import UpdatingPostComp from "./UpdatePost"
+
 
 
 function UpdatingPostModal({ post}) {
@@ -12,7 +11,9 @@ function UpdatingPostModal({ post}) {
     return (
         <div>
             <div className="deletion" onClick={()=> setShowModal(true)}>
-                Edit your Post!
+                <div className="my-edit">
+                    Edit your Post!
+                </div>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

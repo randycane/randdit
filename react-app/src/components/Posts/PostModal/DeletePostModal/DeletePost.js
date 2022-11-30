@@ -32,7 +32,7 @@ function DeletePostComp({ post, onClick }) {
     }
 
     return (
-        <div>
+        <div className="biggie">
             <div>
                 <h1>
                     Delete Post
@@ -40,11 +40,11 @@ function DeletePostComp({ post, onClick }) {
                 <div className="sure">
                     Are you sure you want to delete?
                 </div>
-                <button>
-                    <div className="deletion" onClick={onDel}>Confirm Deletion</div>
+                <button className="confirmation">
+                    <div onClick={onDel}>Confirm Deletion</div>
                 </button>
-                <button>
-                    <div className="cancel" onClick={onClick}>Cancel</div>
+                <button className="cancellation" >
+                    <div onClick={onClick}>Cancel</div>
                 </button>
             </div>
         </div>

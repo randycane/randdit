@@ -6,6 +6,7 @@ import { useHistory, useParams } from "react-router"
 
 import { EditPostThunk } from "../../../../store/post"
 
+import "./Update.css"
 
 function UpdatingPostComp({ post, onClick }) {
 
@@ -79,13 +80,11 @@ function UpdatingPostComp({ post, onClick }) {
         <div className="editted-container">
             <ul className="messages">{isUpdated && showErrors}</ul>
             <div className="under-editted">
-                    <div className="form-title">
-                            <h2>
+                    <div className="form-edit">
                                 Edit your Post
-                            </h2>
                         </div>
                     <div className="edit-input-container">
-                        <span> Title: </span>
+                        <div className="each-editted"> Title: </div>
                         <label>
                                     <textarea
                                         style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
@@ -95,7 +94,7 @@ function UpdatingPostComp({ post, onClick }) {
                                 onChange={(e) => setPost_title(e.target.value)}
                             />
                         </label>
-                        <span> Text: </span>
+                        <div className="each-editted"> Text: </div>
                         <label>
                                     <textarea
                                         style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
@@ -105,7 +104,7 @@ function UpdatingPostComp({ post, onClick }) {
                                 onChange={(e) => setPost_text(e.target.value)}
                             />
                         </label>
-                        <span> Image URL (optional): </span>
+                        <div className="each-editted"> Image URL (optional): </div>
                         <label>
                                     <textarea
                                         style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
@@ -125,11 +124,11 @@ function UpdatingPostComp({ post, onClick }) {
                 <div className="sure">
                     Are you sure you want to edit?
                 </div>
-                <button>
-                    <div className="edit" onClick={handleSubmit}>Confirm Changes</div>
+                <button className="confirmation" >
+                    <div onClick={handleSubmit}>Confirm Changes</div>
                 </button>
-                <button>
-                    <div className="cancel" onClick={onClick}>Cancel</div>
+                <button className="cancellation" >
+                    <div onClick={onClick}>Cancel</div>
                 </button>
             </div>
         </div>
