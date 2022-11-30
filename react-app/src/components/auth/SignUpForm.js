@@ -48,7 +48,7 @@ const SignUpForm = () => {
 
   return (
     <div className="outer-banks">
-        <h2> Register an Account </h2>
+        <div className="regirock"> Register an Account </div>
         <div className="inner-banks">
     <form onSubmit={onSignUp} className="reggie">
       <div className="erroring">
@@ -56,7 +56,7 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className="fields">
         <label>Username</label>
         <input
           type='text'
@@ -65,7 +65,7 @@ const SignUpForm = () => {
           value={username}
         ></input>
       </div>
-      <div>
+      <div className="fields">
         <label>Email</label>
         <input
           type='text'
@@ -74,7 +74,7 @@ const SignUpForm = () => {
           value={email}
         ></input>
       </div>
-      <div>
+      <div className="fields">
         <label>Password</label>
         <input
           type='password'
@@ -83,17 +83,17 @@ const SignUpForm = () => {
           value={password}
         ></input>
       </div>
-      <div>
+      <div className="fields">
         <label>Confirm Password</label>
         <input
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
-          required={true}
+          // required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <button className="signing" type='submit'>Sign Up</button>
     </form>
     </div>
     </div>

@@ -52,7 +52,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={onLogin} className="login">
-      <h2> Log In</h2>
+      <div className="lincoln-logs"> Log In</div>
       {isSubmitted && (
         <div className="errors-top">
           {errors.map((error, index) => (
@@ -84,10 +84,10 @@ const LoginForm = () => {
                 <div></div>
                 <button className={
                             isSubmitted && errors.length > 0 ? "negative" : "submit-button-login"
-                        } type='submit'>Login</button>
+                        } type='submit'>Login Now</button>
                 <div></div>
             <div className="demi">
-                <button className='demo-button' onClick={demoLogin}>Demo User</button>
+                <button className='demo-button' onClick={demoLogin}>Login as Demo User</button>
                 </div>
             </div>
     </form>
