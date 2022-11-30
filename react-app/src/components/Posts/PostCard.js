@@ -53,17 +53,6 @@ const PostCardComponent = () => {
             <div className="undercard">
           <DeletingPostModal post={post}/>
             </div>
-            <>
-                {/* {postWriter && (
-                    <div className="logic">
-                        <>
-                            <UpdatePostComponent/>
-                            <button className="click" onClick={(e) => deleteButton(e)}>
-                            </button>
-                        </>
-                    </div>
-                )} */}
-                </>
         </div>
     )
 }

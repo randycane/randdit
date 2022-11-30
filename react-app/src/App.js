@@ -48,13 +48,17 @@ function App() {
         </ProtectedRoute>
         <Route path='/' exact={true} >
           <SeeTheSubsComponent />
-          {/* <SeeThePostsComponent/> */}
         </Route>
         <Route path="/subranddits/:subrandditId" exact={true}>
             <SeeSubrandditDetailsComponent/>
         </Route>
         <Route path="/subranddits/:subrandditId/posts/:postId" exact={true}>
             <PostCardComponent/>
+          </Route>
+          <Route path="*">
+            <div className="not-found">
+              This material does not exist.
+            </div>
         </Route>
       </Switch>
       </BrowserRouter>

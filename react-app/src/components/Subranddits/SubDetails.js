@@ -47,8 +47,12 @@ function SeeSubrandditDetailsComponent() {
     useEffect(() => {
       dispatch(getSubFromIdThunk(subrandditId))
       dispatch(getAllSubrandditsThunk())
-        .then(()=> setIsLoaded(true))
-    },[dispatch, subrandditId])
+        .then(() => setIsLoaded(true))
+      if (isLoaded && subrandditId && subranddit === undefined) {
+        history.push("/")
+      }
+
+    },[dispatch, subrandditId, JSON.stringify(subranddit)])
 
 
 
@@ -68,7 +72,7 @@ function SeeSubrandditDetailsComponent() {
         <div className="see-posts">
           <SeeThePostsComponent/>
         </div>
-        {sessionUser && sessionUser.id === subranddit.author_id && (
+        {sessionUser && sessionUser?.id === subranddit?.author_id && (
         <div className="manjiro">
         <div className="update-stuff">
           <UpdatingModal subranddit={subranddit}/>

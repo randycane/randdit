@@ -59,9 +59,9 @@ function SeeThePostsComponent({post}) {
 
                                 <div key={post} className="details">
 
-                                    <div className="in-detail"> Title: {post.post_title}</div>
-                                    <div className="in-detail"> Discussion: {post.post_text}</div>
-                                    {post.image_url && (
+                                    <div className="in-detail"> Title: {post?.post_title}</div>
+                                    <div className="in-detail"> Discussion: {post?.post_text}</div>
+                                    {post?.image_url && (
                                 <div className="imgDivision">
                                     <img
                                         className="img"
@@ -78,7 +78,7 @@ function SeeThePostsComponent({post}) {
                                     </div>
                                     <div className="button">
                                     </div>
-                                    {author && author.id === post.author_id && (
+                                    {author && author?.id === post?.author_id && (
                                         <div className="mikey">
                                     <div className="middlecard">
                                         <UpdatingPostModal post={post}/>
