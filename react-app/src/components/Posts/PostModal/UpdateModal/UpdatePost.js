@@ -87,7 +87,8 @@ function UpdatingPostComp({ post, onClick }) {
                     <div className="edit-input-container">
                         <span> Title: </span>
                         <label>
-                            <textarea
+                                    <textarea
+                                        style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                 type="text"
                                 placeholder="title"
                                 value={post_title}
@@ -96,7 +97,8 @@ function UpdatingPostComp({ post, onClick }) {
                         </label>
                         <span> Text: </span>
                         <label>
-                            <textarea
+                                    <textarea
+                                        style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                 type="text"
                                 placeholder="description"
                                 value={post_text}
@@ -105,7 +107,8 @@ function UpdatingPostComp({ post, onClick }) {
                         </label>
                         <span> Image URL (optional): </span>
                         <label>
-                            <textarea
+                                    <textarea
+                                        style = {{fontFamily: "Times New Roman", fontSize: "16px"}}
                                 type="text"
                                 placeholder="image URL"
                                 value={image_url}
