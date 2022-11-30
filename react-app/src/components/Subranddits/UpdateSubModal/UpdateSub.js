@@ -102,7 +102,6 @@ function UpdatingSubComp({onClick}) {
                 <div className="to-press">
                         <button onClick className="submitter"
                             type="submit"
-                            className="submit-success"
                             >
                             Edit Subranddit
                         </button>

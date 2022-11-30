@@ -32,11 +32,11 @@ function DeleteSubComp({ subranddit, onClick }) {
                 <div>
                     Are you sure you want to delete?
                 </div>
-                <button className="conference">
-                    <div className="conf" onClick={onDel}> Confirm Deletion</div>
+                <button className="confirmation">
+                    <div onClick={onDel}> Confirm Deletion</div>
                 </button>
-                <button>
-                    <div className="cancel" onClick={onClick}>Cancel</div>
+                <button className="cancellation" >
+                    <div onClick={onClick}>Cancel</div>
                 </button>
             </div>
         </div>
