@@ -52,10 +52,10 @@ const editPostAction = (payload) => {
     }
 }
 
-const deletePostAction = (payload) => {
+const deletePostAction = (postId) => {
     return {
         type: DEL_POST,
-        payload
+        postId
     }
 }
 
