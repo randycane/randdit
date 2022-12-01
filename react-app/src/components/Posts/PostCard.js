@@ -27,13 +27,10 @@ const PostCardComponent = () => {
     const deleteButton = async (e) => {
         e.preventDefault();
         await dispatch(deletePostThunk(postId))
-        // await dispatch(getSubFromIdThunk(subrandditId))
-        // await dispatch(ReadPostBySubrandditIdThunk(subrandditId))
         history.push(`/subranddits/${subrandditId}`)
     }
 
     useEffect(() => {
-        // dispatch(ReadPostBySubrandditIdThunk(subrandditId))
         dispatch(SeePostByItsPostIdThunk(subrandditId, postId))
     }, [dispatch])
 

@@ -35,7 +35,6 @@ function SeeThePostsComponent({post}) {
     useEffect(() => {
         dispatch(getSubFromIdThunk(subrandditId))
         dispatch(ReadPostBySubrandditIdThunk(subrandditId))
-        // dispatch(GetUserThunk())
     }, [dispatch, subrandditId])
 
 
