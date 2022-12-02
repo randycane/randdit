@@ -32,6 +32,12 @@ def seed_subranddits():
         "description": "Welcome to the subranddit for fans of Dr. Stone!",
         "image_url": "https://i0.wp.com/film-bunker.com/wp-content/uploads/2019/11/https___hypebeast.com_image_2019_09_dr-stone-documentary-hypebeast-exclusive-clip-00.jpg?fit=900%2C600&ssl=1",
         "author_id": 2
+    },
+    {
+        "title": "Rent a Girlfriend",
+        "description": "Sometimes we need company",
+        "image_url": "https://thicc.mywaifulist.moe/pending/waifus/KEJDsftpvTAq5aL4FUqgbHNK4JBOmZFmJacOvJok.jpg",
+        "author_id": 3
     }]
     for subrandy in subRandArray:
         newrandy = Subranddit(

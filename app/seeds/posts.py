@@ -38,9 +38,30 @@ def seed_posts():
         "post_title": "Hot Take Alert",
         "post_text": "Akkun is a better fighter than Pah",
         "image_url": "https://i.pinimg.com/736x/60/08/de/6008debff894a6e04026449a5a99a580.jpg",
-        "author_id": 2,
+        "author_id": 3,
         "subranddit_id": 1
-    }]
+    },
+    {
+        "post_title": "Sumi is so beautiful",
+        "post_text": "Can anyone tell me why she is not more popular?",
+        "image_url": "https://i.pinimg.com/736x/ce/13/52/ce1352208b655ea727f6481c391db7ce.jpg",
+        "author_id": 3,
+        "subranddit_id": 6
+    },
+    {
+        "post_title": "A Complaint",
+        "post_text": "Why is there so much fan service.",
+        "image_url": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/07/rent-a-girlfriend-season-2-episode-1-kazuya-kinoshita-ichinose-chizuru-memories-1.jpg",
+        "author_id": 3,
+        "subranddit_id": 6
+    },
+    {
+        "post_title": "Thank you fellow brethren",
+        "post_text": "You make me feel like larger than just myself <3",
+        "image_url": "https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2022/05/rentagirlfriendseason2_chizurudatevisual-1-e1652532640145.jpg",
+        "author_id": 5,
+        "subranddit_id": 6
+    },]
     for postrandy in postsArray:
         newrandy = Post(
             post_title = postrandy["post_title"],
