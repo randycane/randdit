@@ -1,12 +1,10 @@
-import "./Footer.css"
-
-
+import "./Footer.css";
 
 function FooterComponent() {
     return (
         <footer className="whole-foot">
             <div className="feet">
-                <div className="my-feet">
+                <div className="re-got">
                     Get to know me!
                 </div>
                 <div className="about-me">
@@ -14,17 +12,18 @@ function FooterComponent() {
                         className="git-me-contained"
                         href="https://github.com/randycane"
                         >
-                        <div className="pic-size">
-                            </div>
-                            <div className="re-got"> My Github! </div>
+                        <div className="re-got"> My Github:
+                        <i class="fa-brands fa-github"></i>
+                        </div>
                             </a>
                     <a
                         className="linked-in-contained"
                         href="https://www.linkedin.com/in/randy-y-chang/"
                         >
-                        <div className="pic-size">
+                        <div className="size">
                                 <div className="re-got">
-                                    My LinkedIn!
+                                My LinkedIn:
+                                <i class="fab fa-linkedin-in"></i>
                                 </div>
                          </div>
                         </a>

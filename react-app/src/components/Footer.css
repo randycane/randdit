@@ -1,15 +1,33 @@
 .whole-foot{
     border-top: 1px solid black;
-    margin-top: 10px;
-    background-color: cornflowerblue;
+    margin-top: 7px;
+    padding: 1px;
+    background-color: rgb(9, 68, 176);
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 60px;
 }
 
-.pic-size{
-    height: 20px;
-    width: 20px;
-    object-fit: cover;
+.feet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.re-got{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(51, 114, 133, 0.886);
+    width: 200px;
+}
+
+
+.about-me{
+    margin-top: 2px;
 }
