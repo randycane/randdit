@@ -27,6 +27,8 @@
 * Posts
 
 ## Features coming soon:
+* Creator of the subranddit
+* Author of each post and time stamps
 * Comments on posts
 * Upvote and downvoting
 * Your profile
