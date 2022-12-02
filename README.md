@@ -27,10 +27,10 @@
 * Posts
 
 ## Features coming soon:
-*Comments
+* Comments on posts
 * Upvote and downvoting
 * Your profile
-* Search functionality 
+* Search and Subscribing
 * AWS for uploading images
 
 ## Landing Page
