@@ -58,11 +58,6 @@ function SeeSubrandditDetailsComponent() {
             className="sub-logo"></img>
           <div className="sub-title">Community Title: {subranddit?.title}</div>
           <div className="sub-stuff">About: {subranddit?.description}</div>
-        </div>
-
-        <div className="see-posts">
-          <SeeThePostsComponent/>
-        </div>
         {sessionUser && sessionUser?.id === subranddit?.author_id && (
         <div className="manjiro">
         <div className="update-stuff">
@@ -74,6 +69,11 @@ function SeeSubrandditDetailsComponent() {
         </div>
         </div>
         )}
+        </div>
+
+        <div className="see-posts">
+          <SeeThePostsComponent/>
+        </div>
     </>
     )
   )
