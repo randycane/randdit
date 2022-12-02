@@ -35,8 +35,9 @@
 * Search and Subscribing
 * AWS for uploading images
 
-## Landing Page
-![Screen Shot 2022-12-02 at 12 34 39 AM](https://user-images.githubusercontent.com/92779080/205250650-55cf74df-3d99-4b24-b5d7-7c0719279fbd.png)
+## Home page when logged in
+![Screen Shot 2022-12-02 at 1 43 40 AM](https://user-images.githubusercontent.com/92779080/205263898-79947a0c-b0b5-4069-aae1-39e23b8ce1a2.png)
+
 
 ## Login Modal
 ![Screen Shot 2022-12-02 at 12 39 27 AM](https://user-images.githubusercontent.com/92779080/205251486-e206a643-13ee-4fcb-969a-18a4ed2c7e4e.png)
@@ -46,7 +47,8 @@
 ![Screen Shot 2022-12-02 at 12 40 09 AM](https://user-images.githubusercontent.com/92779080/205251601-9a38bab8-81fe-4ad0-9b7f-33a2bef5b070.png)
 
 ## A Subranddit details page
-![Screen Shot 2022-12-02 at 12 42 21 AM](https://user-images.githubusercontent.com/92779080/205252028-bca27d65-6bff-49b1-aac2-cfc51c6547ba.png)
+![Screen Shot 2022-12-02 at 1 42 05 AM](https://user-images.githubusercontent.com/92779080/205263530-5d755f51-9ed0-4088-b740-844d74ccfdd1.png)
+
 
 ## Creating your own subranddit modal
 ![Screen Shot 2022-12-02 at 12 44 16 AM](https://user-images.githubusercontent.com/92779080/205252405-80e459ee-fb48-4795-8f26-c4d4494436d9.png)
