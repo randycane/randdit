@@ -1,9 +1,10 @@
 import "./Footer.css"
 
 
+
 function FooterComponent() {
     return (
-        <footer>
+        <footer className="whole-foot">
             <div className="feet">
                 <div className="my-feet">
                     Get to know me!
@@ -14,8 +15,8 @@ function FooterComponent() {
                         href="https://github.com/randycane"
                         >
                         <div className="pic-size">
-                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
-                            </img>
+                            {/* <img src={github}>
+                            </img> */}
                             </div>
                             <span> My Github! </span>
                             </a>
