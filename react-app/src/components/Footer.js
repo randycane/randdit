@@ -16,18 +16,19 @@ function FooterComponent() {
                         >
                         <div className="pic-size">
                             </div>
-                            <span> My Github! </span>
+                            <div className="re-got"> My Github! </div>
                             </a>
-                            </div>
-                    <a className="linked-in-contained"
-                        href="https://www.linkedin.com/in/randy-y-chang/">
-
+                    <a
+                        className="linked-in-contained"
+                        href="https://www.linkedin.com/in/randy-y-chang/"
+                        >
                         <div className="pic-size">
-                                <span>
+                                <div className="re-got">
                                     My LinkedIn!
-                                </span>
+                                </div>
                          </div>
                         </a>
+                            </div>
                 </div>
 
                     </footer>
