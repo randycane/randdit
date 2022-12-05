@@ -66,6 +66,24 @@
     color: red;
 }
 
+.error-text{
+    color:red;
+}
+
+.negative{
+    background-color: palevioletred;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 4px;
+    font-weight: 600;
+}
+
+.negative:hover{
+    cursor: pointer;
+}
+
 .choice{
     font-size: 17px;
 }
