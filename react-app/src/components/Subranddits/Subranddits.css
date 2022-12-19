@@ -34,12 +34,7 @@
     font-weight: 400;
 }
 
-/* .toman{
-    font-weight: 600;
-    color: royalblue;
-    margin-top: 12px;
-    margin-bottom: 12px;
-} */
+
 .high-form{
     display: flex;
     flex-direction: column;
