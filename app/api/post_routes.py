@@ -1,7 +1,7 @@
 from unicodedata import name
 from flask import Blueprint, jsonify, session, request, redirect
 
-from app.s3Helper import (
+from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
 from app.models import User, db, Post, Subranddit, Comment, subranddit

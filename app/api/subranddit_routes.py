@@ -6,7 +6,7 @@ from app.models import User, db, Post, Subranddit, Comment
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_user, logout_user, login_required
 
-from app.s3Helper import (
+from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
 from ..forms.subranddits import SubrandditForm
