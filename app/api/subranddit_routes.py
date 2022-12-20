@@ -38,15 +38,15 @@ def create_sub():
 
         image = request.files["image"]
 
-      if not allowed_file(image.filename):
+        if not allowed_file(image.filename):
           return {"errors": ["file type not permitted"]}, 400
 
-      image.filename = get_unique_filename(image.filename)
+        image.filename = get_unique_filename(image.filename)
 
-      upload = upload_file_to_s3(image)
-      if "url" not in upload:
-          return upload, 400
-      url = upload["url"]
+        upload = upload_file_to_s3(image)
+        if "url" not in upload:
+            return upload, 400
+        url = upload["url"]
 
         new_sub = Subranddit(
             title = form.data['title'],
@@ -54,6 +54,7 @@ def create_sub():
             image_url = form.data['image_url'],
             author_id = current_user.id
         )
+
         db.session.add(new_sub)
         db.session.commit()
         return new_sub.to_dict()
