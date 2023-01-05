@@ -15,6 +15,7 @@ class User(db.Model, UserMixin):
     subranddit = relationship("Subranddit", back_populates="user",  cascade="all, delete-orphan")
     post = relationship("Post", back_populates="user",  cascade="all, delete-orphan")
     comment = relationship("Comment", back_populates="user")
+    images = relationship("Image", back_populates="user")
 
     @property
     def password(self):

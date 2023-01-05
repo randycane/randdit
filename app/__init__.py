@@ -13,6 +13,7 @@ from .api.auth_routes import auth_routes
 from .api.subranddit_routes import subranddit_blueprint
 from .api.post_routes import post_blueprint
 from .api.comment_routes import comment_blueprint
+from .api.image_routes import image_routes
 
 from .seeds import seed_commands
 

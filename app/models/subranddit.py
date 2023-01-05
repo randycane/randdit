@@ -15,6 +15,7 @@ class Subranddit(db.Model):
     # relationships:
     post = relationship("Post", back_populates="subranddit", cascade="all, delete-orphan")
     user = relationship("User", back_populates="subranddit")
+    images = relationship("Image", back_populates="subranddit", cascade="all, delete-orphan")
 
     def to_dict(self):
         response = {
