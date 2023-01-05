@@ -153,9 +153,9 @@ const CreateSubRandditRanked = ({ onClick }) => {
               <div className="image-input-div">
                 <label className="one-label" htmlFor="upload-image-input">
                   <div className="img-icon-and-button">
-                  <img className="create-post-preview" src={imagePreview} alt="" />
+                  <img className="create-sub-preview" src={imagePreview} alt="" />
                     <div className="image-upload-button">
-                      Select from computer
+                      Select from your device
                     </div>
                   </div>
 
