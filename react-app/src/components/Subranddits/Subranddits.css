@@ -107,6 +107,7 @@
 }
 
 .label-name{
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,6 +119,16 @@
     width: 300px;
     border-radius: 12px;
     padding-top: 5px;
+}
+
+.right-side-rec{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .to-click{

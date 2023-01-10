@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import { getAllSubrandditsThunk } from "../../store/subranddit";
 import SubrandditCardComponent from "./SubCard";
 import { Link } from "react-router-dom";
@@ -9,52 +9,51 @@ import DeletingModal from "./DeleteSubModal";
 import CreatingSubRandditComponent from "./CreateSubModal/Create";
 import CreationModal from "./CreateSubModal";
 
-import "./Subranddits.css"
+import "./Subranddits.css";
 
 function SeeTheSubsComponent() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const history = useHistory();
+  const history = useHistory();
 
-    const sessionUser = useSelector((state => state.session.user));
-    const everysub = useSelector((state) => state.subranddits)
-    const normalizedSub = Object.values(everysub);
+  const sessionUser = useSelector((state) => state.session.user);
+  const everysub = useSelector((state) => state.subranddits);
+  const normalizedSub = Object.values(everysub);
 
-    const reversedSub = normalizedSub.sort().reverse()
+  const reversedSub = normalizedSub.sort().reverse();
 
-    useEffect(() => {
-        dispatch(getAllSubrandditsThunk())
-    }, [dispatch, JSON.stringify(everysub)])
+  useEffect(() => {
+    dispatch(getAllSubrandditsThunk());
+  }, [dispatch, JSON.stringify(everysub)]);
 
-
-    return (
-        <>
-            <div className="whole-page-container">
-            <div className="toman">
+  return (
+    <>
+      <div className="whole-page-container">
+        <div className="toman"></div>
+        {sessionUser && (
+          <div className="outer-container">
+            <div className="right-under">
+              <CreationModal />
+            </div>
+          </div>
+        )}
+        <div className="right-side-rec">
+          <label className="label-name">Recommended communities below!</label>
+          {reversedSub.length > 0 && (
+            <div className="single-sub">
+              {reversedSub.map((subranddit) => (
+                <div key={subranddit.id} className="each-sub">
+                  <Link to={`/subranddits/${subranddit.id}`}>
+                    <SubrandditCardComponent subranddit={subranddit} />
+                  </Link>
                 </div>
-                {sessionUser && (
-                    <div className="outer-container">
-                    <div className="right-under">
-                                <CreationModal/>
-                    </div>
-                </div>
-                )}
-                    <label className="label-name">Check out some communities below!</label>
-                    {reversedSub.length> 0 && (
-                        <div className="single-sub">
-                            {reversedSub.map((subranddit) => (
-                                <div key={subranddit.id} className="each-sub">
-                                    <Link to={`/subranddits/${subranddit.id}`}>
-                                        <SubrandditCardComponent subranddit={subranddit} />
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-
-            </>
-    )
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default SeeTheSubsComponent;
