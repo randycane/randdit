@@ -160,3 +160,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+.describe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
